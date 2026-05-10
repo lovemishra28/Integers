@@ -21,21 +21,21 @@ const projectIcons = {
 
 export default function Projects() {
   const projectsList = [
-    { 
-      title: "Samvad", 
-      category: "Next JS App", 
+    {
+      title: "Oyestra",
+      category: "Web platform for restraunt",
       image: project1,
       icon: 'web'
     },
-    { 
-      title: "Medighar", 
-      category: "Web & Mobile Platform", 
+    {
+      title: "Wafflie",
+      category: "Web Platform for cafes",
       image: project2,
       icon: 'mobile'
     },
-    { 
-      title: "Joon", 
-      category: "Next JS Ecommerce website", 
+    {
+      title: "Joon",
+      category: "Next JS Ecommerce website",
       image: project3,
       icon: 'shop'
     },
@@ -43,8 +43,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-white relative">
-      
-      <motion.div 
+
+      <motion.div
         className="flex flex-col items-center mb-16 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,9 +52,9 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
       >
         <div className="relative">
-           {/* Green blob behind header */}
-           <div className="absolute -right-4 -top-4 w-12 h-12 bg-[#d4ff3f] rounded-full opacity-80 z-0 blur-sm"></div>
-           <span className="text-sm font-bold text-[#62d124] block mb-2 text-center relative z-10">Work Projects</span>
+          {/* Green blob behind header */}
+          <div className="absolute -right-4 -top-4 w-12 h-12 bg-[#d4ff3f] rounded-full opacity-80 z-0 blur-sm"></div>
+          <span className="text-sm font-bold text-[#62d124] block mb-2 text-center relative z-10">Work Projects</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold font-sans text-black text-center max-w-2xl relative z-10">
           We Are Creating Something Different Layout
@@ -63,18 +63,18 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
         {projectsList.map((project, index) => (
-          <motion.div 
-            key={index} 
+          <motion.div
+            key={index}
             className="group cursor-pointer relative"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
           >
-            
+
             {/* Image Container */}
             <div className={`aspect-square md:aspect-[4/2.5] w-full bg-[#d4ff3f] rounded-xl overflow-hidden relative flex flex-col justify-center p-4 border border-gray-100`}>
-              
+
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10"></div>
 
               {/* White Info Box (Now positioned inside the image container) */}
@@ -92,7 +92,7 @@ export default function Projects() {
                     {project.category}
                   </p>
                 </div>
-                
+
                 {/* Green Arrow Button inside the white box */}
                 <div className="self-start w-10 h-10 rounded-full bg-[#d4ff3f] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center font-bold">
                   {projectIcons.arrow}
@@ -104,7 +104,7 @@ export default function Projects() {
       </div>
 
       {/* The Bottom Horizontal Line and Button */}
-      <motion.div 
+      <motion.div
         className="mt-16 flex items-center gap-6 relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -113,7 +113,7 @@ export default function Projects() {
       >
         {/* Horizontal Line taking up remaining space */}
         <div className="flex-grow h-[2px] bg-black"></div>
-        
+
         {/* Right-aligned Button */}
         <button className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all flex-shrink-0">
           See More Projects

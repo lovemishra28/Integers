@@ -43,7 +43,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-[#f8f9f5] relative">
       {/* Header Area with Green Blob */}
-      <motion.div 
+      <motion.div
         className="relative mb-12"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +61,7 @@ export default function Pricing() {
 
       <div className="flex flex-col lg:flex-row gap-6 items-start mt-20 md:mt-32">
         {/* Custom Plan Card - The Base Step */}
-        <motion.div 
+        <motion.div
           className="w-full lg:w-1/4 bg-white p-8 rounded-2xl border-none shadow-sm flex flex-col justify-center lg:mt-32 relative z-0"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -74,7 +74,7 @@ export default function Pricing() {
               →
             </span>
           </button>
-          
+
           <h3 className="text-2xl font-bold font-sans text-black mb-4">
             Want to know more?
           </h3>
@@ -94,32 +94,35 @@ export default function Pricing() {
             ][index];
 
             return (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`p-8 rounded-2xl transition-all duration-300 relative ${staircaseClasses} ${
-                  plan.active 
-                    ? 'bg-[#d4ff3f] border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] z-10 scale-105' 
-                    : 'bg-white border-none shadow-sm hover:shadow-md'
-                }`}
+                className={`p-8 rounded-2xl transition-all duration-300 relative ${staircaseClasses} ${plan.active
+                  ? 'bg-[#d4ff3f] border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] z-10 scale-105'
+                  : 'bg-white border-none shadow-sm hover:shadow-md'
+                  }`}
               >
                 {/* Circular Arrow Button */}
-                <div className={`absolute top-6 right-6 w-10 h-10 rounded-full border-2 border-black flex items-center justify-center font-bold text-lg ${
-                  plan.active ? 'bg-black text-white' : 'bg-[#d4ff3f] text-black'
-                }`}>
+                <div className={`absolute top-6 right-6 w-10 h-10 rounded-full border-2 border-black flex items-center justify-center font-bold text-lg ${plan.active ? 'bg-black text-white' : 'bg-[#d4ff3f] text-black'
+                  }`}>
                   <FaArrowRight className="w-4 h-4" />
                 </div>
 
                 <h4 className="text-lg font-bold text-black mb-4">{plan.name}</h4>
-                
+
                 {/* Pricing Typography */}
-                <div className="flex items-start gap-1 mb-8">
-                  <span className="font-bold text-xl mt-2 text-black">$</span>
-                  <span className="text-6xl font-black font-sans text-black tracking-tighter">{plan.price}</span>
-                  <span className="text-sm font-bold mt-auto mb-2 text-black">USD</span>
+                <div className="flex flex-col mb-8">
+                  <div className="flex items-start gap-1">
+                    <span className="font-bold text-xl mt-2 text-black">$</span>
+                    <span className="text-6xl font-black font-sans text-black tracking-tighter">{plan.price}</span>
+                    <span className="text-sm font-bold mt-auto mb-2 text-black">USD</span>
+                  </div>
+                  <div className="text-[11px] font-bold text-black/50 mt-1 uppercase tracking-wider">
+                    ≈ ₹{Math.round(parseInt(plan.price) * 95).toLocaleString('en-IN')} INR (Est.)
+                  </div>
                 </div>
 
                 <div className="mb-4 text-sm font-bold text-black">What's Included :</div>
@@ -137,7 +140,7 @@ export default function Pricing() {
         </div>
       </div>
       {/* Additional Notes */}
-      <motion.div 
+      <motion.div
         className="mt-16 p-8 bg-black/5 rounded-2xl border-2 border-dashed border-gray-300"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
