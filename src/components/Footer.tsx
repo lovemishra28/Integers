@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaCheck, FaThumbsUp } from 'react-icons/fa';
 import { submitContactForm } from '@/actions/contact';
-import logo from '@/assets/integers_logo.png';
+import logo from '@/assets/INTEGERS.png';
 import teamMember from '@/assets/team_member_footer.jpg';
 
 export default function Footer() {
@@ -150,11 +150,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-500">
           
           {/* Logo */}
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <div className="relative w-6 h-6">
-              <Image src={logo} alt="Integers Logo" fill className="object-contain" />
-            </div>
-            <span className="text-black font-bold text-sm">Integers</span>
+          <div className="flex items-center gap-3 mb-4 md:mb-0">
+            <Image 
+              src={logo} 
+              alt="Integers Logo" 
+              height={32} 
+              className="h-8 w-auto object-contain rounded-lg"
+            />
+            <span className="text-black font-bold text-lg">Integers</span>
           </div>
           
           {/* Copyright */}

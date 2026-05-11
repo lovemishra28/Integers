@@ -22,22 +22,25 @@ const projectIcons = {
 export default function Projects() {
   const projectsList = [
     {
-      title: "Oyestra",
+      title: "Vastavikta",
       category: "Web platform for restraunt",
       image: project1,
-      icon: 'web'
+      icon: 'web',
+      link: "https://vastavikta-five.vercel.app/"
     },
     {
       title: "Wafflie",
       category: "Web Platform for cafes",
       image: project2,
-      icon: 'mobile'
+      icon: 'mobile',
+      link: "https://wafflie.vercel.app/#"
     },
     {
       title: "Joon",
       category: "Next JS Ecommerce website",
       image: project3,
-      icon: 'shop'
+      icon: 'shop',
+      link: "https://joon-silk.vercel.app/"
     },
   ];
 
@@ -63,9 +66,12 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
         {projectsList.map((project, index) => (
-          <motion.div
+          <motion.a
             key={index}
-            className="group cursor-pointer relative"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group cursor-pointer relative block"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -99,7 +105,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
 

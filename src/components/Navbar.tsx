@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import logo from '@/assets/INTEGERS.png';
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -34,10 +36,16 @@ export default function Navbar() {
           boxShadow: shadow,
         }}
       >
-        <div className="text-2xl font-bold font-sans flex items-center gap-2 text-black">
-          <span className="w-6 h-6 bg-[#d4ff3f] rounded-tl-lg rounded-br-lg rounded-tr-sm rounded-bl-sm block border-2 border-black"></span>
-          Integers
-        </div>
+        <Link href="/" className="text-2xl md:text-3xl font-bold font-sans flex items-center gap-3 text-black tracking-tighter">
+          <Image 
+            src={logo} 
+            alt="Integers Logo" 
+            height={48} 
+            className="h-10 md:h-12 w-auto object-contain rounded-xl"
+            priority
+          />
+          
+        </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-bold text-black">
           <Link href="/" className="nav-link hover:text-[#d4ff3f] transition-colors">Home</Link>
