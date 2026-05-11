@@ -88,7 +88,7 @@ export default function Projects() {
                 <div className="flex flex-col justify-between h-full">
                   <div className="flex items-center gap-3">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e9f6ce] border border-black">
-                      {projectIcons[project.icon]}
+                      {projectIcons[project.icon as keyof typeof projectIcons]}
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold font-sans text-black tracking-tight md:tracking-[0.02em] leading-tight">
                       {project.title}
