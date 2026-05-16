@@ -24,7 +24,28 @@ export default function Testimonials() {
 
   // Fetch reviews when the component loads
   useEffect(() => {
-    fetchReviews();
+    let isMounted = true;
+
+    void (async () => {
+      try {
+        const res = await fetch('/api/reviews');
+        const data = await res.json();
+
+        if (isMounted && data.success) {
+          setReviews(data.reviews);
+        }
+      } catch (error) {
+        console.error("Failed to load reviews", error);
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const fetchReviews = async () => {
@@ -132,9 +153,9 @@ export default function Testimonials() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <div className="absolute -top-6 right-0 text-5xl text-[#d4ff3f] font-serif leading-none font-black opacity-60">""</div>
+                  <div className="absolute -top-6 right-0 text-5xl text-[#d4ff3f] font-serif leading-none font-black opacity-60">&ldquo;&rdquo;</div>
                   <h3 className="text-lg font-bold mb-4 pr-8 text-white leading-snug">
-                    "Exceptional Work"
+                    &quot;Exceptional Work&quot;
                   </h3>
                   <p className="text-[13px] text-gray-300 leading-relaxed mb-6 flex-grow">
                     {review.text}
@@ -167,7 +188,7 @@ export default function Testimonials() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-white leading-tight">Be the First to Review Us</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">We're just getting started on this journey! If we've worked together, your feedback would mean the world to us. Share your experience below.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">We&apos;re just getting started on this journey! If we&apos;ve worked together, your feedback would mean the world to us. Share your experience below.</p>
             </motion.div>
           )}
         </div>
@@ -196,7 +217,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
           >
             {submitSuccess ? (
-              <div className="bg-[#d4ff3f]/10 border border-[#d4ff3f]/30 text-[#d4ff3f] p-8 rounded-2xl font-bold text-center">
+                <div className="bg-[#d4ff3f]/10 border border-[#d4ff3f]/30 text-[#d4ff3f] p-8 rounded-2xl font-bold text-center">
                 <div className="text-3xl mb-4">✨</div>
                 Thank you! Your feedback has been submitted successfully.
               </div>

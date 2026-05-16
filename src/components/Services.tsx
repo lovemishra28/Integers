@@ -9,15 +9,15 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-white">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-12 relative">
+    <section id="services" className="py-20 sm:py-24 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto bg-white">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 relative gap-6">
         
         {/* Header with the green circular blob from the design */}
         <div className="relative">
           <div className="absolute -left-4 -top-4 w-16 h-16 bg-[#d4ff3f] rounded-full opacity-80 z-0 blur-sm"></div>
           <div className="relative z-10">
             <span className="text-sm font-bold text-gray-600 block mb-2">Our Services</span>
-            <h2 className="text-4xl md:text-5xl font-bold font-sans leading-tight text-black max-w-lg">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans leading-tight text-black max-w-lg">
               The process that makes your life easier.
             </h2>
           </div>
@@ -35,12 +35,12 @@ export default function Services() {
       </div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {servicesList.map((service, index) => (
           <div 
             key={index} 
             // The active card gets the solid lime green, thick border, and shadow
-            className={`p-8 rounded-xl transition-all duration-300 relative group cursor-pointer ${
+            className={`p-6 sm:p-8 rounded-xl transition-all duration-300 relative group cursor-pointer ${
               service.active 
                 ? 'bg-[#d4ff3f] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
                 : 'bg-white border border-gray-100 shadow-sm hover:border-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'

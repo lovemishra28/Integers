@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaCheck, FaThumbsUp } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import { submitContactForm } from '@/actions/contact';
 import logo from '@/assets/INTEGERS.png';
 import teamMember from '@/assets/team_member_footer.jpg';
@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row relative z-10">
           
           {/* Left Side - Contact Info */}
-          <div className="w-full lg:w-1/2 px-8 md:px-16 py-24 relative">
+          <div className="w-full lg:w-1/2 px-4 sm:px-8 md:px-16 py-16 sm:py-24 relative">
             
             {/* Green Glow Behind Text */}
             <div className="absolute top-20 left-10 w-48 h-48 bg-[#d4ff3f] rounded-full opacity-20 blur-[60px] pointer-events-none z-0"></div>
@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="relative z-10">
               <span className="text-[#d4ff3f] font-bold text-[10px] tracking-wider uppercase mb-4 block">Say Hello</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 leading-tight">
-                Let's Work Together<br />With Us
+                Let&apos;s Work Together<br />With Us
               </h2>
 
               <div className="space-y-6">
@@ -95,20 +95,20 @@ export default function Footer() {
           </div>
 
           {/* Right Side - The Form */}
-          <div className="w-full lg:w-1/2 px-8 md:px-16 py-16 lg:py-24 relative z-10">
+          <div className="w-full lg:w-1/2 px-4 sm:px-8 md:px-16 py-12 sm:py-16 lg:py-24 relative z-10">
             {/* Dark Gray Form Card */}
-            <div className="bg-[#1c1c1c] p-8 md:p-10 rounded-2xl border border-gray-800 shadow-2xl relative z-10 w-full max-w-md mx-auto lg:ml-0">
+            <div className="bg-[#1c1c1c] p-6 sm:p-8 md:p-10 rounded-2xl border border-gray-800 shadow-2xl relative z-10 w-full max-w-md mx-auto lg:ml-0">
               <h3 className="text-2xl font-bold mb-8">Input Form</h3>
               
               {success ? (
                 <div className="bg-[#d4ff3f] text-black p-6 rounded-xl font-bold text-center">
-                  Thanks! We'll be in touch soon.
+                  Thanks! We&apos;ll be in touch soon.
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-[10px] font-bold text-gray-400 mb-3 uppercase tracking-wider">Personal information</label>
-                    <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <input type="text" name="firstName" required className="w-full bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600" placeholder="First Name" />
                       <input type="text" name="lastName" required className="w-full bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600" placeholder="Last Name" />
                     </div>
@@ -116,8 +116,8 @@ export default function Footer() {
 
                   <div>
                     <label className="block text-[10px] font-bold text-gray-400 mb-3 uppercase tracking-wider">Phone number</label>
-                    <div className="flex gap-2">
-                      <div className="w-20 bg-transparent border border-gray-700 rounded-lg flex items-center justify-center text-xs text-white uppercase font-bold">🇮🇳 +91</div>
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <div className="w-full sm:w-20 bg-transparent border border-gray-700 rounded-lg flex items-center justify-center text-xs text-white uppercase font-bold py-3 sm:py-0">🇮🇳 +91</div>
                       <input type="tel" name="phone" required className="flex-1 bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600" placeholder="Phone Number" />
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function Footer() {
 
       {/* Bottom Bar - Fixed to White background with Black text */}
       <div className="bg-white border-t border-gray-200 py-6 px-8 md:px-16 w-full relative z-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-500">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-gray-500">
           
           {/* Logo */}
           <div className="flex items-center gap-3 mb-4 md:mb-0">
@@ -166,7 +166,7 @@ export default function Footer() {
           </div>
           
           {/* Links */}
-          <div className="flex gap-6 text-black">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-black text-center md:text-left">
             <a href="#" className="hover:text-[#62d124] transition-colors">Terms of Use</a>
             <a href="#" className="hover:text-[#62d124] transition-colors">Accessibility Statement</a>
           </div>

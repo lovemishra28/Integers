@@ -42,8 +42,8 @@ export default function Expertise() {
   ];
 
   return (
-    <section id="services" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-[#f8f9f5]">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+    <section id="services" className="py-20 sm:py-24 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto bg-[#f8f9f5]">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -51,14 +51,14 @@ export default function Expertise() {
           transition={{ duration: 0.6 }}
         >
           <span className="text-sm font-bold text-[#62d124] block mb-2">Our Capabilities</span>
-          <h2 className="text-4xl md:text-5xl font-bold font-sans text-black">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans text-black">
             We Provide Modern Tech<br/>Solutions.
           </h2>
         </motion.div>
         
         {/* Fixed Toggle Buttons */}
         <motion.div 
-          className="mb-4 flex gap-4 mt-6 md:mt-0"
+          className="mb-4 flex flex-wrap gap-3 sm:gap-4 mt-6 md:mt-0"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -73,7 +73,7 @@ export default function Expertise() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {skills.map((skill, index) => (
           <motion.div 
             key={index} 
@@ -81,7 +81,7 @@ export default function Expertise() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`p-8 rounded-xl transition-all duration-300 relative group cursor-pointer border-2 flex flex-col h-full ${
+            className={`p-6 sm:p-8 rounded-xl transition-all duration-300 relative group cursor-pointer border-2 flex flex-col h-full ${
               skill.active 
                 ? 'bg-[#d4ff3f] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]' 
                 : 'bg-white border-gray-200 hover:border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'
