@@ -1,125 +1,145 @@
 # Integers — Modern Digital Agency Landing Page
 
-A polished Next.js landing page designed for a startup digital agency offering web, mobile, and design services.
-
-Built with a clean UI, interactive cards, modern motion, and reusable sections that showcase services, projects, expertise, pricing, and contact.
+A polished Next.js landing page created for a modern digital agency brand. `Integers` showcases services, projects, pricing, expertise, testimonials, and a contact capture flow in a responsive, visually rich layout.
 
 ---
 
 ## 🚀 Project Overview
 
-`Integers` is a single-page responsive portfolio-style website built with Next.js and Tailwind CSS.
+`Integers` is a single-page, App Router-based website built with Next.js and Tailwind CSS. It is designed as a startup agency landing page to exhibit:
 
-It includes:
+- Brand positioning and hero messaging
+- Service offerings and capability highlights
+- Featured project presentation
+- Mid-page call-to-action with strong visual hierarchy
+- Expertise section with key value propositions
+- Testimonials / review showcase
+- Pricing tiers and comparison cards
+- Contact capture form integrated with a backend database
 
-- Hero section with branding and headline
-- Service cards with iconography and feature highlights
-- Project showcases with modern card layouts
-- Mid-section call-to-action with image and badge accents
-- Expertise cards with vertical alignment and status indicators
-- Pricing cards with bold visual hierarchy
-- Contact form with client-side submission
-- Animated icon elements using `react-icons`
+This repository is ideal for agency, studio, or freelance landing pages that need a clean, modern presentation layer with quick deploy support.
 
 ---
 
 ## 🧱 Tech Stack
 
-- **Next.js 16.2.4**
+- **Next.js 16.2.4** (App Router)
 - **React 19.2.4**
 - **TypeScript**
 - **Tailwind CSS v4**
-- **React Icons**
 - **Framer Motion**
-- **Mongoose** (for backend/contact integration)
+- **React Icons**
+- **Mongoose** (MongoDB integration)
 
 ---
 
-## 📁 Project Structure
+## 📦 What’s Included
 
-- `src/app/page.tsx` — main landing page assembly
-- `src/components/` — reusable UI sections and cards
-- `src/components/Navbar.tsx` — navigation and CTA button
-- `src/components/Hero.tsx` — hero header section
-- `src/components/Services.tsx` — service overview cards
-- `src/components/Projects.tsx` — featured work section
-- `src/components/MidCTA.tsx` — mid-page CTA and image panel
-- `src/components/Expertise.tsx` — capabilities grid
+- `src/app/page.tsx` — root page rendering all landing sections
+- `src/components/Navbar.tsx` — sticky navigation with call-to-action buttons
+- `src/components/Hero.tsx` — primary hero section with headline and visual accents
+- `src/components/Services.tsx` — service cards and feature summaries
+- `src/components/Projects.tsx` — project showcase layout
+- `src/components/MidCTA.tsx` — promotional call-to-action section
+- `src/components/Expertise.tsx` — expertise and capability cards
 - `src/components/Testimonials.tsx` — review/testimonial section
-- `src/components/Pricing.tsx` — pricing tier cards
-- `src/components/Footer.tsx` — contact form and footer
-- `src/actions/contact.ts` — contact form submission action
+- `src/components/Pricing.tsx` — pricing tier cards with comparison styling
+- `src/components/Footer.tsx` — contact form, footer links, and brand details
+- `src/actions/contact.ts` — server action handling contact form submissions
+- `src/app/api/reviews/route.ts` — API route for saving and fetching reviews
 - `src/lib/mongodb.ts` — MongoDB connection helper
-- `src/models/Contact.ts` — contact form schema
+- `src/models/Contact.ts` — contact data schema
+- `src/models/Review.ts` — review data schema
 
 ---
 
-## ✅ Features
+## ✅ Key Features
 
-- Responsive layout built for desktop and mobile
-- Stylized grid cards with consistent bottom alignment
-- Themed icon usage across the UI
-- Custom button and badge styles
-- Contact form with submit handling
-- Full design polish for a digital agency portfolio
+- Fully responsive landing page layout
+- Modular reusable sections for fast updates
+- Visual design using Tailwind CSS utilities
+- Animated UI enhancements via Framer Motion
+- Iconography with `react-icons`
+- Contact form submission using a server action
+- MongoDB data persistence via `mongoose`
+- Reviews API route with `GET` and `POST` support
+
+---
+
+## 🔧 Backend & Data Flow
+
+- Contact requests are handled by `src/actions/contact.ts` using a Next.js server action.
+- Submitted contact entries save to MongoDB through `src/models/Contact.ts`.
+- Reviews are managed by `src/app/api/reviews/route.ts` and saved with `src/models/Review.ts`.
+- MongoDB connectivity is centralized in `src/lib/mongodb.ts`.
 
 ---
 
 ## 💻 Installation
 
+Install dependencies:
+
 ```bash
 npm install
 ```
 
-### Run locally
+Start the local development server:
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser.
+Open `http://localhost:3000` to view the site.
 
-### Build for production
+Build for production:
 
 ```bash
 npm run build
 npm start
 ```
 
+Run lint checks:
+
+```bash
+npm run lint
+```
+
 ---
 
-## 🛠️ Customization
+## 🌍 Environment & Deployment Notes
 
-To update the page content:
+- This project uses the Next.js App Router and server actions.
+- Ensure your MongoDB connection settings are configured if using the form persistence features.
+- Replace placeholder contact details and social links with real values in `src/components/Footer.tsx`.
 
-- Modify section titles and text in `src/components/*`
-- Update project data and service cards directly in component arrays
-- Replace images in `public/assets/` and `src/assets/`
-- Change theme colors with Tailwind utility classes
+---
+
+## 🛠 Customization
+
+To update the content or appearance:
+
+- Edit text, headings, and cards in `src/components/*`.
+- Replace or add image assets under `src/assets/` and `public/assets/`.
+- Adjust color and spacing using Tailwind utility classes.
+- Change review or pricing content in the corresponding sections.
+
+---
+
+## 🤝 Contributing
+
+Improvements are welcome. Create a branch, make your changes, and submit a pull request.
 
 ---
 
 ## 📌 Notes
 
-- The project currently uses inline icons from `react-icons`
-- Pricing and expertise cards are built for easy content updates
-- The contact form is connected to the `src/actions/contact.ts` flow
+- The contact form uses a server-side submission handler.
+- Reviews API supports saving new reviews and fetching top-rated entries.
+- The project is structured for easy expansion into a full agency website.
 
 ---
 
-## 🤝 Contribution
-
-Contributions and improvements are welcome. If you want to add a new section or refine the design, please create a new branch and open a pull request.
-
----
-
-## 📣 License
-
-This repository is currently private and intended for personal or startup use.
-
----
-
-## 🌟 Quick Commands
+## 🚀 Quick Commands
 
 ```bash
 npm install
