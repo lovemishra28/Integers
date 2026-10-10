@@ -5,7 +5,7 @@ import teamMember from '@/assets/team_member_footer.jpg';
 
 export default function MidCTA() {
   return (
-    <section id="contact" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-white flex flex-col lg:flex-row items-center gap-16">
+    <section id="connect" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-white flex flex-col lg:flex-row items-center gap-16 scroll-mt-10">
       
       {/* Left Side - Graphics & Image */}
       <div className="w-full lg:w-1/2 relative flex justify-center mt-10 lg:mt-0">

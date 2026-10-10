@@ -137,12 +137,22 @@ export default function Pricing() {
     }
   };
 
-  // WhatsApp instant message
-  const handleWhatsAppChat = () => {
+  // WhatsApp instant message URL
+  const getWhatsAppUrl = () => {
     const msg = encodeURIComponent(
-      `Hi Integers! I'd like to book the ${selectedPlan.name} plan (${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Can we chat?`
+      `Hi Integers! I'd like to book the ${selectedPlan.name} plan (${billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-Time Project'} at ${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Can we chat?`
     );
-    window.open(`https://wa.me/919644397542?text=${msg}`, '_blank');
+    return `https://wa.me/919644397542?text=${msg}`;
+  };
+
+  const handleWhatsAppChat = () => {
+    const url = getWhatsAppUrl();
+    if (typeof window !== 'undefined') {
+      const win = window.open(url, '_blank');
+      if (!win) {
+        window.location.href = url;
+      }
+    }
   };
 
   return (
@@ -625,13 +635,15 @@ export default function Pricing() {
                   Pre-fill Contact Form & Send Brief
                 </button>
 
-                <button
-                  onClick={handleWhatsAppChat}
-                  className="w-full py-3 px-4 rounded-2xl font-bold text-xs uppercase tracking-wider bg-[#25D366] text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] active:translate-y-[1px] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-4 rounded-2xl font-bold text-xs uppercase tracking-wider bg-[#25D366] text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] active:translate-y-[1px] transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
                 >
                   <FaWhatsapp className="w-4 h-4 text-black" />
                   Instant WhatsApp Consultation (+91 9644397542)
-                </button>
+                </a>
               </div>
 
               <div className="mt-4 text-center">
