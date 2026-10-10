@@ -27,7 +27,28 @@ export default function Testimonials() {
 
   // Fetch reviews when the component loads
   useEffect(() => {
-    fetchReviews();
+    let isMounted = true;
+
+    void (async () => {
+      try {
+        const res = await fetch('/api/reviews');
+        const data = await res.json();
+
+        if (isMounted && data.success && Array.isArray(data.reviews)) {
+          setReviews(data.reviews);
+        }
+      } catch (error) {
+        console.error("Failed to load reviews", error);
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const fetchReviews = async () => {
@@ -158,7 +179,7 @@ export default function Testimonials() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <div className="absolute -top-4 right-4 text-4xl text-[#d4ff3f] font-serif leading-none font-black opacity-50">""</div>
+                  <div className="absolute -top-4 right-4 text-4xl text-[#d4ff3f] font-serif leading-none font-black opacity-50">&ldquo;&rdquo;</div>
                   <h3 className="text-base font-bold mb-3 pr-6 text-white leading-snug">
                     {review.rating === 5 ? "Exceptional Work" : "Great Partnership"}
                   </h3>
@@ -198,7 +219,7 @@ export default function Testimonials() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-white leading-tight">Be the First to Review Us</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">We're just getting started on this journey! If we've worked together, your feedback would mean the world to us. Share your experience below.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">We&apos;re just getting started on this journey! If we&apos;ve worked together, your feedback would mean the world to us. Share your experience below.</p>
             </motion.div>
           )}
         </div>

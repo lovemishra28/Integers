@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaArrowRight, FaBars, FaTimes } from 'react-icons/fa';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import logo from '@/assets/INTEGERS.png';
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -28,7 +30,7 @@ export default function Navbar() {
 
   return (
     <motion.div 
-      className="fixed left-1/2 -translate-x-1/2 z-50 px-0"
+      className="fixed left-1/2 -translate-x-1/2 z-50 px-3 sm:px-0"
       style={{
         width,
         maxWidth,
@@ -36,16 +38,21 @@ export default function Navbar() {
       }}
     >
       <motion.nav 
-        className="flex items-center justify-between py-3.5 px-5 md:py-4 md:px-10 w-full backdrop-blur-xl border border-black/10"
+        className="flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 md:px-10 w-full backdrop-blur-xl border border-black/10"
         style={{
           borderRadius,
           backgroundColor,
           boxShadow: shadow,
         }}
       >
-        <Link href="/" className="text-2xl font-bold font-sans flex items-center gap-2 text-black cursor-pointer">
-          <span className="w-6 h-6 bg-[#d4ff3f] rounded-tl-lg rounded-br-lg rounded-tr-sm rounded-bl-sm block border-2 border-black"></span>
-          Integers
+        <Link href="/" className="text-xl sm:text-2xl md:text-3xl font-bold font-sans flex items-center gap-3 text-black tracking-tighter">
+          <Image
+            src={logo}
+            alt="Integers Logo"
+            height={48}
+            className="h-9 sm:h-10 md:h-12 w-auto object-contain rounded-xl"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -62,7 +69,7 @@ export default function Navbar() {
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
           <Link href="#contact" className="inline-flex items-center justify-center px-6 py-2.5 rounded-3xl font-bold text-sm transition-transform hover:scale-105 active:scale-95 bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            Let's Talk
+            Let&apos;s Talk
             <span className="ml-2 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">
               <FaArrowRight className="w-2.5 h-2.5" />
             </span>
@@ -128,7 +135,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider bg-[#d4ff3f] text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform"
               >
-                Let's Talk About Your Project
+                Let&apos;s Talk About Your Project
                 <FaArrowRight className="w-3 h-3 ml-2" />
               </Link>
             </div>
