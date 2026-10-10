@@ -17,7 +17,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-40 pb-48 overflow-hidden bg-[#eefadc]">
+    <section className="relative pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-48 overflow-hidden bg-[#eefadc]">
       
       {/* Decorative Background Elements */}
       <motion.div 
@@ -47,18 +47,18 @@ export default function Hero() {
 
       {/* Huge Outlined Background Text */}
       <motion.div 
-        className="absolute top-28 left-0 w-full text-center z-0 pointer-events-none mt-10 md:mt-12"
+        className="absolute top-20 sm:top-24 md:top-28 left-0 w-full text-center z-0 pointer-events-none mt-6 sm:mt-8 md:mt-12"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="text-[4.5rem] md:text-[14rem] font-bold leading-[0.8] font-sans uppercase tracking-wider text-transparent [-webkit-text-stroke:1.5px_#a5d677] md:[-webkit-text-stroke:3px_#a5d677]">
+        <h1 className="text-[2.6rem] sm:text-[4.5rem] md:text-[14rem] font-bold leading-[0.8] font-sans uppercase tracking-wider text-transparent [-webkit-text-stroke:1px_#a5d677] sm:[-webkit-text-stroke:1.5px_#a5d677] md:[-webkit-text-stroke:3px_#a5d677]">
           INTEGERS
         </h1>
       </motion.div>
 
       {/* Main Content Wrapper */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col items-center mt-20 md:mt-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col items-center mt-14 sm:mt-20 md:mt-32">
         
         <div className="relative w-full max-w-4xl flex flex-col items-center">
           
@@ -78,7 +78,7 @@ export default function Hero() {
           </svg>
 
           {/* Name Capsules */}
-          <div className="absolute inset-0 pointer-events-none z-30">
+          <div className="absolute inset-0 pointer-events-none z-30 hidden sm:block">
             {members.map((member, idx) => (
               <div
                 key={idx}
@@ -94,26 +94,20 @@ export default function Hero() {
 
           {/* The 16:9 Image Container */}
           <motion.div 
-            className="w-[95%] md:w-full aspect-video relative overflow-hidden rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white z-10"
+            className="w-full sm:w-[95%] md:w-full aspect-[4/5] lg:aspect-video relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[#fefcf5] z-10"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             style={{
-              WebkitMaskImage: 'url(/wavy-mask.svg)',
-              maskImage: 'url(/wavy-mask.svg)',
-              WebkitMaskSize: "cover",
-              maskSize: "cover",
-              WebkitMaskRepeat: "no-repeat",
-              maskRepeat: "no-repeat",
-              WebkitMaskPosition: "center top",
-              maskPosition: "center top",
+              WebkitMaskImage: 'none',
+              maskImage: 'none',
             }}
           >
             <Image 
               src={teamHero} 
               alt="Team members" 
               fill 
-              className="object-cover" 
+              className="object-contain md:object-cover object-center" 
               priority
             />
 
@@ -132,7 +126,7 @@ export default function Hero() {
 
           {/* Floating Badge 1: Members */}
           <motion.div 
-            className="absolute top-1/4 -left-2 md:-left-12 bg-white rounded-full w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-20 hover:scale-105 transition-transform"
+            className="hidden md:flex absolute top-1/4 -left-2 md:-left-12 bg-white rounded-full w-24 h-24 md:w-32 md:h-32 flex-col items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-20 hover:scale-105 transition-transform"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
@@ -143,7 +137,7 @@ export default function Hero() {
 
           {/* Floating Badge 2: Happy Clients */}
           <motion.div 
-            className="absolute bottom-1/4 -right-2 md:-right-10 bg-white py-3 px-4 md:px-6 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center gap-2 z-20 rotate-6 hover:rotate-0 transition-transform"
+            className="hidden md:flex absolute bottom-1/4 -right-2 md:-right-10 bg-white py-3 px-4 md:px-6 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex-col items-center gap-2 z-20 rotate-6 hover:rotate-0 transition-transform"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
@@ -162,29 +156,46 @@ export default function Hero() {
 
         {/* The Black Nameplate Pill */}
         <motion.div 
-          className="mt-[-1.5rem] bg-black text-white px-8 md:px-12 py-3 md:py-4 rounded-full font-bold text-xl md:text-3xl font-sans uppercase transform -rotate-2 shadow-[6px_6px_0px_0px_rgba(212,255,63,1)] z-30 relative border-2 border-black border-t-white/20"
+          className="mt-[-1.25rem] bg-black text-white px-6 sm:px-8 md:px-12 py-3 md:py-4 rounded-full font-bold text-base sm:text-xl md:text-3xl font-sans uppercase transform -rotate-2 shadow-[6px_6px_0px_0px_rgba(212,255,63,1)] z-30 relative border-2 border-black border-t-white/20"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
           OUR TEAM
         </motion.div>
+
+        <div className="mt-4 w-full max-w-3xl md:hidden px-1">
+          <div className="rounded-full border-2 border-black bg-black text-white px-4 py-2 text-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] shadow-[4px_4px_0px_0px_rgba(212,255,63,1)] overflow-hidden">
+            <div className="animate-marquee flex whitespace-nowrap w-max">
+              {[1, 2].map((group) => (
+                <div key={group} className="flex items-center">
+                  <span className="mx-3 text-white">Web Development</span>
+                  <span className="text-[#d4ff3f]">•</span>
+                  <span className="mx-3 text-white">UI/UX Design</span>
+                  <span className="text-[#d4ff3f]">•</span>
+                  <span className="mx-3 text-white">App Development</span>
+                  <span className="text-[#d4ff3f]">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Slanted Marquee Banner */}
       <motion.div 
-        className="absolute bottom-6 left-0 w-[110%] -left-[5%] bg-black text-white py-4 md:py-5 transform -rotate-2 shadow-2xl z-40 overflow-hidden flex border-y-2 border-black"
+        className="hidden md:flex absolute bottom-4 sm:bottom-6 left-0 w-[120%] sm:w-[110%] -left-[10%] sm:-left-[5%] bg-black text-white py-3 sm:py-4 md:py-5 transform -rotate-2 shadow-2xl z-40 overflow-hidden border-y-2 border-black"
         initial={{ y: 100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, delay: 0.7 }}
       >
         <div className="animate-marquee flex whitespace-nowrap w-max">
           {[1, 2, 3].map((group) => (
-            <div key={group} className="flex items-center text-lg md:text-2xl font-bold font-sans uppercase">
-              <span className="mx-4 md:mx-8 text-white">Web Development</span> <span className="text-[#d4ff3f]">—</span>
-              <span className="mx-4 md:mx-8 text-white">UI/UX Design</span> <span className="text-[#d4ff3f]">—</span>
-              <span className="mx-4 md:mx-8 text-white">App Development</span> <span className="text-[#d4ff3f]">—</span>
-              <span className="mx-4 md:mx-8 text-[#d4ff3f]">2026</span> <span className="text-[#d4ff3f]">—</span>
+            <div key={group} className="flex items-center text-sm sm:text-lg md:text-2xl font-bold font-sans uppercase">
+              <span className="mx-3 sm:mx-4 md:mx-8 text-white">Web Development</span> <span className="text-[#d4ff3f]">—</span>
+              <span className="mx-3 sm:mx-4 md:mx-8 text-white">UI/UX Design</span> <span className="text-[#d4ff3f]">—</span>
+              <span className="mx-3 sm:mx-4 md:mx-8 text-white">App Development</span> <span className="text-[#d4ff3f]">—</span>
+              <span className="mx-3 sm:mx-4 md:mx-8 text-[#d4ff3f]">2026</span> <span className="text-[#d4ff3f]">—</span>
             </div>
           ))}
         </div>
