@@ -12,13 +12,16 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 @layer base {
   body {
     background-color: #f6f8f1;
     color: #141414;
-    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   body::selection {

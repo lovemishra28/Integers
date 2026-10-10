@@ -43,9 +43,9 @@ export default function Navbar() {
           <Link href="/" className="nav-link hover:text-[#d4ff3f] transition-colors">Home</Link>
           <Link href="#services" className="nav-link hover:text-[#d4ff3f] transition-colors">Services</Link>
           <Link href="#projects" className="nav-link hover:text-[#d4ff3f] transition-colors">Work</Link>
-          <Link href="#reviews" className="nav-link hover:text-[#d4ff3f] transition-colors">Reviews</Link>
           <Link href="#pricing" className="nav-link hover:text-[#d4ff3f] transition-colors">Pricing</Link>
           <Link href="#contact" className="nav-link hover:text-[#d4ff3f] transition-colors">Contact</Link>
+          <Link href="#reviews" className="nav-link hover:text-[#d4ff3f] transition-colors">Reviews</Link>
         </div>
 
         <div className="hidden md:block">

@@ -14,31 +14,31 @@ export default function Footer() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsSubmitting(true);
-    
+
     const formData = new FormData(event.currentTarget);
     const result = await submitContactForm(formData);
-    
+
     if (result.success) {
       setSuccess(true);
       event.currentTarget.reset();
     }
-    
+
     setIsSubmitting(false);
   }
 
   return (
-    <footer id="contact" className="w-full flex flex-col font-sans">
+    <footer id="contact-form" className="w-full flex flex-col font-sans">
       {/* Top Dark Section */}
       <div className="bg-[#111111] text-white relative overflow-hidden w-full">
-        
+
         {/* Background Image - Covers Right Side and blends left */}
         <div className="absolute right-0 top-0 w-full lg:w-[55%] h-full z-0 overflow-hidden pointer-events-none">
           <div className="relative w-full h-full grayscale opacity-40 lg:opacity-80 transition-all duration-700">
-            <Image 
-              src={teamMember} 
-              alt="Background" 
-              fill 
-              className="object-cover object-top lg:object-[center_20%]" 
+            <Image
+              src={teamMember}
+              alt="Background"
+              fill
+              className="object-cover object-top lg:object-[center_20%]"
               priority
             />
             {/* Smooth gradient transition from the dark left side to the image on the right */}
@@ -47,13 +47,13 @@ export default function Footer() {
         </div>
 
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row relative z-10">
-          
+
           {/* Left Side - Contact Info */}
           <div className="w-full lg:w-1/2 px-8 md:px-16 py-24 relative">
-            
+
             {/* Green Glow Behind Text */}
             <div className="absolute top-20 left-10 w-48 h-48 bg-[#d4ff3f] rounded-full opacity-20 blur-[60px] pointer-events-none z-0"></div>
-            
+
             <div className="relative z-10">
               <span className="text-[#d4ff3f] font-bold text-[10px] tracking-wider uppercase mb-4 block">Say Hello</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 leading-tight">
@@ -63,13 +63,13 @@ export default function Footer() {
               <div className="space-y-6">
                 <div>
                   <span className="text-gray-400 text-xs font-bold mb-1 block uppercase tracking-wider">Stay Up To Date</span>
-                  <a href="mailto:hello@youragency.com" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
-                    hello@youragency.com
+                  <a href="mailto:hello@integers.in" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
+                    hello@integers.in
                   </a>
                 </div>
                 <div>
-                  <a href="tel:+910000000000" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
-                    +91 (000) 000-0000
+                  <a href="tel:+919644397542" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
+                    +91 9644397542
                   </a>
                 </div>
                 <div className="pt-4">
@@ -82,11 +82,10 @@ export default function Footer() {
               {/* Fixed Social Icons */}
               <div className="flex gap-4 mt-12">
                 {['Tw', 'Fb', 'Dr', 'Be'].map((social, i) => (
-                  <a key={i} href="#" className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
-                    i === 0 
-                      ? 'bg-[#d4ff3f] text-black hover:scale-110' 
-                      : 'bg-transparent border border-gray-600 text-white hover:border-[#d4ff3f] hover:text-[#d4ff3f]'
-                  }`}>
+                  <a key={i} href="#" className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold transition-all ${i === 0
+                    ? 'bg-[#d4ff3f] text-black hover:scale-110'
+                    : 'bg-transparent border border-gray-600 text-white hover:border-[#d4ff3f] hover:text-[#d4ff3f]'
+                    }`}>
                     {social}
                   </a>
                 ))}
@@ -99,7 +98,7 @@ export default function Footer() {
             {/* Dark Gray Form Card */}
             <div className="bg-[#1c1c1c] p-8 md:p-10 rounded-2xl border border-gray-800 shadow-2xl relative z-10 w-full max-w-md mx-auto lg:ml-0">
               <h3 className="text-2xl font-bold mb-8">Input Form</h3>
-              
+
               {success ? (
                 <div className="bg-[#d4ff3f] text-black p-6 rounded-xl font-bold text-center">
                   Thanks! We'll be in touch soon.
@@ -127,8 +126,8 @@ export default function Footer() {
                     <textarea name="message" required rows={4} className="w-full bg-transparent border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 resize-none" placeholder="Tell us about your project..."></textarea>
                   </div>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     disabled={isSubmitting}
                     className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm transition-transform hover:scale-105 active:scale-95 bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50 mt-2"
                   >
@@ -141,14 +140,14 @@ export default function Footer() {
               )}
             </div>
           </div>
-          
+
         </div>
       </div>
 
       {/* Bottom Bar - Fixed to White background with Black text */}
       <div className="bg-white border-t border-gray-200 py-6 px-8 md:px-16 w-full relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-500">
-          
+
           {/* Logo */}
           <div className="flex items-center gap-2 mb-4 md:mb-0">
             <div className="relative w-6 h-6">
@@ -156,12 +155,12 @@ export default function Footer() {
             </div>
             <span className="text-black font-bold text-sm">Integers</span>
           </div>
-          
+
           {/* Copyright */}
           <div className="text-center md:text-left mb-4 md:mb-0 text-black">
             © {new Date().getFullYear()} Integers. All Rights Reserved.
           </div>
-          
+
           {/* Links */}
           <div className="flex gap-6 text-black">
             <a href="#" className="hover:text-[#62d124] transition-colors">Terms of Use</a>

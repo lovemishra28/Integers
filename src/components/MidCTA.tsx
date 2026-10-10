@@ -5,7 +5,7 @@ import teamMember from '@/assets/team_member_footer.jpg';
 
 export default function MidCTA() {
   return (
-    <section className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-white flex flex-col lg:flex-row items-center gap-16">
+    <section id="contact" className="py-24 px-8 md:px-16 max-w-7xl mx-auto bg-white flex flex-col lg:flex-row items-center gap-16">
       
       {/* Left Side - Graphics & Image */}
       <div className="w-full lg:w-1/2 relative flex justify-center mt-10 lg:mt-0">
@@ -55,12 +55,15 @@ export default function MidCTA() {
           We provide exactly the features local businesses need to maximize their digital presence. We build fast, secure, and beautiful platforms tailored for your brand.
         </p>
         
-        <button className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all">
+        <a
+          href="#contact-form"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer"
+        >
           Connect
           <span className="ml-2 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">
             <FaArrowRight className="w-2.5 h-2.5" />
           </span>
-        </button>
+        </a>
       </div>
     </section>
   );
