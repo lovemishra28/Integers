@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 // Define the shape of our Review data
@@ -19,8 +19,11 @@ export default function Testimonials() {
   // Form States
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [userRating, setUserRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   // Fetch reviews when the component loads
   useEffect(() => {
@@ -31,7 +34,7 @@ export default function Testimonials() {
         const res = await fetch('/api/reviews');
         const data = await res.json();
 
-        if (isMounted && data.success) {
+        if (isMounted && data.success && Array.isArray(data.reviews)) {
           setReviews(data.reviews);
         }
       } catch (error) {
@@ -52,7 +55,7 @@ export default function Testimonials() {
     try {
       const res = await fetch('/api/reviews');
       const data = await res.json();
-      if (data.success) {
+      if (data.success && Array.isArray(data.reviews)) {
         setReviews(data.reviews);
       }
     } catch (error) {
@@ -65,44 +68,67 @@ export default function Testimonials() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-    
-    const formData = new FormData(event.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      role: formData.get("role"),
-      rating: formData.get("rating"),
-      text: formData.get("text"),
-    };
+    setSubmitError(null);
+
+    const form = formRef.current;
+    if (!form) {
+      setIsSubmitting(false);
+      return;
+    }
+
+    const formData = new FormData(form);
+    const name = formData.get("name")?.toString().trim();
+    const role = formData.get("role")?.toString().trim() || "Client";
+    const text = formData.get("text")?.toString().trim();
+    const rating = Number(userRating) || 5;
+
+    if (!name || !text) {
+      setSubmitError("Please fill in your name and review experience.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const payload = { name, role, rating, text };
 
     try {
       const res = await fetch('/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       const result = await res.json();
       
-      if (result.success) {
+      if (res.ok && result.success) {
         setSubmitSuccess(true);
-        event.currentTarget.reset();
-        // Refetch to instantly show the new review if it was 5 stars!
-        fetchReviews();
+        form.reset();
+        setUserRating(5);
+        setHoverRating(0);
+
+        // Instantly prepend newly created review to the UI
+        if (result.review) {
+          setReviews((prev) => [result.review, ...prev.filter((r) => r._id !== result.review._id)]);
+        } else {
+          fetchReviews();
+        }
         
-        // Hide success message after 5 seconds
-        setTimeout(() => setSubmitSuccess(false), 5000);
+        // Hide success message after 7 seconds
+        setTimeout(() => setSubmitSuccess(false), 7000);
+      } else {
+        setSubmitError(result.error || "Failed to submit review. Please try again.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to submit review", error);
+      setSubmitError("Network error: Could not connect to the review server. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="reviews" className="py-24 px-8 md:px-16 bg-[#111111] text-white relative overflow-hidden flex flex-col items-center">
+    <section id="reviews" className="py-24 px-8 md:px-16 bg-[#111111] text-white relative overflow-hidden flex flex-col items-center scroll-mt-10">
       
-      {/* Decorative Squiggle & Cursor (already present, ensured it stays) */}
+      {/* Decorative Squiggle & Cursor */}
       <motion.div 
         className="absolute top-32 left-10 md:left-24 opacity-60 pointer-events-none hidden md:block z-0"
         initial={{ opacity: 0, rotate: -10 }}
@@ -146,28 +172,33 @@ export default function Testimonials() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 relative z-10 font-sans">
               {reviews.map((review, idx) => (
                 <motion.div 
-                  key={review._id} 
-                  className="relative group flex flex-col"
+                  key={review._id || idx} 
+                  className="relative group flex flex-col bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-[#d4ff3f]/50 transition-colors"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <div className="absolute -top-6 right-0 text-5xl text-[#d4ff3f] font-serif leading-none font-black opacity-60">&ldquo;&rdquo;</div>
-                  <h3 className="text-lg font-bold mb-4 pr-8 text-white leading-snug">
-                    &quot;Exceptional Work&quot;
+                  <div className="absolute -top-4 right-4 text-4xl text-[#d4ff3f] font-serif leading-none font-black opacity-50">&ldquo;&rdquo;</div>
+                  <h3 className="text-base font-bold mb-3 pr-6 text-white leading-snug">
+                    {review.rating === 5 ? "Exceptional Work" : "Great Partnership"}
                   </h3>
                   <p className="text-[13px] text-gray-300 leading-relaxed mb-6 flex-grow">
                     {review.text}
                   </p>
                   <div className="flex text-[#ff9d00] mb-5 text-sm tracking-tight">
-                    {"★".repeat(review.rating)}
+                    {"★".repeat(Math.max(1, Math.min(5, review.rating)))}
+                    <span className="text-gray-700">
+                      {"★".repeat(Math.max(0, 5 - review.rating))}
+                    </span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-700 border-2 border-gray-600"></div>
-                    <div>
-                      <h4 className="font-bold text-sm text-white">{review.name}</h4>
-                      <p className="text-[10px] text-gray-500 uppercase tracking-wide">{review.role}</p>
+                  <div className="flex items-center gap-3 mt-auto pt-3 border-t border-white/10">
+                    <div className="w-9 h-9 rounded-full bg-[#d4ff3f] text-black font-extrabold text-xs flex items-center justify-center border-2 border-black shrink-0">
+                      {review.name.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-sm text-white truncate">{review.name}</h4>
+                      <p className="text-[10px] text-gray-400 uppercase tracking-wide truncate">{review.role || "Client"}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -175,7 +206,7 @@ export default function Testimonials() {
             </div>
           ) : (
             <motion.div 
-              className="text-center py-10 px-6 max-w-2xl mx-auto relative z-10 font-sans"
+              className="text-center py-10 px-6 max-w-2xl mx-auto relative z-10 font-sans bg-white/5 rounded-2xl border border-white/10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -193,6 +224,7 @@ export default function Testimonials() {
           )}
         </div>
         
+        {/* Feedback Submission Form Section */}
         <div className="w-full max-w-7xl mx-auto font-sans flex flex-col lg:flex-row gap-12 lg:gap-20 items-start mt-12 relative z-20">
           <motion.div 
             className="w-full lg:w-1/3"
@@ -217,68 +249,114 @@ export default function Testimonials() {
             viewport={{ once: true }}
           >
             {submitSuccess ? (
-                <div className="bg-[#d4ff3f]/10 border border-[#d4ff3f]/30 text-[#d4ff3f] p-8 rounded-2xl font-bold text-center">
-                <div className="text-3xl mb-4">✨</div>
-                Thank you! Your feedback has been submitted successfully.
+              <div className="bg-[#d4ff3f]/15 border-2 border-[#d4ff3f] text-white p-8 rounded-2xl font-bold text-center shadow-[6px_6px_0px_0px_rgba(212,255,63,0.3)]">
+                <div className="text-4xl mb-3">✨</div>
+                <h4 className="text-xl font-black text-[#d4ff3f] mb-2">Thank you!</h4>
+                <p className="text-sm text-gray-200 mb-6">
+                  Your feedback has been submitted successfully and added to our testimonials!
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitSuccess(false)}
+                  className="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#d4ff3f] text-black border-2 border-black hover:scale-105 transition-transform"
+                >
+                  Write Another Review
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                {submitError && (
+                  <div className="bg-red-500/20 border-2 border-red-500 text-red-200 p-4 rounded-xl text-xs font-bold">
+                    ⚠️ {submitError}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Your Name</label>
-                    <input type="text" name="name" required className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 font-sans" placeholder="Full Name" />
+                    <label className="block text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Your Name <span className="text-red-500">*</span></label>
+                    <input 
+                      type="text" 
+                      name="name" 
+                      required 
+                      className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 font-sans" 
+                      placeholder="e.g. Alex Rivera" 
+                    />
                   </div>
                   <div>
                     <label className="block text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Role / Company</label>
-                    <input type="text" name="role" required className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 font-sans" placeholder="Job Title / Company" />
+                    <input 
+                      type="text" 
+                      name="role" 
+                      className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 font-sans" 
+                      placeholder="e.g. Founder at TechNova" 
+                    />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-bold text-gray-400 mb-3 uppercase tracking-wider">
-                     Your Rating
+                     Your Rating <span className="text-red-500">*</span>
                   </label>
-                  <div className="flex gap-2 items-center">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <button
-                        key={star}
-                        type="button"
-                        onClick={() => setUserRating(star)}
-                        onMouseEnter={() => setHoverRating(star)}
-                        onMouseLeave={() => setHoverRating(0)}
-                        className="text-3xl transition-all duration-200 focus:outline-none hover:scale-110"
-                      >
-                        <span className={`
-                          ${(hoverRating || userRating) >= star ? 'text-[#ff9d00]' : 'text-gray-700'}
-                          transition-colors duration-200
-                        `}>
-                          ★
-                        </span>
-                      </button>
-                    ))}
-                    <span className="ml-4 text-xs font-bold text-gray-500 uppercase tracking-widest">
-                      {userRating === 5 && "Excellent!"}
-                      {userRating === 4 && "Very Good"}
-                      {userRating === 3 && "Average"}
-                      {userRating === 2 && "Poor"}
-                      {userRating === 1 && "Terrible"}
+                  <div className="flex gap-3 items-center flex-wrap">
+                    <div className="flex gap-1.5 items-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          key={star}
+                          type="button"
+                          onClick={() => {
+                            setUserRating(star);
+                            setHoverRating(0);
+                          }}
+                          onMouseEnter={() => setHoverRating(star)}
+                          onMouseLeave={() => setHoverRating(0)}
+                          className="text-3xl transition-transform active:scale-125 focus:outline-none hover:scale-110 cursor-pointer p-1"
+                          aria-label={`Rate ${star} stars`}
+                        >
+                          <span className={`
+                            ${(hoverRating || userRating) >= star ? 'text-[#ff9d00]' : 'text-gray-700'}
+                            transition-colors duration-150
+                          `}>
+                            ★
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                    <span className="text-xs font-bold text-[#d4ff3f] uppercase tracking-widest px-3 py-1 bg-white/10 rounded-full border border-white/10">
+                      {userRating === 5 && "★★★★★ Excellent!"}
+                      {userRating === 4 && "★★★★ Very Good"}
+                      {userRating === 3 && "★★★ Average"}
+                      {userRating === 2 && "★★ Needs Improvement"}
+                      {userRating === 1 && "★ Poor"}
                     </span>
                   </div>
                   <input type="hidden" name="rating" value={userRating} />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Your Experience</label>
-                  <textarea name="text" required rows={3} className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 resize-none leading-relaxed font-sans" placeholder="Describe your experience with us..."></textarea>
+                  <label className="block text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wider">Your Experience <span className="text-red-500">*</span></label>
+                  <textarea 
+                    name="text" 
+                    required 
+                    rows={3} 
+                    className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#d4ff3f] transition-colors placeholder-gray-600 resize-none leading-relaxed font-sans" 
+                    placeholder="Describe your experience working with Integers..."
+                  ></textarea>
                 </div>
 
                 <div className="pt-2">
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full md:w-auto inline-flex items-center justify-center px-10 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest font-sans transition-all hover:scale-105 active:scale-95 bg-[#d4ff3f] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50"
+                    className="w-full md:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-xs uppercase tracking-widest font-sans transition-all hover:scale-105 active:scale-95 bg-[#d4ff3f] text-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:opacity-50 cursor-pointer"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit Feedback'}
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+                        Submitting Feedback...
+                      </span>
+                    ) : (
+                      'Submit Feedback'
+                    )}
                   </button>
                 </div>
               </form>

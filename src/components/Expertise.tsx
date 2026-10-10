@@ -578,7 +578,7 @@ export default function Expertise() {
           ref={containerRef}
           onPointerMove={handlePointerMove}
           onPointerLeave={handleContainerPointerLeave}
-          className="relative w-full h-[460px] sm:h-[520px] md:h-[600px] overflow-hidden select-none touch-none z-10 cursor-default"
+          className="relative w-full h-[460px] sm:h-[520px] md:h-[600px] overflow-hidden select-none touch-pan-y z-10 cursor-default"
         >
           {isClient &&
             TECH_DATA.map((tech) => (
@@ -597,7 +597,7 @@ export default function Expertise() {
                   color: tech.textColor,
                   willChange: 'transform',
                 }}
-                className={`absolute top-0 left-0 rounded-full border-2 border-black flex flex-col items-center justify-center cursor-grab active:cursor-grabbing select-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-shadow group ${
+                className={`absolute top-0 left-0 rounded-full border-2 border-black flex flex-col items-center justify-center cursor-grab active:cursor-grabbing select-none touch-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-shadow group ${
                   activeTech.id === tech.id ? 'ring-4 ring-[#d4ff3f]' : ''
                 }`}
               >

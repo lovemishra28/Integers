@@ -111,14 +111,15 @@ export default function Hero() {
               priority
             />
 
-            {/* Hover Zones */}
+            {/* Hover & Tap Zones */}
             <div className="absolute inset-0 flex z-40">
               {members.map((member, idx) => (
                 <div 
                   key={idx}
-                  className="flex-1 h-full cursor-pointer"
+                  className="flex-1 h-full cursor-pointer select-none"
                   onMouseEnter={() => setHoveredMember(member.name)}
                   onMouseLeave={() => setHoveredMember(null)}
+                  onClick={() => setHoveredMember((prev) => (prev === member.name ? null : member.name))}
                 />
               ))}
             </div>
