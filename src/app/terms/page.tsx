@@ -63,7 +63,7 @@ export default function TermsPage() {
 
             <h2 className="text-xl font-black text-black pt-4">6. Governing Law</h2>
             <p>
-              These terms are governed by the laws of India, with jurisdiction in Gwalior, Madhya Pradesh. For any inquiries regarding our terms, please contact us at <a href="mailto:hello@integers.in" className="text-black font-bold underline">hello@integers.in</a>.
+              These terms are governed by the laws of India, with jurisdiction in Gwalior, Madhya Pradesh. For any inquiries regarding our terms, please contact us at <a href="mailto:contact@integersdev.in" className="text-black font-bold underline">contact@integersdev.in</a>.
             </p>
           </div>
 

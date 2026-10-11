@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCheck, FaTimes, FaLinkedinIn, FaInstagram, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { FaCheck, FaTimes, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { submitContactForm } from '@/actions/contact';
 import logo from '@/assets/integers_logo.png';
@@ -56,26 +56,14 @@ export default function Footer() {
   const socialLinks = [
     {
       name: 'X (Twitter)',
-      url: 'https://x.com/integers_in',
+      url: 'https://x.com/integers_dev?s=11',
       icon: <FaXTwitter className="w-4 h-4" />,
       primary: true,
     },
     {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/integers',
-      icon: <FaLinkedinIn className="w-4 h-4" />,
-      primary: false,
-    },
-    {
       name: 'Instagram',
-      url: 'https://www.instagram.com/integers.in',
+      url: 'https://www.instagram.com/integers.dev/',
       icon: <FaInstagram className="w-4 h-4" />,
-      primary: false,
-    },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/integers',
-      icon: <FaGithub className="w-4 h-4" />,
       primary: false,
     },
     {
@@ -126,8 +114,8 @@ export default function Footer() {
               <div className="space-y-6">
                 <div>
                   <span className="text-gray-400 text-xs font-bold mb-1 block uppercase tracking-wider">Stay Up To Date</span>
-                  <a href="mailto:hello@integers.in" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
-                    hello@integers.in
+                  <a href="mailto:contact@integersdev.in" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
+                    contact@integersdev.in
                   </a>
                 </div>
                 <div>
@@ -333,7 +321,7 @@ export default function Footer() {
 
               <h4 className="text-base font-black text-black pt-2">5. Governing Law</h4>
               <p>
-                These terms are governed by the laws of India, with jurisdiction in Gwalior, Madhya Pradesh. For any inquiries regarding our terms, please contact us at <a href="mailto:hello@integers.in" className="text-black font-bold underline">hello@integers.in</a>.
+                These terms are governed by the laws of India, with jurisdiction in Gwalior, Madhya Pradesh. For any inquiries regarding our terms, please contact us at <a href="mailto:contact@integersdev.in" className="text-black font-bold underline">contact@integersdev.in</a>.
               </p>
             </div>
 
@@ -406,7 +394,7 @@ export default function Footer() {
                 We welcome your feedback on the accessibility of Integers. If you encounter accessibility barriers or have suggestions for improvement, please contact us:
               </p>
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-300 font-bold text-xs space-y-1">
-                <div>Email: <a href="mailto:hello@integers.in" className="text-black underline">hello@integers.in</a></div>
+                <div>Email: <a href="mailto:contact@integersdev.in" className="text-black underline">contact@integersdev.in</a></div>
                 <div>Phone: <a href="tel:+919644397542" className="text-black underline">+91 9644397542</a></div>
                 <div>Location: Gwalior, Madhya Pradesh, India</div>
               </div>
