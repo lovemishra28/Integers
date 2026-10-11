@@ -32,6 +32,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "IntegersDev",
+              "url": "https://www.integersdev.in/",
+            }),
+          }}
+        />
+      </head>
       {/* Apply the Poppins font and font-sans so Tailwind uses it */}
       <body className={`${poppins.variable} font-sans`}>
         {children}
