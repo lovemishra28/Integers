@@ -15,8 +15,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Integers | Web Agency",
-  description: "Web Development & UI/UX Design by Integers.",
+  metadataBase: new URL("https://www.integersdev.in/"),
+  title: "IntegersDev | Web Development Agency",
+  description:
+    "IntegersDev builds modern websites and delivers web development and UI/UX design services for businesses.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
