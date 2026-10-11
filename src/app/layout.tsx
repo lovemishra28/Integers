@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "IntegersDev | Web Development Agency",
   description:
     "IntegersDev builds modern websites and delivers web development and UI/UX design services for businesses.",
+  applicationName: "IntegersDev",
   alternates: {
     canonical: "/",
   },
