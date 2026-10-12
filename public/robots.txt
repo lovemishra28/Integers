@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /74566
+Disallow: /74566/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/eo7456/
+Disallow: /api/admin/

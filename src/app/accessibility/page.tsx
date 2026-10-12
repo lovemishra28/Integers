@@ -62,7 +62,7 @@ export default function AccessibilityPage() {
 
             <div className="p-4 bg-gray-50 rounded-2xl border border-gray-300 font-bold text-sm space-y-1.5 max-w-md">
               <div>Email: <a href="mailto:contact@integersdev.in" className="text-black underline">contact@integersdev.in</a></div>
-              <div>Phone: <a href="tel:+919644397542" className="text-black underline">+91 9644397542</a></div>
+              <div>Phone: <a href="tel:+919981097501" className="text-black underline">+91 9981097501</a></div>
               <div>Address: Gwalior, Madhya Pradesh, India</div>
             </div>
 

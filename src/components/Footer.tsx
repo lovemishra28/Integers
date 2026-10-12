@@ -68,7 +68,7 @@ export default function Footer() {
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/919644397542',
+      url: 'https://wa.me/919981097501',
       icon: <FaWhatsapp className="w-4 h-4" />,
       primary: false,
     },
@@ -119,8 +119,8 @@ export default function Footer() {
                   </a>
                 </div>
                 <div>
-                  <a href="tel:+919644397542" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
-                    +91 9644397542
+                  <a href="tel:+919981097501" className="text-xl md:text-2xl font-bold hover:text-[#d4ff3f] transition-colors">
+                    +91 9981097501
                   </a>
                 </div>
                 <div className="pt-2">
@@ -395,7 +395,7 @@ export default function Footer() {
               </p>
               <div className="p-3 bg-gray-50 rounded-xl border border-gray-300 font-bold text-xs space-y-1">
                 <div>Email: <a href="mailto:contact@integersdev.in" className="text-black underline">contact@integersdev.in</a></div>
-                <div>Phone: <a href="tel:+919644397542" className="text-black underline">+91 9644397542</a></div>
+                <div>Phone: <a href="tel:+919981097501" className="text-black underline">+91 9981097501</a></div>
                 <div>Location: Gwalior, Madhya Pradesh, India</div>
               </div>
               <p className="text-[11px] text-gray-500">

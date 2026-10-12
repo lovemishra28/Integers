@@ -6,6 +6,13 @@ const contactSchema = new Schema(
     lastName: { type: String, required: true },
     phone: { type: String, required: true },
     message: { type: String, required: true },
+    status: {
+      type: String,
+      enum: ["new", "read", "contacted", "archived"],
+      default: "new",
+    },
+    notes: { type: String, default: "" },
+    isStarred: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
