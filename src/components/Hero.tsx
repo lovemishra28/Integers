@@ -78,13 +78,13 @@ export default function Hero() {
           </svg>
 
           {/* Name Capsules */}
-          <div className="absolute inset-0 pointer-events-none z-30 hidden sm:block">
+          <div className="absolute inset-0 pointer-events-none z-30">
             {members.map((member, idx) => (
               <div
                 key={idx}
                 style={{ left: member.left }}
-                className={`absolute top-[10%] -translate-x-1/2 bg-black text-white px-4 md:px-6 py-1 md:py-2 rounded-full font-bold text-xs md:text-base font-sans uppercase transform transition-all duration-300 border-2 border-black shadow-[4px_4px_0px_0px_rgba(212,255,63,1)] ${
-                  hoveredMember === member.name ? "opacity-100 -translate-y-4 scale-110" : "opacity-0 translate-y-0 scale-90"
+                className={`absolute top-[6%] sm:top-[10%] -translate-x-1/2 bg-black text-white px-2.5 sm:px-4 md:px-6 py-0.5 sm:py-1 md:py-2 rounded-full font-bold text-[10px] sm:text-xs md:text-base font-sans uppercase transform transition-all duration-300 border sm:border-2 border-black shadow-[2px_2px_0px_0px_rgba(212,255,63,1)] sm:shadow-[4px_4px_0px_0px_rgba(212,255,63,1)] ${
+                  hoveredMember === member.name ? "opacity-100 -translate-y-2 sm:-translate-y-4 scale-105 sm:scale-110" : "opacity-0 translate-y-0 scale-90"
                 }`}
               >
                 {member.name}
@@ -94,7 +94,7 @@ export default function Hero() {
 
           {/* The 16:9 Image Container */}
           <motion.div 
-            className="w-full sm:w-[95%] md:w-full aspect-[4/5] lg:aspect-video relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[#fefcf5] z-10"
+            className="w-full sm:w-[95%] md:w-full aspect-video relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[#fefcf5] z-10"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -107,7 +107,7 @@ export default function Hero() {
               src={teamHero} 
               alt="Team members" 
               fill 
-              className="object-contain md:object-cover object-center" 
+              className="object-cover object-center" 
               priority
             />
 
