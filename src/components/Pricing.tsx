@@ -142,7 +142,7 @@ export default function Pricing() {
     const msg = encodeURIComponent(
       `Hi Integers! I'd like to book the ${selectedPlan.name} plan (${billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-Time Project'} at ${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Can we chat?`
     );
-    return `https://wa.me/919644397542?text=${msg}`;
+    return `https://wa.me/919981097501?text=${msg}`;
   };
 
   const handleWhatsAppChat = () => {
@@ -642,7 +642,7 @@ export default function Pricing() {
                   className="w-full py-3 px-4 rounded-2xl font-bold text-xs uppercase tracking-wider bg-[#25D366] text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] active:translate-y-[1px] transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
                 >
                   <FaWhatsapp className="w-4 h-4 text-black" />
-                  Instant WhatsApp Consultation (+91 9644397542)
+                  Instant WhatsApp Consultation (+91 9981097501)
                 </a>
               </div>
 
