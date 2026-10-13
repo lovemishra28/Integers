@@ -29,7 +29,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/integers_logo.png";
+import logo from "@/assets/integersdev_lime_icon.png";
 
 // Types
 interface ContactItem {
@@ -494,7 +494,7 @@ export default function AdminDashboardPage() {
       clean = "91" + clean; // Default to India code +91 if standard 10-digit
     }
     const snippet = msg.length > 50 ? msg.slice(0, 47) + "..." : msg;
-    const text = encodeURIComponent(`Hi ${name}! This is Integers Web Agency regarding your website inquiry: "${snippet}". We would love to discuss your project!`);
+    const text = encodeURIComponent(`Hi ${name}! This is IntegersDev regarding your website inquiry: "${snippet}". We would love to discuss your project!`);
     return `https://wa.me/${clean}?text=${text}`;
   };
 
@@ -545,7 +545,7 @@ export default function AdminDashboardPage() {
       <div className="min-h-screen flex items-center justify-center bg-[#0e0e0e]">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-[#d4ff3f] border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-gray-400 font-bold text-sm tracking-wider uppercase">Loading Integers Admin...</p>
+          <p className="text-gray-400 font-bold text-sm tracking-wider uppercase">Loading IntegersDev Admin...</p>
         </div>
       </div>
     );
@@ -569,11 +569,11 @@ export default function AdminDashboardPage() {
           {/* Logo & Header */}
           <div className="flex items-center gap-3 mb-6">
             <div className="relative w-10 h-10 bg-white rounded-xl p-1.5 border border-black flex items-center justify-center">
-              <Image src={logo} alt="Integers Logo" fill className="object-contain p-1" />
+              <Image src={logo} alt="IntegersDev Control Panel Logo" fill className="object-contain p-1" />
             </div>
             <div>
               <h1 className="text-xl font-black text-white tracking-tight flex items-center gap-2">
-                Integers
+                IntegersDev
                 <span className="bg-[#d4ff3f] text-black text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full border border-black">
                   Admin
                 </span>
@@ -663,11 +663,11 @@ export default function AdminDashboardPage() {
           <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
             <div className="flex items-center gap-2.5">
               <div className="relative w-8 h-8 bg-white rounded-lg p-1 border border-black flex items-center justify-center">
-                <Image src={logo} alt="Integers Logo" fill className="object-contain p-0.5" />
+                <Image src={logo} alt="IntegersDev Control Panel Logo" fill className="object-contain p-0.5" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-black text-lg tracking-tight text-white">Integers</span>
+                  <span className="font-black text-lg tracking-tight text-white">IntegersDev</span>
                   <span className="bg-[#d4ff3f] text-black text-[9px] font-black uppercase px-2 py-0.5 rounded border border-black shadow-[1px_1px_0px_0px_#000]">
                     Admin Panel
                   </span>
@@ -1498,7 +1498,7 @@ export default function AdminDashboardPage() {
                           firstName: "Rahul",
                           lastName: "Sharma",
                           phone: "+91 9876543210",
-                          message: "Hi Integers Team! Testing the live admin message notification system. Everything is looking top-notch!",
+                          message: "Hi IntegersDev Team! Testing the live admin message notification system. Everything is looking top-notch!",
                           notes: "Generated via Admin Dashboard Test Tool",
                           status: "new",
                         }),
@@ -1719,7 +1719,7 @@ export default function AdminDashboardPage() {
                   value={newReviewForm.text}
                   onChange={(e) => setNewReviewForm({ ...newReviewForm, text: e.target.value })}
                   className="w-full bg-[#202020] border border-gray-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#d4ff3f] resize-none"
-                  placeholder="Integers delivered our platform ahead of schedule with remarkable UI/UX..."
+                  placeholder="IntegersDev delivered our platform ahead of schedule with remarkable UI/UX..."
                 />
               </div>
 
@@ -1788,7 +1788,7 @@ export default function AdminDashboardPage() {
 
       {/* Footer */}
       <footer className="border-t border-gray-800/80 py-4 px-6 text-center text-xs text-gray-500 font-medium">
-        Integers Admin Control Panel • Secure Website Messages & Lead Management • {new Date().getFullYear()}
+        IntegersDev Admin Control Panel • Secure Website Messages & Lead Management • {new Date().getFullYear()}
       </footer>
 
     </div>

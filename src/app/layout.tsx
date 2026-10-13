@@ -15,15 +15,58 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.integersdev.in/"),
-  title: "IntegersDev | Web Development Agency",
+  metadataBase: new URL("https://integersdev.in"),
+  title: {
+    default: "Web Development Company in Gwalior | Next.js & UI/UX | IntegersDev",
+    template: "%s",
+  },
   description:
-    "IntegersDev builds modern websites and delivers web development and UI/UX design services for businesses.",
-  applicationName: "IntegersDev",
+    "Top web development company in Gwalior, India. IntegersDev crafts custom Next.js sites, UI/UX & mobile apps to grow your brand. Contact us for a free quote!",
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "Web Development Company in Gwalior | Next.js & UI/UX | IntegersDev",
+    description:
+      "Top web development company in Gwalior, India. IntegersDev crafts custom Next.js sites, UI/UX & mobile apps to grow your brand. Contact us for a free quote!",
+    url: "https://integersdev.in",
+    siteName: "IntegersDev",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "IntegersDev - Web Development Company in Gwalior",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Development Company in Gwalior | Next.js & UI/UX | IntegersDev",
+    description:
+      "Top web development company in Gwalior, India. IntegersDev crafts custom Next.js sites, UI/UX & mobile apps to grow your brand. Contact us for a free quote!",
+    site: "@integers_dev",
+    creator: "@integers_dev",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      siteConfig.googleSiteVerification,
+  },
 };
+
+import { siteConfig } from "@/config/site";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/schema";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import AnalyticsListener from "@/components/analytics/AnalyticsListener";
+import CookieConsent from "@/components/CookieConsent";
 
 export default function RootLayout({
   children,
@@ -33,21 +76,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "IntegersDev",
-              "url": "https://www.integersdev.in/",
-            }),
-          }}
-        />
+        <OrganizationSchema />
+        <LocalBusinessSchema />
       </head>
       {/* Apply the Poppins font and font-sans so Tailwind uses it */}
       <body className={`${poppins.variable} font-sans`}>
+        <GoogleAnalytics />
+        <AnalyticsListener />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

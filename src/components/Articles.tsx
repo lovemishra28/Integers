@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { FaCalendarAlt, FaUser } from 'react-icons/fa';
+import Link from 'next/link';
+import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
 import article1 from '@/assets/article1_thumbnail.jpg';
 import article2 from '@/assets/article2_thumbnail.jpg';
 import article3 from '@/assets/article3_thumbnail.jpg';
@@ -46,12 +47,12 @@ export default function Articles() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {articles.map((article, index) => (
-          <div key={index} className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <Link key={index} href="/blog" className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 block">
             {/* Image Placeholder */}
             <div className="aspect-[4/3] w-full bg-gray-200 relative overflow-hidden">
               <Image 
                 src={article.image} 
-                alt={article.title} 
+                alt={`${article.title} - IntegersDev agency insights`} 
                 fill 
                 className="object-cover transition-transform duration-500 group-hover:scale-105" 
               />
@@ -90,8 +91,19 @@ export default function Articles() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
+      </div>
+
+      {/* Bottom Link to Full Blog */}
+      <div className="mt-14 text-center">
+        <Link
+          href="/blog"
+          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-black text-xs uppercase tracking-wider bg-[#d4ff3f] text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:scale-105 transition-transform"
+        >
+          View All Guides &amp; Insights
+          <FaArrowRight className="w-3 h-3" />
+        </Link>
       </div>
     </section>
   );

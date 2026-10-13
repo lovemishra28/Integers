@@ -642,9 +642,9 @@ export default function Expertise() {
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <h4 className="text-base sm:text-lg font-bold text-black font-sans leading-tight">
+                <h3 className="text-base sm:text-lg font-bold text-black font-sans leading-tight">
                   {activeTech.name}
-                </h4>
+                </h3>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#d4ff3f] text-black border border-black">
                   {activeTech.category}
                 </span>

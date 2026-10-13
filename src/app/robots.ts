@@ -1,13 +1,20 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.integersdev.in";
+import { siteConfig } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = siteConfig.url || "https://integersdev.in";
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: [
+        "/74566",
+        "/74566/",
+        "/api/",
+        "/api/admin/",
+        "/api/eo7456/",
+      ],
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

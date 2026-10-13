@@ -1,0 +1,66 @@
+---
+title: "The 10-Point Web Performance Audit for Startup Platforms"
+description: "From modern image formats (AVIF) to edge CDN caching and font preloading — the exact technical checklist we run before every client launch."
+date: "2026-08-10"
+author: "Kuldeep"
+tags: ["Performance", "Core Web Vitals", "SEO", "Optimization"]
+coverImage: "/services/web-dev-showcase.png"
+---
+
+## Why Milliseconds Mean Revenue
+
+Website performance is not a theoretical developer vanity metric. Every 100-millisecond delay in mobile page load time decreases conversion rates by 7%, increases bounce rates, and directly suppresses your Google organic search rank.
+
+Before shipping any production web platform at IntegersDev, our engineering collective runs this strict 10-point Web Performance Audit.
+
+## 1. Convert Legacy Images to AVIF and Modern WebP
+
+Images typically account for 65% to 80% of total transferred page weight. Uncompressed 3MB hero JPEGs cripple mobile browsing.
+
+- Configure Next.js Image Optimization to serve modern **AVIF** and **WebP** formats automatically.
+- Always declare explicit `width` and `height` dimensions or use `sizes` attributes to prevent Cumulative Layout Shifts (CLS).
+- Leverage modern WebP fallback for older mobile browsers.
+
+## 2. Eliminate Render-Blocking Custom Web Fonts
+
+Custom web fonts downloaded from third-party servers often introduce Flash of Invisible Text (FOIT) or Flash of Unstyled Text (FOUT).
+
+- Use Next.js `next/font/google` to automatically self-host font files at build time.
+- Set `display: 'swap'` to guarantee immediate text readability while fonts load.
+- Restrict font weights to only those actively utilized in the design system.
+
+## 3. Implement Strict Edge CDN Caching & Stale-While-Revalidate
+
+Static assets (CSS, bundled JS, favicon, company brochures) should never hit your origin application server twice.
+
+Configure `Cache-Control: public, max-age=31536000, immutable` for versioned chunks, and use `stale-while-revalidate` for dynamic data endpoints to serve lightning-fast responses from the edge.
+
+## 4. Audit & Defer Third-Party Tracking Scripts
+
+Every third-party tag—whether a live chat widget, session replay script, or pixel tracker—competes for single-threaded JavaScript execution on user devices:
+
+- Defer non-critical analytics using `next/script` with `strategy="lazyOnload"`.
+- Remove legacy analytics tags that no longer serve direct business goals.
+- Avoid multi-megabyte external script loaders on critical landing pages.
+
+## 5. Tree-Shake Icon & Component Libraries
+
+Importing an entire icon bundle instead of specific named exports can inadvertently add 500KB of dead code to your client bundle.
+
+Always verify that imports are granular:
+
+```typescript
+// Correct: Tree-shaken granular import
+import { FaArrowRight, FaStar } from "react-icons/fa";
+
+// Incorrect: Importing massive monolithic barrels
+import * as Icons from "react-icons/fa";
+```
+
+## 6. Preload Critical Above-The-Fold Assets
+
+Use `<link rel="preload">` or Next.js `priority={true}` on above-the-fold hero images and logos so browsers fetch them concurrently with the initial HTML stream.
+
+## Continuous Monitoring
+
+Performance is not a one-time task; it is a discipline. Automate Lighthouse CI in your deployment pipeline to catch regressions before they impact live visitors.
