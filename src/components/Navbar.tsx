@@ -48,7 +48,7 @@ export default function Navbar() {
         <Link href="/" className="text-xl sm:text-2xl md:text-3xl font-bold font-sans flex items-center gap-3 text-black tracking-tighter">
           <Image
             src={logo}
-            alt="Integers Logo"
+            alt="IntegersDev - Web Development & UI/UX Agency in Gwalior"
             height={48}
             className="h-9 sm:h-10 md:h-12 w-auto object-contain rounded-xl"
             priority
@@ -56,19 +56,19 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-black">
-          <Link href="/" className="nav-link hover:text-[#d4ff3f] transition-colors">Home</Link>
-          <Link href="#services" className="nav-link hover:text-[#d4ff3f] transition-colors">Services</Link>
-          <Link href="#projects" className="nav-link hover:text-[#d4ff3f] transition-colors">Work</Link>
-          <Link href="#pricing" className="nav-link hover:text-[#d4ff3f] transition-colors">Pricing</Link>
-          <Link href="#expertise" className="nav-link hover:text-[#d4ff3f] transition-colors">Expertise</Link>
-          <Link href="#contact" className="nav-link hover:text-[#d4ff3f] transition-colors">Contact</Link>
-          <Link href="#reviews" className="nav-link hover:text-[#d4ff3f] transition-colors">Reviews</Link>
+        <div className="hidden md:flex items-center gap-7 text-sm font-bold text-black">
+          <Link href="/" className="nav-link hover:text-[#62d124] transition-colors">Home</Link>
+          <Link href="/services" className="nav-link hover:text-[#62d124] transition-colors">Services</Link>
+          <Link href="/portfolio" className="nav-link hover:text-[#62d124] transition-colors">Work</Link>
+          <Link href="/pricing" className="nav-link hover:text-[#62d124] transition-colors">Pricing</Link>
+          <Link href="/about" className="nav-link hover:text-[#62d124] transition-colors">About</Link>
+          <Link href="/blog" className="nav-link hover:text-[#62d124] transition-colors">Blog</Link>
+          <Link href="/faq" className="nav-link hover:text-[#62d124] transition-colors">FAQ</Link>
         </div>
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <Link href="#contact" className="inline-flex items-center justify-center px-6 py-2.5 rounded-3xl font-bold text-sm transition-transform hover:scale-105 active:scale-95 bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          <Link href="/contact" className="inline-flex items-center justify-center px-6 py-2.5 rounded-3xl font-bold text-sm transition-transform hover:scale-105 active:scale-95 bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
             Let&apos;s Talk
             <span className="ml-2 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">
               <FaArrowRight className="w-2.5 h-2.5" />
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Mobile Navigation Controls */}
         <div className="flex items-center gap-2 md:hidden">
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-full font-bold text-xs bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform"
           >
             Talk
@@ -110,12 +110,15 @@ export default function Navbar() {
             <div className="flex flex-col gap-1 divide-y divide-black/5">
               {[
                 { label: 'Home', href: '/' },
-                { label: 'Services', href: '#services' },
-                { label: 'Work Projects', href: '#projects' },
-                { label: 'Pricing Plans', href: '#pricing' },
-                { label: 'Tech Capabilities', href: '#expertise' },
-                { label: 'Client Testimonials', href: '#reviews' },
-                { label: 'Contact Us', href: '#contact' },
+                { label: 'Services Hub', href: '/services' },
+                { label: 'Portfolio & Work', href: '/portfolio' },
+                { label: 'Pricing & Plans', href: '/pricing' },
+                { label: 'Client Reviews', href: '/testimonials' },
+                { label: 'Free Website Audit', href: '/free-website-audit' },
+                { label: 'About Studio', href: '/about' },
+                { label: 'Articles & Blog', href: '/blog' },
+                { label: 'FAQ', href: '/faq' },
+                { label: 'Contact Us', href: '/contact' },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -131,7 +134,7 @@ export default function Navbar() {
 
             <div className="pt-2 border-t-2 border-black/10 flex flex-col gap-2">
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider bg-[#d4ff3f] text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform"
               >

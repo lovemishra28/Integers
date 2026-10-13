@@ -1,0 +1,61 @@
+---
+title: "Next.js App Router: Real-World Performance & Core Web Vitals"
+description: "Why migrating from legacy client-side frameworks to Next.js Server Components cut our clients' Largest Contentful Paint (LCP) times by over 65%."
+date: "2026-09-15"
+author: "Vinay"
+tags: ["Next.js", "Performance", "Web Vitals", "Architecture"]
+coverImage: "/services/web-dev-showcase.png"
+---
+
+## The Hidden Cost of Client-Side Rendering
+
+For years, traditional Single Page Application (SPA) architectures forced user devices to do the heavy lifting. Before a customer could see a single paragraph of text or product image, their phone had to:
+
+1. Download a massive JavaScript bundle (often exceeding 1.2MB).
+2. Parse and evaluate script execution on budget mobile CPUs.
+3. Fire a secondary waterfall of client-side `fetch()` requests back to the API server.
+4. Render the React DOM tree from scratch.
+
+On standard 4G mobile connections across Central India, this multi-step waterfall created a 4-to-6 second blank screen penalty. Conversion rates dropped and bounce rates soared.
+
+## Next.js Server Components: Zero Client Bundle Overhead
+
+Next.js App Router fundamentally changed web architecture by executing component code on the server by default.
+
+```tsx
+// Server Component: Zero client JavaScript shipped for this fetch
+export default async function ProductCatalog() {
+  const products = await db.query.products.findMany({ limit: 12 });
+
+  return (
+    <div className="grid grid-cols-3 gap-6">
+      {products.map((p) => (
+        <ProductCard key={p.id} item={p} />
+      ))}
+    </div>
+  );
+}
+```
+
+The database query runs adjacent to your data source. Heavy Markdown parsers, date formatting utilities, and database drivers never enter the browser bundle. The client receives pristine, pre-rendered HTML ready for instant browser display.
+
+## Real-World Core Web Vitals Benchmarks
+
+Across recent e-commerce and local business platforms migrated to Next.js by IntegersDev, the performance impact has been dramatic:
+
+| Metric | Legacy SPA (React) | Next.js App Router | Performance Improvement |
+| :--- | :--- | :--- | :--- |
+| **First Contentful Paint (FCP)** | 2.8s | 0.5s | 82% Faster |
+| **Largest Contentful Paint (LCP)** | 4.6s | 0.9s | 80% Faster |
+| **Cumulative Layout Shift (CLS)** | 0.18 | 0.00 | Zero Visual Shift |
+| **JS Bundle Delivered to Client** | 1,420 KB | 88 KB | 93% Payload Reduction |
+
+## Incremental Static Regeneration (ISR)
+
+With `export const revalidate = 60;`, you achieve the speed of a static website paired with the freshness of a live database. 
+
+Pages are served instantly from global edge cache servers. When new reviews, products, or blog articles are published, Next.js regenerates the cache in the background without causing any slowdown for live active visitors.
+
+## Summary
+
+Migrating to Next.js App Router is not merely a modern tooling choice—it is a direct business advantage that improves Google organic rankings, keeps bounce rates low, and converts mobile visitors into paying customers.

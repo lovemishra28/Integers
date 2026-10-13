@@ -1,0 +1,1201 @@
+{
+  "timestamp": "2026-10-13T17:41:28.729Z",
+  "summary": {
+    "totalAudited": 40,
+    "brokenLinksCount": 0,
+    "duplicateTitlesCount": 0,
+    "duplicateDescCount": 0,
+    "h1IssuesCount": 0,
+    "missingCanonicals": 0,
+    "schemaErrorsCount": 0,
+    "missingAltTotal": 0,
+    "totalHierarchyIssues": 0
+  },
+  "brokenLinks": [],
+  "duplicateTitles": [],
+  "duplicateDescriptions": [],
+  "results": {
+    "/": {
+      "statusCode": 200,
+      "title": "Web Development Agency in Gwalior | Next.js, UI/UX &amp; Apps | IntegersDev",
+      "titleLength": 75,
+      "description": "Top web development company in Gwalior, India. IntegersDev crafts custom Next.js sites, UI/UX &amp; mobile apps to grow your brand. Contact us for a free quote!",
+      "descLength": 160,
+      "canonical": "https://integersdev.in",
+      "h1Count": 1,
+      "h1Texts": [
+        "Web Development Company in Gwalior for Growing Businesses"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 23,
+      "totalImages": 14,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ]
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 57,
+      "hasViewport": true
+    },
+    "/services": {
+      "statusCode": 200,
+      "title": "Web, Mobile &amp; UI/UX Development Services | IntegersDev",
+      "titleLength": 58,
+      "description": "Explore our complete service offerings in Gwalior: Next.js web development, bespoke UI/UX architecture, mobile apps &amp; custom software solutions.",
+      "descLength": 148,
+      "canonical": "https://integersdev.in/services",
+      "h1Count": 1,
+      "h1Texts": [
+        "Digital Services Engineered for Scale &amp; Speed"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 9,
+      "totalImages": 8,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/portfolio": {
+      "statusCode": 200,
+      "title": "Portfolio &amp; Case Studies | IntegersDev",
+      "titleLength": 42,
+      "description": "Explore web development, UI/UX design, and mobile app case studies by IntegersDev in Gwalior. High-converting Next.js websites and custom digital solutions.",
+      "descLength": 156,
+      "canonical": "https://integersdev.in/portfolio",
+      "h1Count": 1,
+      "h1Texts": [
+        "Our Work &amp; Case Studies"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 8,
+      "totalImages": 7,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 57,
+      "hasViewport": true
+    },
+    "/pricing": {
+      "statusCode": 200,
+      "title": "Pricing &amp; Plans | Web &amp; App Development | IntegersDev",
+      "titleLength": 61,
+      "description": "Transparent pricing for web development, UI/UX design, and custom software in Gwalior. Explore project packages starting from $129 (₹12,250), monthly retainers, and detailed plan comparison.",
+      "descLength": 190,
+      "canonical": "https://integersdev.in/pricing",
+      "h1Count": 1,
+      "h1Texts": [
+        "Predictable &amp; Transparent Pricing"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 16,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Product",
+        "Product",
+        "Product",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 45,
+      "hasViewport": true
+    },
+    "/about": {
+      "statusCode": 200,
+      "title": "About Us | Web Development Studio in Gwalior | IntegersDev",
+      "titleLength": 58,
+      "description": "Meet IntegersDev: Vinay, Aryan, Kuldeep &amp; Love. A modern web development, UI/UX and mobile app engineering studio rooted in Gwalior, Madhya Pradesh, India. Discover our story, values, and 5-step process.",
+      "descLength": 207,
+      "canonical": "https://integersdev.in/about",
+      "h1Count": 1,
+      "h1Texts": [
+        "Engineering High-Impact Software from Gwalior to the World"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 20,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 46,
+      "hasViewport": true
+    },
+    "/contact": {
+      "statusCode": 200,
+      "title": "Contact Us | Web Development Studio in Gwalior | IntegersDev",
+      "titleLength": 60,
+      "description": "Get in touch with IntegersDev in Gwalior, Madhya Pradesh. Contact Vinay, Aryan, Kuldeep &amp; Love for custom web development, UI/UX design, or mobile apps. Call +91 9981097501.",
+      "descLength": 177,
+      "canonical": "https://integersdev.in/contact",
+      "h1Count": 1,
+      "h1Texts": [
+        "Let&#x27;s Build Something Great Together"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 8,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 42,
+      "hasViewport": true
+    },
+    "/blog": {
+      "statusCode": 200,
+      "title": "Blog &amp; Technical Insights | Web Development &amp; UI/UX | IntegersDev",
+      "titleLength": 73,
+      "description": "Engineering guides, Next.js tutorials, local business SEO benchmarks for Gwalior, and modern UI/UX design insights from the IntegersDev engineering collective.",
+      "descLength": 159,
+      "canonical": "https://integersdev.in/blog",
+      "h1Count": 1,
+      "h1Texts": [
+        "Engineering Guides &amp; Digital Insights"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 14,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 63,
+      "hasViewport": true
+    },
+    "/faq": {
+      "statusCode": 200,
+      "title": "Frequently Asked Questions | IntegersDev",
+      "titleLength": 40,
+      "description": "Got questions about web development, Next.js, pricing, UI/UX, or mobile apps in Gwalior? Browse all frequently asked questions about working with IntegersDev.",
+      "descLength": 158,
+      "canonical": "https://integersdev.in/faq",
+      "h1Count": 1,
+      "h1Texts": [
+        "Everything You Need to Know"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 9,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 44,
+      "hasViewport": true
+    },
+    "/testimonials": {
+      "statusCode": 200,
+      "title": "Client Testimonials &amp; Reviews | IntegersDev",
+      "titleLength": 47,
+      "description": "Read authentic reviews and ratings from founders, local businesses, and product managers who built Next.js websites, mobile apps, and UI/UX design systems with IntegersDev in Gwalior.",
+      "descLength": 183,
+      "canonical": "https://integersdev.in/testimonials",
+      "h1Count": 1,
+      "h1Texts": [
+        "What Founders &amp; Clients Say About IntegersDev"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 6,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "LocalBusiness",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 46,
+      "hasViewport": true
+    },
+    "/free-website-audit": {
+      "statusCode": 200,
+      "title": "Free Website Audit | Speed, SEO &amp; Conversion Diagnostic | IntegersDev",
+      "titleLength": 73,
+      "description": "Get a free 24-hour website audit from IntegersDev in Gwalior. We analyze your Core Web Vitals, technical SEO, mobile UX friction, and Next.js migration roadmap.",
+      "descLength": 160,
+      "canonical": "https://integersdev.in/free-website-audit",
+      "h1Count": 1,
+      "h1Texts": [
+        "Get Your Free 24-Hour Website Audit"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 13,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 45,
+      "hasViewport": true
+    },
+    "/privacy-policy": {
+      "statusCode": 200,
+      "title": "Privacy Policy | IntegersDev - Data Protection &amp; Contact Form Disclosure",
+      "titleLength": 76,
+      "description": "Read the IntegersDev Privacy Policy. Learn how we collect, process, and protect client data, contact form inquiries, and project specifications in compliance with India&#x27;s DPDPA 2023 and IT Act 2000.",
+      "descLength": 203,
+      "canonical": "https://integersdev.in/privacy-policy",
+      "h1Count": 1,
+      "h1Texts": [
+        "Privacy Policy &amp; Data Protection"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 14,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 45,
+      "hasViewport": true
+    },
+    "/terms": {
+      "statusCode": 200,
+      "title": "Terms of Use &amp; Service Agreement | IntegersDev",
+      "titleLength": 50,
+      "description": "Read the terms of service and client engagement agreements for IntegersDev. India-governed contract terms, milestone deliverables, IP ownership, and liability standards.",
+      "descLength": 169,
+      "canonical": "https://integersdev.in/terms",
+      "h1Count": 1,
+      "h1Texts": [
+        "Terms of Use &amp; Client Agreement"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 14,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 47,
+      "hasViewport": true
+    },
+    "/accessibility": {
+      "statusCode": 200,
+      "title": "Accessibility Statement | IntegersDev - WCAG 2.1 AA Standards",
+      "titleLength": 61,
+      "description": "Read the IntegersDev Accessibility Statement. Discover our commitment to WCAG 2.1 Level AA compliance, high contrast design, keyboard navigation, and India&#x27;s RPwD Act 2016.",
+      "descLength": 177,
+      "canonical": "https://integersdev.in/accessibility",
+      "h1Count": 1,
+      "h1Texts": [
+        "Accessibility Statement &amp; WCAG Compliance"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 9,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 45,
+      "hasViewport": true
+    },
+    "/services/web-development": {
+      "statusCode": 200,
+      "title": "Web Development Company in Gwalior | Next.js Websites | IntegersDev",
+      "titleLength": 67,
+      "description": "Leading web development company in Gwalior. IntegersDev builds custom Next.js websites, high-converting platforms &amp; fullstack web apps. Request a free quote!",
+      "descLength": 161,
+      "canonical": "https://integersdev.in/services/web-development",
+      "h1Count": 1,
+      "h1Texts": [
+        "Web Development Company in Gwalior"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 35,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 54,
+      "hasViewport": true
+    },
+    "/services/ui-ux-design": {
+      "statusCode": 200,
+      "title": "UI UX Design Agency India | Figma Design Systems | IntegersDev",
+      "titleLength": 62,
+      "description": "Top UI UX design agency India. IntegersDev crafts intuitive web &amp; mobile interfaces, clickable Figma prototypes &amp; scalable design systems that convert visitors into revenue.",
+      "descLength": 181,
+      "canonical": "https://integersdev.in/services/ui-ux-design",
+      "h1Count": 1,
+      "h1Texts": [
+        "UI UX Design Agency in India"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 35,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 54,
+      "hasViewport": true
+    },
+    "/services/mobile-app-development": {
+      "statusCode": 200,
+      "title": "App Development Company Gwalior | iOS &amp; Android Apps | IntegersDev",
+      "titleLength": 70,
+      "description": "Top app development company Gwalior. IntegersDev builds high-performance React Native iOS &amp; Android apps with offline sync &amp; push notifications. Get a free quote!",
+      "descLength": 170,
+      "canonical": "https://integersdev.in/services/mobile-app-development",
+      "h1Count": 1,
+      "h1Texts": [
+        "App Development Company in Gwalior"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 35,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 54,
+      "hasViewport": true
+    },
+    "/services/nextjs-development": {
+      "statusCode": 200,
+      "title": "Next.js Development Agency India | App Router &amp; RSC | IntegersDev",
+      "titleLength": 69,
+      "description": "Top Next.js development agency India. IntegersDev builds blazing-fast React Server Component web platforms with Turbopack &amp; Edge caching. Get a free proposal!",
+      "descLength": 162,
+      "canonical": "https://integersdev.in/services/nextjs-development",
+      "h1Count": 1,
+      "h1Texts": [
+        "Next.js Development Agency in India"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 35,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 54,
+      "hasViewport": true
+    },
+    "/services/custom-software-development": {
+      "statusCode": 200,
+      "title": "Custom Software Development in Gwalior | SaaS &amp; Portals | IntegersDev",
+      "titleLength": 73,
+      "description": "Custom software development company in Gwalior. IntegersDev engineers bespoke SaaS apps, internal admin portals, RBAC systems &amp; automated databases. Request a proposal!",
+      "descLength": 172,
+      "canonical": "https://integersdev.in/services/custom-software-development",
+      "h1Count": 1,
+      "h1Texts": [
+        "Custom Software Development in Gwalior &amp; India"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 35,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 54,
+      "hasViewport": true
+    },
+    "/portfolio/vastavikta": {
+      "statusCode": 200,
+      "title": "Vastavikta - Case Study | IntegersDev",
+      "titleLength": 37,
+      "description": "A high-end heritage culinary destination platform featuring responsive menus, elegant ambiance galleries, table reservation pipelines, and ultra-smooth micro-animations. Engineered by IntegersDev in Gwalior, India.",
+      "descLength": 214,
+      "canonical": "https://integersdev.in/portfolio/vastavikta",
+      "h1Count": 1,
+      "h1Texts": [
+        "Vastavikta Web Development"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 6,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Review",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/portfolio/divyanshi-travels": {
+      "statusCode": 200,
+      "title": "Divyanshi Travels - Case Study | IntegersDev",
+      "titleLength": 44,
+      "description": "A dedicated tour &amp; caravan booking web application designed to showcase custom travel packages, destination highlights, and instant WhatsApp lead capture for travelers. Engineered by IntegersDev in Gwalior, India.",
+      "descLength": 217,
+      "canonical": "https://integersdev.in/portfolio/divyanshi-travels",
+      "h1Count": 1,
+      "h1Texts": [
+        "Divyanshi Travels Web Development"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 6,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Review",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/portfolio/digital-cafe-pos": {
+      "statusCode": 200,
+      "title": "Digital Cafe POS &amp; Ordering Hub - Case Study | IntegersDev",
+      "titleLength": 62,
+      "description": "A lightning-fast QR table-ordering and kitchen display system designed for modern cafes and restaurants in Gwalior and Central India. Engineered by IntegersDev in Gwalior, India.",
+      "descLength": 178,
+      "canonical": "https://integersdev.in/portfolio/digital-cafe-pos",
+      "h1Count": 1,
+      "h1Texts": [
+        "Digital Cafe POS &amp; Ordering Hub Custom Software"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 17,
+      "totalImages": 5,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/portfolio/omni-channel-commerce": {
+      "statusCode": 200,
+      "title": "Omni-Channel Mobile Commerce UI - Case Study | IntegersDev",
+      "titleLength": 58,
+      "description": "End-to-end design system and interactive prototype for a boutique commerce mobile app, featuring gestural navigation, cart animations, and dark mode viewports. Engineered by IntegersDev in Gwalior, India.",
+      "descLength": 204,
+      "canonical": "https://integersdev.in/portfolio/omni-channel-commerce",
+      "h1Count": 1,
+      "h1Texts": [
+        "Omni-Channel Mobile Commerce UI UI/UX Design"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 15,
+      "totalImages": 5,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/web-development-company-gwalior": {
+      "statusCode": 200,
+      "title": "Top Web Development Company in Gwalior | Next.js &amp; UI/UX Studio | IntegersDev",
+      "titleLength": 81,
+      "description": "Leading web development company in Gwalior. IntegersDev builds custom Next.js websites, high-converting platforms &amp; mobile apps. In-person meetings in City Center.",
+      "descLength": 167,
+      "canonical": "https://integersdev.in/web-development-company-gwalior",
+      "h1Count": 1,
+      "h1Texts": [
+        "Top Web Development Company in Gwalior"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 21,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 52,
+      "hasViewport": true
+    },
+    "/web-development-company-indore": {
+      "statusCode": 200,
+      "title": "Web Development Company in Indore | Next.js &amp; UI/UX | IntegersDev",
+      "titleLength": 69,
+      "description": "Premier web development company for Indore startups, D2C brands &amp; enterprises. High-speed Next.js web applications, UI/UX systems &amp; mobile apps. Request a quote!",
+      "descLength": 169,
+      "canonical": "https://integersdev.in/web-development-company-indore",
+      "h1Count": 1,
+      "h1Texts": [
+        "High-Performance Web Development in Indore"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 21,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 52,
+      "hasViewport": true
+    },
+    "/web-development-company-bhopal": {
+      "statusCode": 200,
+      "title": "Web Development Company in Bhopal | Next.js &amp; UI/UX | IntegersDev",
+      "titleLength": 69,
+      "description": "Top web development company in Bhopal. High-security Next.js websites, custom software, UI/UX design &amp; mobile apps for institutions, solar &amp; industry.",
+      "descLength": 158,
+      "canonical": "https://integersdev.in/web-development-company-bhopal",
+      "h1Count": 1,
+      "h1Texts": [
+        "Premier Web Development Company in Bhopal"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 21,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 52,
+      "hasViewport": true
+    },
+    "/website-for-restaurants": {
+      "statusCode": 200,
+      "title": "Website for Restaurants &amp; Cafes | Custom Next.js Web Design | IntegersDev",
+      "titleLength": 77,
+      "description": "High-converting custom websites for restaurants, cafes &amp; dining brands. Commission-free table reservations, digital menus, QR ordering, and local SEO.",
+      "descLength": 154,
+      "canonical": "https://integersdev.in/website-for-restaurants",
+      "h1Count": 1,
+      "h1Texts": [
+        "Custom High-Converting Websites for Restaurants &amp; Cafes"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/website-for-travel-agencies": {
+      "statusCode": 200,
+      "title": "Website for Travel Agencies &amp; Tour Operators | IntegersDev",
+      "titleLength": 62,
+      "description": "Custom high-speed websites for travel agencies, tour operators &amp; vehicle rental companies. Interactive itineraries, WhatsApp lead funnels, and instant inquiries.",
+      "descLength": 165,
+      "canonical": "https://integersdev.in/website-for-travel-agencies",
+      "h1Count": 1,
+      "h1Texts": [
+        "Custom Web Development for Travel Agencies &amp; Tours"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 48,
+      "hasViewport": true
+    },
+    "/website-for-clinics": {
+      "statusCode": 200,
+      "title": "Website for Clinics, Doctors &amp; Hospitals | Healthcare Web Design | IntegersDev",
+      "titleLength": 82,
+      "description": "High-performance, secure websites for clinics, dental centers, and doctors. Seamless appointment booking, OPD schedules, doctor profiles &amp; local SEO.",
+      "descLength": 153,
+      "canonical": "https://integersdev.in/website-for-clinics",
+      "h1Count": 1,
+      "h1Texts": [
+        "Patient-First Modern Websites for Clinics &amp; Doctors"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 47,
+      "hasViewport": true
+    },
+    "/website-for-schools": {
+      "statusCode": 200,
+      "title": "Website for Schools &amp; Educational Institutes | Web Design | IntegersDev",
+      "titleLength": 75,
+      "description": "Modern websites &amp; admission portals for private schools, colleges, and academies. Online admission forms, academic calendars, fee charts &amp; parent portals.",
+      "descLength": 162,
+      "canonical": "https://integersdev.in/website-for-schools",
+      "h1Count": 1,
+      "h1Texts": [
+        "Modern Websites &amp; Admission Portals for Schools &amp; Institutes"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 47,
+      "hasViewport": true
+    },
+    "/website-for-real-estate": {
+      "statusCode": 200,
+      "title": "Website for Real Estate Developers, Builders &amp; Realtors | IntegersDev",
+      "titleLength": 73,
+      "description": "High-conversion web platforms for real estate developers &amp; luxury builders. Interactive master plans, floor plan selectors, site visit booking &amp; ad funnels.",
+      "descLength": 164,
+      "canonical": "https://integersdev.in/website-for-real-estate",
+      "h1Count": 1,
+      "h1Texts": [
+        "High-Conversion Websites for Real Estate Developers"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 4,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 47,
+      "hasViewport": true
+    },
+    "/blog/how-much-does-a-website-cost-in-india-2026": {
+      "statusCode": 200,
+      "title": "How Much Does a Website Cost in India in 2026: Complete Pricing Guide | IntegersDev Blog",
+      "titleLength": 88,
+      "description": "A transparent breakdown of website design and development costs in India in 2026. Explore pricing tiers for business sites, Next.js apps, e-commerce, hidden hosting fees, and agency vs freelancer rates.",
+      "descLength": 202,
+      "canonical": "https://integersdev.in/blog/how-much-does-a-website-cost-in-india-2026",
+      "h1Count": 1,
+      "h1Texts": [
+        "How Much Does a Website Cost in India in 2026: Complete Pricing Guide"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 37,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 61,
+      "hasViewport": true
+    },
+    "/blog/nextjs-vs-wordpress-for-business-websites": {
+      "statusCode": 200,
+      "title": "Next.js vs WordPress for Business Websites: The Definitive 2026 Comparison | IntegersDev Blog",
+      "titleLength": 93,
+      "description": "An honest, technical, and commercial comparison between Next.js and WordPress for business websites in 2026. Compare performance benchmarks, security liabilities, SEO capabilities, maintenance overhead, and total cost of ownership.",
+      "descLength": 231,
+      "canonical": "https://integersdev.in/blog/nextjs-vs-wordpress-for-business-websites",
+      "h1Count": 1,
+      "h1Texts": [
+        "Next.js vs WordPress for Business Websites: The Definitive 2026 Comparison"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 35,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 61,
+      "hasViewport": true
+    },
+    "/blog/how-to-get-your-business-found-on-google-in-gwalior": {
+      "statusCode": 200,
+      "title": "How to Get Your Business Found on Google in Gwalior: Complete Local SEO Playbook | IntegersDev Blog",
+      "titleLength": 99,
+      "description": "The complete, step-by-step local SEO guide for businesses in Gwalior in 2026. Learn how to optimize your Google Business Profile, rank in the Google Maps 3-Pack across City Center and Lashkar, build localized schemas, and capture high-intent customers.",
+      "descLength": 252,
+      "canonical": "https://integersdev.in/blog/how-to-get-your-business-found-on-google-in-gwalior",
+      "h1Count": 1,
+      "h1Texts": [
+        "How to Get Your Business Found on Google in Gwalior: Complete Local SEO Playbook"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 31,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 65,
+      "hasViewport": true
+    },
+    "/blog/local-cafes-digital-storefront": {
+      "statusCode": 200,
+      "title": "Why Local Cafes in Gwalior Need a Digital Storefront | IntegersDev Blog",
+      "titleLength": 71,
+      "description": "How QR menus, automated reservation forms, and mobile-friendly storefronts turn casual walk-in visitors into loyal weekly patrons in Central India.",
+      "descLength": 147,
+      "canonical": "https://integersdev.in/blog/local-cafes-digital-storefront",
+      "h1Count": 1,
+      "h1Texts": [
+        "Why Local Cafes in Gwalior Need a Digital Storefront"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 16,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 53,
+      "hasViewport": true
+    },
+    "/blog/website-checklist-before-launch": {
+      "statusCode": 200,
+      "title": "The Ultimate Website Launch Checklist: 35 Essential Steps Before Going Live (2026) | IntegersDev Blog",
+      "titleLength": 101,
+      "description": "The complete, battle-tested pre-launch website checklist for 2026. Audit Core Web Vitals, technical SEO, mobile UX, Schema.org markup, form smoke tests, legal compliance (DPDPA 2023), and analytics tracking before deploying to production.",
+      "descLength": 238,
+      "canonical": "https://integersdev.in/blog/website-checklist-before-launch",
+      "h1Count": 1,
+      "h1Texts": [
+        "The Ultimate Website Launch Checklist: 35 Essential Steps Before Going Live (2026)"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 62,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 69,
+      "hasViewport": true
+    },
+    "/blog/rank-retail-outlet-google-maps": {
+      "statusCode": 200,
+      "title": "How to Rank Your Retail Outlet on Google Maps in Gwalior | IntegersDev Blog",
+      "titleLength": 75,
+      "description": "A step-by-step technical guide to local citations, Google Business Profile schema markup, geotargeted landing pages, and review velocity.",
+      "descLength": 137,
+      "canonical": "https://integersdev.in/blog/rank-retail-outlet-google-maps",
+      "h1Count": 1,
+      "h1Texts": [
+        "How to Rank Your Retail Outlet on Google Maps in Gwalior"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 16,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 53,
+      "hasViewport": true
+    },
+    "/blog/scalable-apps-food-deliveries": {
+      "statusCode": 200,
+      "title": "Building Scalable Apps for Restaurant Deliveries &amp; Orders | IntegersDev Blog",
+      "titleLength": 80,
+      "description": "Architecting zero-latency order queues, real-time push dispatches, and offline-resilient mobile UI with React Native and Node.js.",
+      "descLength": 129,
+      "canonical": "https://integersdev.in/blog/scalable-apps-food-deliveries",
+      "h1Count": 1,
+      "h1Texts": [
+        "Building Scalable Apps for Restaurant Deliveries &amp; Orders"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 16,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 53,
+      "hasViewport": true
+    },
+    "/blog/nextjs-app-router-benchmarks": {
+      "statusCode": 200,
+      "title": "Next.js App Router: Real-World Performance &amp; Core Web Vitals | IntegersDev Blog",
+      "titleLength": 83,
+      "description": "Why migrating from legacy client-side frameworks to Next.js Server Components cut our clients&#x27; Largest Contentful Paint (LCP) times by over 65%.",
+      "descLength": 149,
+      "canonical": "https://integersdev.in/blog/nextjs-app-router-benchmarks",
+      "h1Count": 1,
+      "h1Texts": [
+        "Next.js App Router: Real-World Performance &amp; Core Web Vitals"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 16,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 53,
+      "hasViewport": true
+    },
+    "/blog/neo-brutalist-conversion-design": {
+      "statusCode": 200,
+      "title": "Neo-Brutalism in 2026: The Aesthetic That Breaks Banner Blindness | IntegersDev Blog",
+      "titleLength": 84,
+      "description": "Why clean borders, deliberate high contrast, and tactile shadows out-convert sterile corporate gradients in modern software design.",
+      "descLength": 131,
+      "canonical": "https://integersdev.in/blog/neo-brutalist-conversion-design",
+      "h1Count": 1,
+      "h1Texts": [
+        "Neo-Brutalism in 2026: The Aesthetic That Breaks Banner Blindness"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 15,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 53,
+      "hasViewport": true
+    },
+    "/blog/speed-optimization-checklist": {
+      "statusCode": 200,
+      "title": "The 10-Point Web Performance Audit for Startup Platforms | IntegersDev Blog",
+      "titleLength": 75,
+      "description": "From modern image formats (AVIF) to edge CDN caching and font preloading — the exact technical checklist we run before every client launch.",
+      "descLength": 139,
+      "canonical": "https://integersdev.in/blog/speed-optimization-checklist",
+      "h1Count": 1,
+      "h1Texts": [
+        "The 10-Point Web Performance Audit for Startup Platforms"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 19,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 53,
+      "hasViewport": true
+    }
+  },
+  "inboundLinkCount": {
+    "/": 162,
+    "/services": 96,
+    "/portfolio": 104,
+    "/pricing": 118,
+    "/about": 80,
+    "/contact": 224,
+    "/blog": 114,
+    "/faq": 80,
+    "/testimonials": 41,
+    "/free-website-audit": 48,
+    "/privacy-policy": 125,
+    "/terms": 83,
+    "/accessibility": 83,
+    "/services/web-development": 49,
+    "/services/ui-ux-design": 50,
+    "/services/mobile-app-development": 46,
+    "/services/nextjs-development": 50,
+    "/services/custom-software-development": 47,
+    "/portfolio/vastavikta": 13,
+    "/portfolio/divyanshi-travels": 12,
+    "/portfolio/digital-cafe-pos": 6,
+    "/portfolio/omni-channel-commerce": 7,
+    "/web-development-company-gwalior": 42,
+    "/web-development-company-indore": 40,
+    "/web-development-company-bhopal": 40,
+    "/website-for-restaurants": 40,
+    "/website-for-travel-agencies": 40,
+    "/website-for-clinics": 40,
+    "/website-for-schools": 40,
+    "/website-for-real-estate": 40,
+    "/blog/how-much-does-a-website-cost-in-india-2026": 8,
+    "/blog/nextjs-vs-wordpress-for-business-websites": 9,
+    "/blog/how-to-get-your-business-found-on-google-in-gwalior": 5,
+    "/blog/local-cafes-digital-storefront": 6,
+    "/blog/website-checklist-before-launch": 4,
+    "/blog/rank-retail-outlet-google-maps": 8,
+    "/blog/scalable-apps-food-deliveries": 2,
+    "/blog/nextjs-app-router-benchmarks": 4,
+    "/blog/neo-brutalist-conversion-design": 2,
+    "/blog/speed-optimization-checklist": 4,
+    "/IntegersDev_Agency_Brochure.pdf": 46,
+    "/free-website-audit/thank-you": 1
+  }
+}

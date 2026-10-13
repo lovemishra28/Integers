@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 // Make sure this path is correct for your local setup!
 import teamHero from "@/assets/team_memeber_hero.png"; 
+import { siteConfig } from "@/config/site"; 
 
 export default function Hero() {
   const [hoveredMember, setHoveredMember] = useState<string | null>(null);
@@ -17,7 +18,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-48 overflow-hidden bg-[#eefadc]">
+    <section className="relative pt-28 sm:pt-36 md:pt-44 pb-16 sm:pb-24 md:pb-48 overflow-hidden bg-[#eefadc]">
       
       {/* Decorative Background Elements */}
       <motion.div 
@@ -45,20 +46,49 @@ export default function Hero() {
         </svg>
       </motion.div>
 
-      {/* Huge Outlined Background Text */}
+      {/* Huge Outlined Background Text - Decorative Watermark */}
       <motion.div 
-        className="absolute top-20 sm:top-24 md:top-28 left-0 w-full text-center z-0 pointer-events-none mt-6 sm:mt-8 md:mt-12"
+        className="absolute top-20 sm:top-24 md:top-28 left-0 w-full text-center z-0 pointer-events-none mt-6 sm:mt-8 md:mt-12 opacity-30 md:opacity-40"
         initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        animate={{ y: 0, opacity: 0.4 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="text-[2.6rem] sm:text-[4.5rem] md:text-[14rem] font-bold leading-[0.8] font-sans uppercase tracking-wider text-transparent [-webkit-text-stroke:1px_#a5d677] sm:[-webkit-text-stroke:1.5px_#a5d677] md:[-webkit-text-stroke:3px_#a5d677]">
-          INTEGERS
-        </h1>
+        <div
+          aria-hidden="true"
+          className="text-[2.2rem] sm:text-[3.8rem] md:text-[11.5rem] font-bold leading-[0.8] font-sans uppercase tracking-wider text-transparent [-webkit-text-stroke:1px_#a5d677] sm:[-webkit-text-stroke:1.5px_#a5d677] md:[-webkit-text-stroke:3px_#a5d677] select-none"
+        >
+          INTEGERSDEV
+        </div>
       </motion.div>
 
       {/* Main Content Wrapper */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col items-center mt-14 sm:mt-20 md:mt-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col items-center mt-4 sm:mt-6 md:mt-8">
+        
+        {/* Keyword-Rich H1 Headline */}
+        <motion.div 
+          className="text-center max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 relative z-20 px-2"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border-2 border-black text-[10px] sm:text-xs font-black uppercase tracking-wider mb-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <span className="w-2 h-2 rounded-full bg-[#62d124]"></span>
+            Gwalior • MP • Web &amp; Mobile Agency
+          </div>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black font-sans text-black tracking-tight leading-[1.12]">
+            Web Development Company in Gwalior{" "}
+            <span className="inline-block bg-[#d4ff3f] px-2 sm:px-3 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-xl -rotate-1 mt-1 sm:mt-0">
+              for Growing Businesses
+            </span>
+          </h1>
+          <p className="mt-4 text-xs sm:text-sm md:text-base font-bold text-gray-700 max-w-2xl mx-auto">
+            High-converting Next.js websites, UI/UX design &amp; custom solutions engineered by{" "}
+            <span className="text-black font-black underline decoration-2 decoration-[#62d124]">
+              Vinay, Aryan, Kuldeep &amp; Love
+            </span>
+            .
+          </p>
+        </motion.div>
         
         <div className="relative w-full max-w-4xl flex flex-col items-center">
           
@@ -105,7 +135,7 @@ export default function Hero() {
           >
             <Image 
               src={teamHero} 
-              alt="Team members" 
+              alt="IntegersDev team of web developers and designers in Gwalior - Vinay, Aryan, Kuldeep, and Love" 
               fill 
               className="object-cover object-center" 
               priority
@@ -125,15 +155,19 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating Badge 1: Members */}
+          {/* Floating Badge 1: Productivity */}
           <motion.div 
             className="hidden md:flex absolute top-1/4 -left-2 md:-left-12 bg-white rounded-full w-24 h-24 md:w-32 md:h-32 flex-col items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-20 hover:scale-105 transition-transform"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
           >
-            <span className="font-bold text-xl md:text-3xl font-sans text-black leading-none">100%</span>
-            <span className="text-[9px] md:text-xs uppercase font-bold text-black tracking-wider mt-1">Productivity</span>
+            <span className="font-bold text-xl md:text-3xl font-sans text-black leading-none">
+              {siteConfig.stats.productivity}
+            </span>
+            <span className="text-[9px] md:text-xs uppercase font-bold text-black tracking-wider mt-1">
+              {siteConfig.stats.productivityLabel}
+            </span>
           </motion.div>
 
           {/* Floating Badge 2: Happy Clients */}
@@ -148,10 +182,12 @@ export default function Hero() {
               <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#ed8936] border-2 border-black"></div>
               <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#6b46c1] border-2 border-black"></div>
               <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#3182ce] border-2 border-black flex items-center justify-center text-[8px] md:text-[10px] font-bold text-white">
-                16+
+                {siteConfig.stats.happyClients}
               </div>
             </div>
-            <span className="text-[10px] md:text-xs font-bold text-black uppercase tracking-wider">Happy Businesses</span>
+            <span className="text-[10px] md:text-xs font-bold text-black uppercase tracking-wider">
+              {siteConfig.stats.happyClientsLabel}
+            </span>
           </motion.div>
         </div>
 

@@ -2,8 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight, FaUtensils, FaCaravan, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
 interface ProjectItem {
   id: string;
@@ -77,7 +79,7 @@ export default function Projects() {
               {/* Crystal Clear Website Screenshot (No Blur) */}
               <Image
                 src={project.image}
-                alt={project.title}
+                alt={`${project.title} - ${project.category} website engineered by IntegersDev in Gwalior`}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-500 z-0"
@@ -132,15 +134,15 @@ export default function Projects() {
         <div className="flex-grow h-[2px] bg-black"></div>
 
         {/* Right-aligned Button */}
-        <a
-          href="#contact"
+        <Link
+          href={siteConfig.portfolioUrl}
           className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all flex-shrink-0 cursor-pointer"
         >
           See More Projects
           <span className="ml-2 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">
             <FaArrowRight className="w-2.5 h-2.5" />
           </span>
-        </a>
+        </Link>
       </motion.div>
     </section>
   );

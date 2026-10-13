@@ -4,7 +4,8 @@ const contactSchema = new Schema(
   {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    phone: { type: String, required: true },
+    email: { type: String, default: "" },
+    phone: { type: String, default: "" },
     message: { type: String, required: true },
     status: {
       type: String,

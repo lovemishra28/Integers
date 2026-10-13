@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaPenNib, FaCode, FaMobileAlt, FaCubes, FaArrowRight, FaTimes, FaCheckCircle } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
 interface ServiceItem {
   id: string;
@@ -16,6 +17,7 @@ interface ServiceItem {
   icon: React.ReactNode;
   features: string[];
   deliverables: string[];
+  slug: string;
 }
 
 const servicesList: ServiceItem[] = [
@@ -24,6 +26,7 @@ const servicesList: ServiceItem[] = [
     title: "Web UI/UX Design",
     subtitle: "Interface & Experience",
     badgeText: "Figma UI",
+    slug: "/services/ui-ux-design",
     description: "Designing intuitive, engaging and user-friendly digital experiences that turn visitors into loyal customers.",
     image: "/services/uiux-showcase.png",
     icon: <FaPenNib className="w-5 h-5" />,
@@ -40,6 +43,7 @@ const servicesList: ServiceItem[] = [
     title: "Web Development",
     subtitle: "Frontend & Fullstack",
     badgeText: "Next.js",
+    slug: "/services/web-development",
     description: "Building fast, responsive and scalable web applications tailored specifically for modern businesses and cafes.",
     image: "/services/web-dev-showcase.png",
     icon: <FaCode className="w-5 h-5" />,
@@ -56,6 +60,7 @@ const servicesList: ServiceItem[] = [
     title: "Mobile App Design",
     subtitle: "iOS & Android",
     badgeText: "iOS & Android",
+    slug: "/services/mobile-app-development",
     description: "Creating beautiful, functional and scalable mobile applications crafted for real everyday users.",
     image: "/services/mobile-app-showcase.png",
     icon: <FaMobileAlt className="w-5 h-5" />,
@@ -72,6 +77,7 @@ const servicesList: ServiceItem[] = [
     title: "Custom Solutions",
     subtitle: "Tailored Architecture",
     badgeText: "Custom Stack",
+    slug: "/services/custom-software-development",
     description: "Tailored digital systems, custom workflows, API integrations and scalable platforms for unique business challenges.",
     image: "/services/custom-solutions-showcase.png",
     icon: <FaCubes className="w-5 h-5" />,
@@ -86,10 +92,10 @@ const servicesList: ServiceItem[] = [
 ];
 
 const statsData = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "20+", label: "Happy Clients" },
-  { value: "3+", label: "Years Experience" },
-  { value: "100%", label: "Client Focused" },
+  { value: siteConfig.stats.projectsCompleted, label: siteConfig.stats.projectsLabel },
+  { value: siteConfig.stats.happyClients, label: siteConfig.stats.happyClientsLabel },
+  { value: siteConfig.stats.yearsExperience, label: siteConfig.stats.yearsLabel },
+  { value: siteConfig.stats.clientFocused, label: siteConfig.stats.clientFocusedLabel },
 ];
 
 export default function Services() {
@@ -113,7 +119,10 @@ export default function Services() {
         {/* Updated Button matching the design's brutalist style */}
         <div className="mt-6 md:mt-0">
           <a
-            href="#contact"
+            href={siteConfig.brochureUrl}
+            download="IntegersDev_Agency_Brochure.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-2.5 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer"
           >
             Our Brochure
@@ -142,7 +151,7 @@ export default function Services() {
               {/* Card Background Image (Full Visible Artwork) */}
               <Image
                 src={service.image}
-                alt={service.title}
+                alt={`${service.title} - IntegersDev web development agency in Gwalior`}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover object-center group-hover:scale-108 transition-transform duration-500 z-0"
@@ -196,15 +205,15 @@ export default function Services() {
         </div>
 
         {/* Right Action Button */}
-        <a
-          href="#contact"
+        <Link
+          href="/services"
           className="inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all flex-shrink-0 cursor-pointer"
         >
-          Let's Build Together
+          View All Services
           <span className="ml-2 w-5 h-5 rounded-full bg-black text-white flex items-center justify-center text-[10px]">
             <FaArrowRight className="w-2.5 h-2.5" />
           </span>
-        </a>
+        </Link>
       </motion.div>
 
       {/* ----------------- SERVICE DETAILS MODAL ----------------- */}
@@ -249,7 +258,7 @@ export default function Services() {
                 <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] bg-gray-100">
                   <Image
                     src={selectedService.image}
-                    alt={selectedService.title}
+                    alt={`${selectedService.title} - IntegersDev digital solutions in Gwalior`}
                     fill
                     className="object-cover"
                     priority
@@ -295,20 +304,20 @@ export default function Services() {
               {/* Modal Footer */}
               <div className="p-5 bg-[#f8f9f5] border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-4">
                 <Link
-                  href="#projects"
+                  href={selectedService.slug}
                   onClick={() => setSelectedService(null)}
                   className="text-xs font-bold text-black hover:underline flex items-center gap-1.5"
                 >
-                  View Related Portfolio Projects →
+                  Explore Dedicated Page →
                 </Link>
 
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   onClick={() => setSelectedService(null)}
                   className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 rounded-full font-bold text-sm bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-none transition-all"
                 >
                   Start a Project in {selectedService.title} ↗
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

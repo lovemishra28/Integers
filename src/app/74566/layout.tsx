@@ -6,7 +6,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Integers | Control Panel",
+  title: "IntegersDev | Control Panel",
   description: "Secure control panel to monitor inquiries, manage customer messages, and moderate reviews.",
 };
 

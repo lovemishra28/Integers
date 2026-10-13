@@ -1,0 +1,83 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1400 >>
+stream
+BT
+/F2 26 Tf
+50 730 Td
+(IntegersDev - Digital Agency Brochure) Tj
+0 -30 Td
+/F1 12 Tf
+(High-Performance Web Development, UI/UX Design & Mobile Apps) Tj
+0 -25 Td
+(Gwalior, Madhya Pradesh, India | contact@integersdev.in | +91 9981097501) Tj
+0 -40 Td
+/F2 16 Tf
+(1. ABOUT INTEGERSDEV) Tj
+0 -22 Td
+/F1 11 Tf
+(IntegersDev is a bespoke software & digital engineering studio based in Gwalior.) Tj
+0 -16 Td
+(We engineer high-converting web applications, scalable mobile apps, and pixel-perfect design.) Tj
+0 -30 Td
+/F2 16 Tf
+(2. CORE SERVICES) Tj
+0 -22 Td
+/F1 11 Tf
+(- Web Development: High-speed Next.js, React, Tailwind CSS, Fullstack systems) Tj
+0 -16 Td
+(- UI/UX Architecture: Figma prototypes, Design Systems, Mobile Viewports) Tj
+0 -16 Td
+(- Mobile App Engineering: Cross-platform iOS & Android mobile applications) Tj
+0 -16 Td
+(- Custom Cloud Solutions: Database integrations, API workflows, Admin dashboards) Tj
+0 -30 Td
+/F2 16 Tf
+(3. CORE TEAM & LEADERSHIP) Tj
+0 -22 Td
+/F1 11 Tf
+(- Vinay: Fullstack Architecture & Cloud Engineering) Tj
+0 -16 Td
+(- Aryan: UI/UX & Visual Experience Design) Tj
+0 -16 Td
+(- Kuldeep: Frontend Engineering & Responsive Systems) Tj
+0 -16 Td
+(- Love: Software Engineering & Performance Optimization) Tj
+0 -30 Td
+/F2 16 Tf
+(4. CONTACT & CONSULTATION) Tj
+0 -22 Td
+/F1 11 Tf
+(Website: https://integersdev.in  |  WhatsApp: +91 9981097501  |  Email: contact@integersdev.in) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000001703 00000 n 
+0000001773 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1848
+%%EOF

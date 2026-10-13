@@ -15,6 +15,7 @@ import {
   FaLock
 } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackPricingTierSelection, trackWhatsAppClick } from '@/lib/analytics';
 
 type BillingCycle = 'project' | 'retainer';
 type Currency = 'USD' | 'INR';
@@ -30,6 +31,7 @@ interface Plan {
   basePriceINR: number;
   features: string[];
 }
+
 
 const PLANS: Plan[] = [
   {
@@ -55,8 +57,8 @@ const PLANS: Plan[] = [
     badge: "Most Popular",
     popular: true,
     deliveryTime: "7 - 10 Days",
-    basePriceUSD: 179,
-    basePriceINR: 17000,
+    basePriceUSD: 249,
+    basePriceINR: 23700,
     features: [
       "Full Next.js / React Frontend Development",
       "Complete Backend & Database Setup",
@@ -72,8 +74,8 @@ const PLANS: Plan[] = [
     tagline: "End-to-end fullstack platform built for serious scale & traffic",
     badge: "Scale & App",
     deliveryTime: "2 - 3 Weeks",
-    basePriceUSD: 349,
-    basePriceINR: 33150,
+    basePriceUSD: 449,
+    basePriceINR: 42750,
     features: [
       "Full Web & Mobile App Dev (PWA/Hybrid)",
       "Advanced Fullstack & Cloud Architecture",
@@ -112,10 +114,19 @@ export default function Pricing() {
   const selectedPlan = PLANS.find(p => p.id === selectedPlanId) || PLANS[1];
   const selectedPriceData = calculatePlanPrice(selectedPlan);
 
-  // Handle CTA action (Open details modal)
+  // Handle CTA action (Open details modal and track GA4 event)
   const handleSelectPlan = (planId: string) => {
     setSelectedPlanId(planId);
     setIsModalOpen(true);
+
+    const targetPlan = PLANS.find(p => p.id === planId) || selectedPlan;
+    const pData = calculatePlanPrice(targetPlan);
+    trackPricingTierSelection(
+      targetPlan.name,
+      currency === 'USD' ? pData.totalUSD : pData.totalINR,
+      currency,
+      billingCycle
+    );
   };
 
   // Scroll down to contact form and populate message
@@ -129,7 +140,7 @@ export default function Pricing() {
       setTimeout(() => {
         const textarea = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
         if (textarea) {
-          const summary = `Hi Integers team, I'm interested in the ${selectedPlan.name} plan (${billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-time Project'} at ${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Let's discuss requirements!`;
+          const summary = `Hi IntegersDev team, I'm interested in the ${selectedPlan.name} plan (${billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-time Project'} at ${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Let's discuss requirements!`;
           textarea.value = summary;
           textarea.focus();
         }
@@ -140,13 +151,14 @@ export default function Pricing() {
   // WhatsApp instant message URL
   const getWhatsAppUrl = () => {
     const msg = encodeURIComponent(
-      `Hi Integers! I'd like to book the ${selectedPlan.name} plan (${billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-Time Project'} at ${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Can we chat?`
+      `Hi IntegersDev! I'd like to book the ${selectedPlan.name} plan (${billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-Time Project'} at ${currency === 'USD' ? `$${selectedPriceData.totalUSD}` : `₹${selectedPriceData.totalINR.toLocaleString('en-IN')}`}). Can we chat?`
     );
     return `https://wa.me/919981097501?text=${msg}`;
   };
 
   const handleWhatsAppChat = () => {
     const url = getWhatsAppUrl();
+    trackWhatsAppClick(`Pricing Modal: ${selectedPlan.name} Plan`, url);
     if (typeof window !== 'undefined') {
       const win = window.open(url, '_blank');
       if (!win) {
@@ -156,7 +168,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="scroll-mt-24 pt-28 md:pt-36 pb-24 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto bg-[#f8f9f5] relative overflow-hidden">
+    <section id="pricing" className="scroll-mt-24 pt-8 md:pt-12 pb-16 md:pb-24 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto bg-[#f8f9f5] relative overflow-hidden">
       {/* Background Decorative Ambient Blobs */}
       <div className="absolute top-12 left-10 w-72 h-72 bg-[#d4ff3f] rounded-full opacity-25 blur-3xl pointer-events-none z-0"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#d4ff3f] rounded-full opacity-20 blur-3xl pointer-events-none z-0"></div>
@@ -394,6 +406,11 @@ export default function Pricing() {
 
                 {/* Price Display */}
                 <div className="my-5 sm:my-6 pt-4 border-t border-black/10">
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-black/5 text-black border border-black/10">
+                      Starting from
+                    </span>
+                  </div>
                   <div className="flex items-baseline gap-1">
                     <span className="font-black text-xl sm:text-2xl text-black">
                       {currency === 'USD' ? '$' : '₹'}
@@ -595,7 +612,7 @@ export default function Pricing() {
               {/* Price Breakdown Box */}
               <div className="bg-gray-50 border-2 border-black/10 rounded-2xl p-4 mb-6 space-y-2.5">
                 <div className="flex justify-between text-xs font-bold text-gray-700">
-                  <span>Base {selectedPlan.name} Tier</span>
+                  <span>Starting from ({selectedPlan.name} Tier)</span>
                   <span className="font-black text-black">
                     {currency === 'USD' ? `$${selectedPlan.basePriceUSD}` : `₹${selectedPlan.basePriceINR.toLocaleString('en-IN')}`}
                   </span>
