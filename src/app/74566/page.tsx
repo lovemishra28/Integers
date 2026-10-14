@@ -27,6 +27,8 @@ import {
   FaTimes,
   FaEdit,
   FaPaperPlane,
+  FaEnvelope,
+  FaGlobe,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/integersdev_lime_icon.png";
@@ -36,6 +38,7 @@ interface ContactItem {
   _id: string;
   firstName: string;
   lastName: string;
+  email?: string;
   phone: string;
   message: string;
   status?: "new" | "read" | "contacted" | "archived";
@@ -96,7 +99,7 @@ export default function AdminDashboardPage() {
 
   // Filter & Search states
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "new" | "contacted" | "archived" | "starred">("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "new" | "audits" | "contacted" | "archived" | "starred">("all");
   const [reviewFilter, setReviewFilter] = useState<"all" | "approved" | "hidden">("all");
 
   // Auto-refresh interval (in seconds, 0 = off)
@@ -124,6 +127,7 @@ export default function AdminDashboardPage() {
   const [newLeadForm, setNewLeadForm] = useState({
     firstName: "",
     lastName: "",
+    email: "",
     phone: "",
     message: "",
     notes: "",
@@ -416,6 +420,7 @@ export default function AdminDashboardPage() {
         setNewLeadForm({
           firstName: "",
           lastName: "",
+          email: "",
           phone: "",
           message: "",
           notes: "",
@@ -452,11 +457,12 @@ export default function AdminDashboardPage() {
   function exportContactsToCSV() {
     if (contacts.length === 0) return;
 
-    const headers = ["ID", "First Name", "Last Name", "Phone", "Message", "Status", "Notes", "Created At"];
+    const headers = ["ID", "First Name", "Last Name", "Email", "Phone", "Message", "Status", "Notes", "Created At"];
     const rows = filteredContacts.map((c) => [
       `"${c._id}"`,
       `"${c.firstName.replace(/"/g, '""')}"`,
       `"${c.lastName.replace(/"/g, '""')}"`,
+      `"${(c.email || "").replace(/"/g, '""')}"`,
       `"${c.phone.replace(/"/g, '""')}"`,
       `"${c.message.replace(/"/g, '""')}"`,
       `"${c.status || "new"}"`,
@@ -506,6 +512,11 @@ export default function AdminDashboardPage() {
         if (c.status && c.status !== "new") return false;
       } else if (statusFilter === "starred") {
         if (!c.isStarred) return false;
+      } else if (statusFilter === "audits") {
+        const isAudit =
+          (c.notes && c.notes.toLowerCase().includes("free website audit")) ||
+          (c.message && c.message.toLowerCase().includes("free website audit"));
+        if (!isAudit) return false;
       } else if (statusFilter !== "all") {
         if (c.status !== statusFilter) return false;
       }
@@ -515,10 +526,11 @@ export default function AdminDashboardPage() {
         const q = searchQuery.toLowerCase();
         const fullName = `${c.firstName} ${c.lastName}`.toLowerCase();
         const matchName = fullName.includes(q);
+        const matchEmail = (c.email || "").toLowerCase().includes(q);
         const matchPhone = c.phone.toLowerCase().includes(q);
         const matchMsg = c.message.toLowerCase().includes(q);
         const matchNotes = (c.notes || "").toLowerCase().includes(q);
-        if (!matchName && !matchPhone && !matchMsg && !matchNotes) return false;
+        if (!matchName && !matchEmail && !matchPhone && !matchMsg && !matchNotes) return false;
       }
 
       return true;
@@ -537,6 +549,14 @@ export default function AdminDashboardPage() {
   // Counts
   const unreadCount = useMemo(() => {
     return contacts.filter((c) => !c.status || c.status === "new").length;
+  }, [contacts]);
+
+  const auditCount = useMemo(() => {
+    return contacts.filter(
+      (c) =>
+        (c.notes && c.notes.toLowerCase().includes("free website audit")) ||
+        (c.message && c.message.toLowerCase().includes("free website audit"))
+    ).length;
   }, [contacts]);
 
   // Loading initial auth state
@@ -948,6 +968,7 @@ export default function AdminDashboardPage() {
                 {[
                   { id: "all", label: "All Messages", count: contacts.length },
                   { id: "new", label: "Unread", count: unreadCount, highlight: true },
+                  { id: "audits", label: "Audit Requests", count: auditCount, highlight: true },
                   { id: "contacted", label: "Contacted", count: contacts.filter((c) => c.status === "contacted").length },
                   { id: "archived", label: "Archived", count: contacts.filter((c) => c.status === "archived").length },
                   { id: "starred", label: "Starred ★", count: contacts.filter((c) => c.isStarred).length },
@@ -1011,6 +1032,15 @@ export default function AdminDashboardPage() {
                     const isContacted = contact.status === "contacted";
                     const isArchived = contact.status === "archived";
                     const isEditingNote = activeNoteEditId === contact._id;
+                    const isAudit =
+                      (contact.notes && contact.notes.toLowerCase().includes("free website audit")) ||
+                      (contact.message && contact.message.toLowerCase().includes("free website audit"));
+                    const auditUrlMatch = contact.message.match(/Target Website URL:\s*(https?:\/\/[^\s\n]+)/i);
+                    const auditUrl = auditUrlMatch ? auditUrlMatch[1] : null;
+                    const hasValidPhone =
+                      Boolean(contact.phone) &&
+                      contact.phone !== "N/A (Audit Request)" &&
+                      !contact.phone.toLowerCase().includes("not provided");
 
                     return (
                       <motion.div
@@ -1032,13 +1062,21 @@ export default function AdminDashboardPage() {
                             {/* Avatar */}
                             <div
                               className={`w-11 h-11 rounded-xl flex items-center justify-center font-black text-sm border-2 border-black flex-shrink-0 shadow-[2px_2px_0px_0px_#000] ${
-                                isNew
+                                isAudit
+                                  ? "bg-[#38bdf8] text-black"
+                                  : isNew
                                   ? "bg-[#d4ff3f] text-black"
                                   : "bg-[#252525] text-white"
                               }`}
                             >
-                              {contact.firstName.charAt(0).toUpperCase()}
-                              {contact.lastName.charAt(0).toUpperCase()}
+                              {isAudit ? (
+                                <FaGlobe className="w-5 h-5" />
+                              ) : (
+                                <>
+                                  {contact.firstName.charAt(0).toUpperCase()}
+                                  {contact.lastName.charAt(0).toUpperCase()}
+                                </>
+                              )}
                             </div>
 
                             <div>
@@ -1075,6 +1113,14 @@ export default function AdminDashboardPage() {
                                 >
                                   {contact.status || "NEW INQUIRY"}
                                 </span>
+
+                                {/* Audit Request Pill */}
+                                {isAudit && (
+                                  <span className="bg-[#38bdf8] text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-black shadow-[1px_1px_0px_0px_#000] flex items-center gap-1">
+                                    <FaGlobe className="w-2.5 h-2.5" />
+                                    Audit Request
+                                  </span>
+                                )}
                               </div>
 
                               {/* Timestamp details */}
@@ -1096,29 +1142,59 @@ export default function AdminDashboardPage() {
                             </div>
                           </div>
 
-                          {/* Action Buttons: Call, WhatsApp, Status Cycle, Delete */}
+                          {/* Action Buttons: Inspect Site, Email, Call, WhatsApp, Status Cycle, Delete */}
                           <div className="flex items-center gap-2 flex-wrap justify-end">
+                            {/* Inspect Client Website if Audit Lead */}
+                            {auditUrl && (
+                              <a
+                                href={auditUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-3 py-1.5 bg-[#d4ff3f] hover:bg-[#bce332] text-black text-xs font-black rounded-xl border-2 border-black transition-all flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
+                                title={`Inspect target website: ${auditUrl}`}
+                              >
+                                <FaExternalLinkAlt className="w-3 h-3" />
+                                <span>Inspect Site</span>
+                              </a>
+                            )}
+
+                            {/* Direct Email Action */}
+                            {contact.email && (
+                              <a
+                                href={`mailto:${contact.email}?subject=Regarding%20your%20inquiry%20with%20IntegersDev`}
+                                className="px-3 py-1.5 bg-[#222] hover:bg-white hover:text-black text-gray-200 text-xs font-bold rounded-xl border border-gray-700 hover:border-black transition-all flex items-center gap-1.5 shadow-[1px_1px_0px_0px_#000]"
+                                title={`Email ${contact.email}`}
+                              >
+                                <FaEnvelope className="w-3 h-3 text-[#38bdf8]" />
+                                <span className="truncate max-w-[130px] sm:max-w-none">{contact.email}</span>
+                              </a>
+                            )}
+
                             {/* Direct Phone Call */}
-                            <a
-                              href={`tel:${contact.phone}`}
-                              className="px-3 py-1.5 bg-[#222] hover:bg-white hover:text-black text-gray-200 text-xs font-bold rounded-xl border border-gray-700 hover:border-black transition-all flex items-center gap-1.5 shadow-[1px_1px_0px_0px_#000]"
-                              title={`Call ${contact.phone}`}
-                            >
-                              <FaPhoneAlt className="w-3 h-3 text-[#10b981]" />
-                              <span>{contact.phone}</span>
-                            </a>
+                            {hasValidPhone && (
+                              <a
+                                href={`tel:${contact.phone}`}
+                                className="px-3 py-1.5 bg-[#222] hover:bg-white hover:text-black text-gray-200 text-xs font-bold rounded-xl border border-gray-700 hover:border-black transition-all flex items-center gap-1.5 shadow-[1px_1px_0px_0px_#000]"
+                                title={`Call ${contact.phone}`}
+                              >
+                                <FaPhoneAlt className="w-3 h-3 text-[#10b981]" />
+                                <span>{contact.phone}</span>
+                              </a>
+                            )}
 
                             {/* Direct WhatsApp Action */}
-                            <a
-                              href={formatWhatsAppUrl(contact.phone, contact.firstName, contact.message)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="px-3 py-1.5 bg-[#25d366] hover:bg-[#20ba59] text-black text-xs font-black rounded-xl border-2 border-black transition-all flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
-                              title="Chat with client on WhatsApp"
-                            >
-                              <FaWhatsapp className="w-3.5 h-3.5" />
-                              <span>WhatsApp</span>
-                            </a>
+                            {hasValidPhone && (
+                              <a
+                                href={formatWhatsAppUrl(contact.phone, contact.firstName, contact.message)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-3 py-1.5 bg-[#25d366] hover:bg-[#20ba59] text-black text-xs font-black rounded-xl border-2 border-black transition-all flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
+                                title="Chat with client on WhatsApp"
+                              >
+                                <FaWhatsapp className="w-3.5 h-3.5" />
+                                <span>WhatsApp</span>
+                              </a>
+                            )}
 
                             {/* Status Selector Dropdown */}
                             <select
@@ -1497,7 +1573,8 @@ export default function AdminDashboardPage() {
                         body: JSON.stringify({
                           firstName: "Rahul",
                           lastName: "Sharma",
-                          phone: "+91 9876543210",
+                          email: "rahul@example.com",
+                          phone: "+91 98765 43210",
                           message: "Hi IntegersDev Team! Testing the live admin message notification system. Everything is looking top-notch!",
                           notes: "Generated via Admin Dashboard Test Tool",
                           status: "new",
@@ -1515,10 +1592,46 @@ export default function AdminDashboardPage() {
                       setIsLoading(false);
                     }
                   }}
-                  className="px-6 py-3 bg-[#d4ff3f] hover:bg-[#bce332] text-black font-black text-xs uppercase tracking-wider rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] cursor-pointer active:scale-95 transition-all flex items-center gap-2"
+                  className="px-5 py-3 bg-[#d4ff3f] hover:bg-[#bce332] text-black font-black text-xs uppercase tracking-wider rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] cursor-pointer active:scale-95 transition-all flex items-center gap-2"
                 >
                   <FaPaperPlane className="w-3.5 h-3.5" />
-                  <span>Send Test Message Now</span>
+                  <span>Send Test General Message</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      setIsLoading(true);
+                      const res = await fetch(`${API_BASE}/contacts`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          firstName: "Dr. Ananya",
+                          lastName: "Verma",
+                          email: "ananya@healthplus.in",
+                          phone: "+91 99887 76655",
+                          message: "[FREE WEBSITE AUDIT REQUEST]\nTarget Website URL: https://healthplusclinic.in\nLead Name: Dr. Ananya Verma\nEmail Address: ananya@healthplus.in\nPhone / WhatsApp: +91 99887 76655\nSource: /free-website-audit",
+                          notes: "Free Website Audit requested for: https://healthplusclinic.in",
+                          status: "new",
+                        }),
+                      });
+                      const data = await res.json();
+                      if (data.success) {
+                        playAlertSound();
+                        fetchData(true);
+                        setActiveTab("messages");
+                      }
+                    } catch (e) {
+                      console.error("Test audit message failed:", e);
+                    } finally {
+                      setIsLoading(false);
+                    }
+                  }}
+                  className="mt-3 px-5 py-3 bg-[#38bdf8] hover:bg-[#0ea5e9] text-black font-black text-xs uppercase tracking-wider rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] cursor-pointer active:scale-95 transition-all flex items-center gap-2"
+                >
+                  <FaGlobe className="w-3.5 h-3.5" />
+                  <span>Send Test Website Audit Request</span>
                 </button>
               </div>
             </div>
@@ -1529,7 +1642,7 @@ export default function AdminDashboardPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
                 <div className="bg-[#202020] p-3 rounded-xl border border-gray-800">
                   <div className="text-gray-500 font-bold mb-1">ADMIN ROUTE</div>
-                  <div className="text-white font-bold">/admin</div>
+                  <div className="text-[#d4ff3f] font-bold">/74566</div>
                 </div>
                 <div className="bg-[#202020] p-3 rounded-xl border border-gray-800">
                   <div className="text-gray-500 font-bold mb-1">DATABASE MODEL</div>
@@ -1598,16 +1711,28 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">Phone Number</label>
-                <input
-                  type="tel"
-                  required
-                  value={newLeadForm.phone}
-                  onChange={(e) => setNewLeadForm({ ...newLeadForm, phone: e.target.value })}
-                  className="w-full bg-[#202020] border border-gray-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#d4ff3f]"
-                  placeholder="+91 98765 43210"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    value={newLeadForm.phone}
+                    onChange={(e) => setNewLeadForm({ ...newLeadForm, phone: e.target.value })}
+                    className="w-full bg-[#202020] border border-gray-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#d4ff3f]"
+                    placeholder="+91 98765 43210"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold text-gray-400 uppercase mb-1">Email Address (Optional)</label>
+                  <input
+                    type="email"
+                    value={newLeadForm.email}
+                    onChange={(e) => setNewLeadForm({ ...newLeadForm, email: e.target.value })}
+                    className="w-full bg-[#202020] border border-gray-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#d4ff3f]"
+                    placeholder="client@example.com"
+                  />
+                </div>
               </div>
 
               <div>

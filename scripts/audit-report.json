@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-13T17:41:28.729Z",
+  "timestamp": "2026-10-14T09:56:26.637Z",
   "summary": {
     "totalAudited": 40,
     "brokenLinksCount": 0,
@@ -127,6 +127,33 @@
       "outboundInternalLinksCount": 45,
       "hasViewport": true
     },
+    "/free-website-audit": {
+      "statusCode": 200,
+      "title": "Free Website Audit | Speed, SEO &amp; Conversion Diagnostic | IntegersDev",
+      "titleLength": 73,
+      "description": "Get a free 24-hour website audit from IntegersDev in Gwalior. We analyze your Core Web Vitals, technical SEO, mobile UX friction, and Next.js migration roadmap.",
+      "descLength": 160,
+      "canonical": "https://integersdev.in/free-website-audit",
+      "h1Count": 1,
+      "h1Texts": [
+        "Get Your Free 24-Hour Website Audit"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 13,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 45,
+      "hasViewport": true
+    },
     "/about": {
       "statusCode": 200,
       "title": "About Us | Web Development Studio in Gwalior | IntegersDev",
@@ -183,6 +210,34 @@
       "outboundInternalLinksCount": 42,
       "hasViewport": true
     },
+    "/testimonials": {
+      "statusCode": 200,
+      "title": "Client Testimonials &amp; Reviews | IntegersDev",
+      "titleLength": 47,
+      "description": "Read authentic reviews and ratings from founders, local businesses, and product managers who built Next.js websites, mobile apps, and UI/UX design systems with IntegersDev in Gwalior.",
+      "descLength": 183,
+      "canonical": "https://integersdev.in/testimonials",
+      "h1Count": 1,
+      "h1Texts": [
+        "What Founders &amp; Clients Say About IntegersDev"
+      ],
+      "hierarchyIssues": [],
+      "totalHeadings": 6,
+      "totalImages": 3,
+      "missingAlt": [],
+      "schemas": [
+        "Organization",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "LocalBusiness",
+        "BreadcrumbList"
+      ],
+      "schemaErrors": [],
+      "outboundInternalLinksCount": 46,
+      "hasViewport": true
+    },
     "/blog": {
       "statusCode": 200,
       "title": "Blog &amp; Technical Insights | Web Development &amp; UI/UX | IntegersDev",
@@ -236,61 +291,6 @@
       ],
       "schemaErrors": [],
       "outboundInternalLinksCount": 44,
-      "hasViewport": true
-    },
-    "/testimonials": {
-      "statusCode": 200,
-      "title": "Client Testimonials &amp; Reviews | IntegersDev",
-      "titleLength": 47,
-      "description": "Read authentic reviews and ratings from founders, local businesses, and product managers who built Next.js websites, mobile apps, and UI/UX design systems with IntegersDev in Gwalior.",
-      "descLength": 183,
-      "canonical": "https://integersdev.in/testimonials",
-      "h1Count": 1,
-      "h1Texts": [
-        "What Founders &amp; Clients Say About IntegersDev"
-      ],
-      "hierarchyIssues": [],
-      "totalHeadings": 6,
-      "totalImages": 3,
-      "missingAlt": [],
-      "schemas": [
-        "Organization",
-        [
-          "LocalBusiness",
-          "ProfessionalService"
-        ],
-        "LocalBusiness",
-        "BreadcrumbList"
-      ],
-      "schemaErrors": [],
-      "outboundInternalLinksCount": 46,
-      "hasViewport": true
-    },
-    "/free-website-audit": {
-      "statusCode": 200,
-      "title": "Free Website Audit | Speed, SEO &amp; Conversion Diagnostic | IntegersDev",
-      "titleLength": 73,
-      "description": "Get a free 24-hour website audit from IntegersDev in Gwalior. We analyze your Core Web Vitals, technical SEO, mobile UX friction, and Next.js migration roadmap.",
-      "descLength": 160,
-      "canonical": "https://integersdev.in/free-website-audit",
-      "h1Count": 1,
-      "h1Texts": [
-        "Get Your Free 24-Hour Website Audit"
-      ],
-      "hierarchyIssues": [],
-      "totalHeadings": 13,
-      "totalImages": 3,
-      "missingAlt": [],
-      "schemas": [
-        "Organization",
-        [
-          "LocalBusiness",
-          "ProfessionalService"
-        ],
-        "BreadcrumbList"
-      ],
-      "schemaErrors": [],
-      "outboundInternalLinksCount": 45,
       "hasViewport": true
     },
     "/privacy-policy": {
@@ -1159,12 +1159,12 @@
     "/services": 96,
     "/portfolio": 104,
     "/pricing": 118,
+    "/free-website-audit": 48,
     "/about": 80,
     "/contact": 224,
-    "/blog": 114,
-    "/faq": 80,
     "/testimonials": 41,
-    "/free-website-audit": 48,
+    "/blog": 111,
+    "/faq": 80,
     "/privacy-policy": 125,
     "/terms": 83,
     "/accessibility": 83,
@@ -1185,9 +1185,9 @@
     "/website-for-clinics": 40,
     "/website-for-schools": 40,
     "/website-for-real-estate": 40,
-    "/blog/how-much-does-a-website-cost-in-india-2026": 8,
-    "/blog/nextjs-vs-wordpress-for-business-websites": 9,
-    "/blog/how-to-get-your-business-found-on-google-in-gwalior": 5,
+    "/blog/how-much-does-a-website-cost-in-india-2026": 9,
+    "/blog/nextjs-vs-wordpress-for-business-websites": 10,
+    "/blog/how-to-get-your-business-found-on-google-in-gwalior": 6,
     "/blog/local-cafes-digital-storefront": 6,
     "/blog/website-checklist-before-launch": 4,
     "/blog/rank-retail-outlet-google-maps": 8,
