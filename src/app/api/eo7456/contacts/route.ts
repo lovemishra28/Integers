@@ -36,6 +36,7 @@ export async function GET(request: Request) {
       const searchMatch = [
         { firstName: searchRegex },
         { lastName: searchRegex },
+        { email: searchRegex },
         { phone: searchRegex },
         { message: searchRegex },
         { notes: searchRegex },
@@ -88,7 +89,7 @@ export async function POST(request: Request) {
     await connectToDatabase();
     const body = await request.json();
 
-    const { firstName, lastName, phone, message, notes, status, isStarred } = body;
+    const { firstName, lastName, email, phone, message, notes, status, isStarred } = body;
 
     if (!firstName || !lastName || !phone || !message) {
       return NextResponse.json(
@@ -100,6 +101,7 @@ export async function POST(request: Request) {
     const newContact = new Contact({
       firstName: String(firstName).trim(),
       lastName: String(lastName).trim(),
+      email: email ? String(email).trim() : "",
       phone: String(phone).trim(),
       message: String(message).trim(),
       notes: notes ? String(notes).trim() : "",
