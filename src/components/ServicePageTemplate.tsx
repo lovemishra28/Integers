@@ -17,6 +17,9 @@ import PageHeader from "@/components/PageHeader";
 import FAQAccordion, { FAQItem } from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import { ServiceSchema, FAQPageSchema } from "@/components/schema";
+import { ServicePageSkeleton } from "@/components/ui/Skeleton";
+
+export { ServicePageSkeleton };
 
 export interface IncludedFeature {
   icon?: React.ReactNode;
@@ -44,6 +47,7 @@ export interface PricingTeaser {
   startingPrice: string;
   currencyLabel?: string;
   timeframe: string;
+  warranty?: string;
   description: string;
   highlights: string[];
   ctaText?: string;
@@ -123,9 +127,13 @@ export interface ServicePageTemplateProps {
   ctaTitle?: string;
   ctaDescription?: string;
   ctaBadge?: string;
+
+  // Optional Loading Skeleton state
+  isLoading?: boolean;
 }
 
 export default function ServicePageTemplate({
+  isLoading = false,
   badge = "Service Offering",
   title,
   highlight,
@@ -158,6 +166,13 @@ export default function ServicePageTemplate({
   ctaDescription,
   ctaBadge,
 }: ServicePageTemplateProps) {
+  if (isLoading) {
+    return (
+      <SiteLayout>
+        <ServicePageSkeleton />
+      </SiteLayout>
+    );
+  }
   const fullServiceTitle = `${title} ${highlight || ""}`.trim();
   const resolvedUrl =
     canonicalUrl ||
@@ -404,9 +419,17 @@ export default function ServicePageTemplate({
               <div className="text-3xl sm:text-4xl font-black text-[#d4ff3f] mb-1">
                 {pricingTeaser.startingPrice}
               </div>
-              <div className="text-[11px] font-bold text-gray-300 mb-4 flex items-center justify-center gap-1.5">
-                <FaClock className="w-3 h-3 text-[#d4ff3f]" />
-                Delivery: {pricingTeaser.timeframe}
+              <div className="flex flex-col items-center justify-center gap-1.5 text-[11px] font-bold text-gray-300 mb-4">
+                <span className="flex items-center gap-1.5">
+                  <FaClock className="w-3 h-3 text-[#d4ff3f]" />
+                  Delivery: {pricingTeaser.timeframe}
+                </span>
+                {pricingTeaser.warranty && (
+                  <span className="flex items-center gap-1.5 text-[#d4ff3f]">
+                    <FaShieldAlt className="w-3 h-3" />
+                    {pricingTeaser.warranty}
+                  </span>
+                )}
               </div>
 
               <Link
@@ -443,6 +466,8 @@ export default function ServicePageTemplate({
               src={caseStudy.image}
               alt={`${caseStudy.title} - ${caseStudy.category} case study by IntegersDev`}
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
               className="object-cover object-top"
             />
             <div className="absolute top-4 left-4 z-10">

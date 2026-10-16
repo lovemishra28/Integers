@@ -180,6 +180,7 @@ export default async function CaseStudyPage({ params }: Props) {
             src={project.coverImage}
             alt={`${project.title} - ${project.category} case study engineered by IntegersDev in Gwalior`}
             fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
             priority
             className="object-cover object-top"
           />

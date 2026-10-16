@@ -21,6 +21,8 @@ export default function MidCTA() {
                src={teamMember} 
                alt="IntegersDev web developer consulting on digital solutions in Gwalior" 
                fill
+               sizes="(max-width: 768px) 100vw, 384px"
+               loading="lazy"
                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" 
              />
            </div>
@@ -52,7 +54,7 @@ export default function MidCTA() {
           Contact Us Today Grow Your Business
         </h2>
         
-        <p className="text-gray-500 font-medium mb-10 leading-relaxed max-w-md">
+        <p className="text-gray-700 font-semibold mb-10 leading-relaxed max-w-md">
           We provide exactly the features local businesses need to maximize their digital presence. We build fast, secure, and beautiful platforms tailored for your brand.
         </p>
         

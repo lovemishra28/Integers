@@ -173,7 +173,7 @@ export default function AuditThankYouPage() {
                   <FaExternalLinkAlt className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </div>
                 <p className="text-xs text-gray-600 font-medium mt-2">
-                  Engineered mobile tour reservation flow resulting in 65% direct smartphone bookings.
+                  Engineered mobile tour reservation flow facilitating direct smartphone bookings.
                 </p>
               </Link>
             </div>

@@ -19,6 +19,7 @@ import PageHeader from "@/components/PageHeader";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import { CityConfig } from "@/data/cities";
+import { PRICING_TIERS } from "@/data/pricing";
 import { getProjectBySlug } from "@/data/projects";
 import {
   LocalBusinessSchema,
@@ -303,6 +304,8 @@ export default function CityPageTemplate({ city }: CityPageTemplateProps) {
                   src={caseStudy.coverImage}
                   alt={caseStudy.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>
@@ -313,32 +316,86 @@ export default function CityPageTemplate({ city }: CityPageTemplateProps) {
 
       {/* 6. Transparent Pricing Teaser for This City */}
       <section className="py-12 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto w-full mb-20">
-        <div className="bg-[#f8f9f5] border-2 border-black rounded-3xl p-8 sm:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <span className="text-xs font-black uppercase text-black/60 tracking-wider block mb-2">
-              Transparent Regional Pricing
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-black tracking-tight mb-2">
-              Predictable Milestone Packages for {city.cityName}
-            </h2>
-            <p className="text-sm font-medium text-gray-700 max-w-xl">
-              Starting from{" "}
-              <strong className="text-black">
-                {city.pricingTeaser.startingUSD} (
-                {city.pricingTeaser.startingINR})
-              </strong>{" "}
-              with {city.pricingTeaser.delivery}. 100% source code ownership and zero hidden agency markups.
-            </p>
-          </div>
+        <div className="bg-[#f8f9f5] border-2 border-black rounded-3xl p-8 sm:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-8">
+            <div>
+              <span className="text-xs font-black uppercase text-black/60 tracking-wider block mb-2">
+                Transparent Regional Pricing
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-black tracking-tight mb-2">
+                Predictable Milestone Packages for {city.cityName}
+              </h2>
+              <p className="text-sm font-medium text-gray-700 max-w-xl">
+                Starting from <strong className="text-black">{city.pricingTeaser.startingUSD} ({city.pricingTeaser.startingINR})</strong> with {city.pricingTeaser.delivery} and {city.pricingTeaser.warranty}. 100% source code ownership and zero hidden agency markups.
+              </p>
+            </div>
 
-          <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <Link
               href="/pricing"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-black text-xs uppercase tracking-wider bg-[#d4ff3f] text-black border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:scale-105 transition-transform text-center"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-black text-xs uppercase tracking-wider bg-[#d4ff3f] text-black border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:scale-105 transition-transform text-center shrink-0"
             >
               Explore Full Pricing &amp; Plans
               <FaArrowRight className="w-3 h-3" />
             </Link>
+          </div>
+
+          {/* 3 Unified Tier Cards matching homepage and pricing page */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PRICING_TIERS.map((tier) => (
+              <div
+                key={tier.id}
+                className={`rounded-2xl p-6 border-2 border-black flex flex-col justify-between transition-all ${
+                  tier.popular
+                    ? "bg-[#d4ff3f] shadow-[6px_6px_0px_0px_#000]"
+                    : "bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span
+                      className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${
+                        tier.popular
+                          ? "bg-black text-[#d4ff3f] border-black"
+                          : "bg-gray-100 text-gray-800 border-gray-300"
+                      }`}
+                    >
+                      {tier.name}
+                    </span>
+                    <span className="text-[11px] font-bold text-gray-700 flex items-center gap-1">
+                      <FaClock className="w-2.5 h-2.5" />
+                      {tier.deliveryTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-black text-black">
+                    {tier.priceDisplayUSD}{" "}
+                    <span className="text-xs font-bold text-black/70">
+                      / {tier.priceDisplayINR}
+                    </span>
+                  </h3>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-gray-800 mt-2 mb-4">
+                    <FaShieldAlt className="w-3 h-3 text-black" />
+                    <span>{tier.warranty}</span>
+                  </div>
+
+                  <ul className="space-y-1.5 text-xs font-semibold text-gray-700 mb-6">
+                    {tier.features.slice(0, 3).map((f, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <FaCheck className="w-2.5 h-2.5 text-black shrink-0" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link
+                  href="/pricing"
+                  className="w-full py-2.5 rounded-xl font-black text-xs uppercase tracking-wider text-center bg-black text-white hover:bg-[#d4ff3f] hover:text-black transition-colors border-2 border-black"
+                >
+                  Configure {tier.name} Tier
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

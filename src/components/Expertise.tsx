@@ -280,9 +280,26 @@ export default function Expertise() {
     const { clientWidth: width, clientHeight: height } = container;
     initBalls(width, height);
 
-    let animationFrameId: number;
+    // Initial positioning of DOM elements
+    for (let i = 0; i < physicsRef.current.length; i++) {
+      const b = physicsRef.current[i];
+      const el = ballElementsRef.current[b.id];
+      if (el) {
+        el.style.transform = `translate3d(${b.x - b.radius}px, ${b.y - b.radius}px, 0px) rotate(${b.rotation}deg)`;
+      }
+    }
+
+    // Check prefers-reduced-motion
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    let animationFrameId: number | null = null;
+    let isVisible = false;
 
     const updatePhysics = () => {
+      if (!isVisible) return;
       const currentContainer = containerRef.current;
       if (!currentContainer) return;
 
@@ -429,7 +446,27 @@ export default function Expertise() {
       animationFrameId = requestAnimationFrame(updatePhysics);
     };
 
-    animationFrameId = requestAnimationFrame(updatePhysics);
+    // IntersectionObserver to run loop only when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true;
+            animationFrameId = requestAnimationFrame(updatePhysics);
+          }
+        } else {
+          isVisible = false;
+          if (animationFrameId !== null) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    observer.observe(container);
 
     // Resize listener
     const handleResize = () => {
@@ -440,7 +477,10 @@ export default function Expertise() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
       window.removeEventListener("resize", handleResize);
     };
   }, [gravityMode, initBalls]);

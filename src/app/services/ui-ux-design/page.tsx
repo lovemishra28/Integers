@@ -22,6 +22,8 @@ import ServicePageTemplate, {
 } from "@/components/ServicePageTemplate";
 import { FAQItem } from "@/components/FAQAccordion";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "UI UX Design Agency India | Figma Design Systems | IntegersDev",
   description:
@@ -187,8 +189,9 @@ const techStackData: TechItem[] = [
 const pricingTeaserData: PricingTeaser = {
   title: "Bespoke UI/UX Design Packages",
   badge: "Fast MVP Sprints",
-  startingPrice: "₹12,250 / $129",
-  timeframe: "3 to 5 Business Days",
+  startingPrice: "$129 / ₹12,250",
+  timeframe: "3 – 5 Days",
+  warranty: "7 Days Post-Launch Warranty",
   description:
     "Ideal for founders and product teams needing high-converting Figma prototypes, investor pitch decks, or a complete design system overhaul.",
   highlights: [

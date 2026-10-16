@@ -23,6 +23,8 @@ import ServicePageTemplate, {
 } from "@/components/ServicePageTemplate";
 import { FAQItem } from "@/components/FAQAccordion";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "App Development Company Gwalior | iOS & Android Apps | IntegersDev",
   description:
@@ -188,8 +190,9 @@ const techStackData: TechItem[] = [
 const pricingTeaserData: PricingTeaser = {
   title: "Cross-Platform Mobile App Development Packages",
   badge: "iOS & Android",
-  startingPrice: "₹28,000 / $299",
-  timeframe: "3 to 4 Weeks",
+  startingPrice: "$449 / ₹42,750",
+  timeframe: "2 – 3 Weeks",
+  warranty: "30 Days Priority Warranty",
   description:
     "Launch your business onto the Apple App Store and Google Play Store with a single, maintainable React Native codebase.",
   highlights: [
@@ -198,7 +201,7 @@ const pricingTeaserData: PricingTeaser = {
     "Offline data caching & SQLite local storage",
     "Firebase push notifications & deep link setup",
     "App Store & Google Play submission management",
-    "30 days of post-launch bug warranty & monitoring",
+    "30 days priority post-launch bug warranty",
   ],
   ctaText: "View Full Pricing & Mobile Retainers",
   ctaHref: "/pricing",

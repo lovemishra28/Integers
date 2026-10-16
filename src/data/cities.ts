@@ -56,6 +56,7 @@ export interface CityConfig {
     startingUSD: string;
     startingINR: string;
     delivery: string;
+    warranty: string;
   };
   faqs: CityFAQ[];
 }
@@ -175,7 +176,8 @@ export const CITIES_DATA: CityConfig[] = [
     pricingTeaser: {
       startingUSD: "$129",
       startingINR: "₹12,250",
-      delivery: "3 – 5 Days Turnaround",
+      delivery: "3 – 5 Days",
+      warranty: "7 Days Post-Launch Warranty",
     },
     faqs: [
       {
@@ -320,7 +322,8 @@ export const CITIES_DATA: CityConfig[] = [
     pricingTeaser: {
       startingUSD: "$129",
       startingINR: "₹12,250",
-      delivery: "7 – 10 Days Standard Delivery",
+      delivery: "3 – 5 Days",
+      warranty: "7 Days Post-Launch Warranty",
     },
     faqs: [
       {
@@ -465,7 +468,8 @@ export const CITIES_DATA: CityConfig[] = [
     pricingTeaser: {
       startingUSD: "$129",
       startingINR: "₹12,250",
-      delivery: "3 – 10 Days Milestone Delivery",
+      delivery: "3 – 5 Days",
+      warranty: "7 Days Post-Launch Warranty",
     },
     faqs: [
       {

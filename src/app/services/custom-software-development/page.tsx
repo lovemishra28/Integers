@@ -21,6 +21,8 @@ import ServicePageTemplate, {
 } from "@/components/ServicePageTemplate";
 import { FAQItem } from "@/components/FAQAccordion";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Custom Software Development in Gwalior | SaaS & Portals | IntegersDev",
   description:
@@ -186,8 +188,9 @@ const techStackData: TechItem[] = [
 const pricingTeaserData: PricingTeaser = {
   title: "Milestone-Based Custom Software Proposals",
   badge: "Bespoke Architecture",
-  startingPrice: "₹35,000 / $399",
-  timeframe: "2 to 4 Weeks",
+  startingPrice: "$449 / ₹42,750",
+  timeframe: "2 – 3 Weeks",
+  warranty: "30 Days Priority Warranty",
   description:
     "Tailored engineering roadmaps with clear milestone deliverables, escrow payments, and complete source code ownership upon launch.",
   highlights: [
@@ -196,7 +199,7 @@ const pricingTeaserData: PricingTeaser = {
     "Third-party payment & WhatsApp notification pipelines",
     "Interactive analytics dashboard & PDF reporting engine",
     "100% intellectual property & code ownership transfer",
-    "30 days of post-launch hypercare & staff onboarding",
+    "30 days priority post-launch bug warranty",
   ],
   ctaText: "Explore Custom Pricing & Estimator",
   ctaHref: "/pricing",

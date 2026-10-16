@@ -96,13 +96,13 @@ export const FAQ_DATA: CategorizedFAQs[] = [
       {
         question: "How much does a custom project cost?",
         answer:
-          "Our packages start at $129 (₹12,250) for fast UI/UX designs and landing pages, $249 (₹23,700) for standard fullstack production web apps, and $449 (₹42,750) for Turbo fullstack & mobile applications. Check our /pricing page for detailed breakdowns.",
+          "Our packages start at $129 (₹12,250) for the Basic tier (3–5 days delivery, 7 days warranty), $249 (₹23,700) for the Standard tier (7–10 days delivery, 14 days warranty), and $449 (₹42,750) for the Turbo tier (2–3 weeks delivery, 30 days priority warranty). Check our /pricing page for full feature breakdowns and monthly retainer options.",
         category: "Pricing",
       },
       {
         question: "How long does a typical project take?",
         answer:
-          "Landing pages and MVPs typically take 3 to 7 business days. Fullstack web applications and custom dashboards take 2 to 4 weeks. Mobile applications generally take 4 to 8 weeks depending on scope.",
+          "Our Basic MVP sprint takes 3 to 5 days, our Standard production fullstack build takes 7 to 10 days, and our Turbo fullstack platform sprint takes 2 to 3 weeks with structured milestone check-ins.",
         category: "Timelines",
       },
       {

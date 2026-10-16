@@ -64,15 +64,16 @@ export default function Articles() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between border border-black/5"
+              className="group cursor-pointer bg-white rounded-3xl overflow-hidden border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[8px_8px_0px_0px_#000] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Image Thumbnail */}
-              <div className="aspect-[16/10] w-full bg-gray-900 relative overflow-hidden">
+              <div className="aspect-[16/10] w-full bg-gray-900 relative overflow-hidden border-b-2 border-black">
                 <Image
                   src={coverImage}
                   alt={`${post.frontmatter.title} - Article by ${post.authorDetails.name}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  loading="lazy"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

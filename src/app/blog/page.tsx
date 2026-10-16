@@ -7,6 +7,8 @@ import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 import { getAllPosts } from "@/lib/blog";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Blog & Technical Insights | Web Development & UI/UX | IntegersDev",
   description:

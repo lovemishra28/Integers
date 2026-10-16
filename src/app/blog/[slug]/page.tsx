@@ -20,6 +20,8 @@ interface BlogPostPageProps {
   }>;
 }
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const slugs = getAllBlogSlugs();
   return slugs.map((slug) => ({

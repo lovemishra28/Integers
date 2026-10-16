@@ -239,6 +239,8 @@ export default function IndustryPageTemplate({
                 src={industry.caseStudy.coverImage}
                 alt={industry.caseStudy.title}
                 fill
+                sizes="(max-width: 1024px) 100vw, 384px"
+                loading="lazy"
                 className="object-cover"
               />
             </div>

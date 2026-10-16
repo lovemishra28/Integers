@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import MidCTA from "@/components/MidCTA";
-import Expertise from "@/components/Expertise";
-import Testimonials from "@/components/Testimonials";
-import PricingTeaser from "@/components/PricingTeaser";
-import Articles from "@/components/Articles";
 import Footer from "@/components/Footer";
 import { getApprovedReviews } from "@/lib/reviews";
+
+const PricingTeaser = dynamic(() => import("@/components/PricingTeaser"));
+const Expertise = dynamic(() => import("@/components/Expertise"));
+const Articles = dynamic(() => import("@/components/Articles"));
+const Testimonials = dynamic(() => import("@/components/Testimonials"));
 
 export const revalidate = 60;
 

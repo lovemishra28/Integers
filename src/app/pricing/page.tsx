@@ -9,6 +9,8 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import { JsonLd, FAQPageSchema } from "@/components/schema";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Pricing & Plans | Web & App Development | IntegersDev",
   description:

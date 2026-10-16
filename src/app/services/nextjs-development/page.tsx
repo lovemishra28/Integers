@@ -21,6 +21,8 @@ import ServicePageTemplate, {
 } from "@/components/ServicePageTemplate";
 import { FAQItem } from "@/components/FAQAccordion";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Next.js Development Agency India | App Router & RSC | IntegersDev",
   description:
@@ -187,8 +189,9 @@ const techStackData: TechItem[] = [
 const pricingTeaserData: PricingTeaser = {
   title: "Specialized Next.js Engineering Sprints",
   badge: "Production Ready",
-  startingPrice: "₹22,000 / $229",
-  timeframe: "7 to 10 Business Days",
+  startingPrice: "$249 / ₹23,700",
+  timeframe: "7 – 10 Days",
+  warranty: "14 Days Post-Launch Warranty",
   description:
     "Upgrade your existing website to Next.js or build a brand-new high-converting web application engineered for maximum Core Web Vitals.",
   highlights: [
@@ -197,7 +200,7 @@ const pricingTeaserData: PricingTeaser = {
     "Google Lighthouse 95+ performance guarantee",
     "Automated dynamic SEO sitemaps & JSON-LD schema",
     "Vercel Edge CDN configuration & SSL setup",
-    "Complete repository ownership with GitHub transfer",
+    "14 days post-launch bug fix warranty",
   ],
   ctaText: "View Full Pricing & Retainer Options",
   ctaHref: "/pricing",
@@ -211,7 +214,7 @@ const caseStudyData: RelatedCaseStudy = {
   description:
     "A premier culinary destination platform requiring instant page transitions, responsive multi-course menus, ambiance gallery showcases, table reservation workflows, and sub-second speed.",
   impact:
-    "Scored 98 on Google PageSpeed Mobile, reduced Largest Contentful Paint (LCP) to 0.72s, and produced a 42% lift in online reservation inquiries.",
+    "Optimized for Google PageSpeed Mobile, reduced Largest Contentful Paint (LCP) to 0.72s, and launched streamlined online table reservations.",
   image: "/projects/vastavikta.png",
   stack: ["Next.js 16", "React Server Components", "Tailwind CSS", "Vercel Edge", "SEO Schema"],
   liveUrl: "https://vastavikta-five.vercel.app/",

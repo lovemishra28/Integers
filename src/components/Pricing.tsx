@@ -20,72 +20,9 @@ import { trackPricingTierSelection, trackWhatsAppClick } from '@/lib/analytics';
 type BillingCycle = 'project' | 'retainer';
 type Currency = 'USD' | 'INR';
 
-interface Plan {
-  id: string;
-  name: string;
-  tagline: string;
-  badge?: string;
-  popular?: boolean;
-  deliveryTime: string;
-  basePriceUSD: number;
-  basePriceINR: number;
-  features: string[];
-}
+import { PRICING_TIERS, PricingTier } from '@/data/pricing';
 
-
-const PLANS: Plan[] = [
-  {
-    id: "basic",
-    name: "Basic",
-    tagline: "Ideal for early MVPs, landing pages & design validation",
-    badge: "Fast MVP",
-    deliveryTime: "3 - 5 Days",
-    basePriceUSD: 129,
-    basePriceINR: 12250,
-    features: [
-      "Custom UI/UX Design Creation",
-      "2 Iterative Design Revisions",
-      "Clean, Modern & Accessible Layout",
-      "Figma Source File Handoff",
-      "Mobile Responsive Viewports"
-    ]
-  },
-  {
-    id: "standard",
-    name: "Standard",
-    tagline: "Complete production frontend & backend ready to convert",
-    badge: "Most Popular",
-    popular: true,
-    deliveryTime: "7 - 10 Days",
-    basePriceUSD: 249,
-    basePriceINR: 23700,
-    features: [
-      "Full Next.js / React Frontend Development",
-      "Complete Backend & Database Setup",
-      "Interactive Forms & Booking Integration",
-      "Fully Responsive Pixel-Perfect UI",
-      "Basic SEO & Social Meta Configuration",
-      "Production Deployment Setup"
-    ]
-  },
-  {
-    id: "turbo",
-    name: "Turbo",
-    tagline: "End-to-end fullstack platform built for serious scale & traffic",
-    badge: "Scale & App",
-    deliveryTime: "2 - 3 Weeks",
-    basePriceUSD: 449,
-    basePriceINR: 42750,
-    features: [
-      "Full Web & Mobile App Dev (PWA/Hybrid)",
-      "Advanced Fullstack & Cloud Architecture",
-      "Scalable & High-Volume Production Ready",
-      "Custom Business Automation Features",
-      "Custom Admin / CMS Dashboard",
-      "Priority Sprint Delivery & Monitoring"
-    ]
-  }
-];
+const PLANS = PRICING_TIERS;
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>('project');
@@ -94,7 +31,7 @@ export default function Pricing() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Calculate plan price based on billing cycle
-  const calculatePlanPrice = (plan: Plan) => {
+  const calculatePlanPrice = (plan: PricingTier) => {
     const isRetainer = billingCycle === 'retainer';
     const discount = isRetainer ? 0.8 : 1;
 
@@ -367,15 +304,27 @@ export default function Pricing() {
                   {isSelected ? "★ ACTIVE CHOICE" : plan.badge}
                 </span>
 
-                {/* Delivery Timeline Pill */}
-                <span
-                  className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md flex items-center gap-1 ${
-                    isSelected ? 'bg-black/10 text-black' : 'bg-gray-100 text-gray-600'
-                  }`}
-                >
-                  <FaClock className="w-2.5 h-2.5" />
-                  {plan.deliveryTime}
-                </span>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {/* Delivery Timeline Pill */}
+                  <span
+                    className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md flex items-center gap-1 ${
+                      isSelected ? 'bg-black/10 text-black' : 'bg-gray-100 text-gray-600'
+                    }`}
+                  >
+                    <FaClock className="w-2.5 h-2.5" />
+                    {plan.deliveryTime}
+                  </span>
+
+                  {/* Warranty Pill */}
+                  <span
+                    className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md flex items-center gap-1 ${
+                      isSelected ? 'bg-black/10 text-black' : 'bg-gray-100 text-gray-600'
+                    }`}
+                  >
+                    <FaShieldAlt className="w-2.5 h-2.5" />
+                    {plan.warranty}
+                  </span>
+                </div>
               </div>
 
               <div>
@@ -606,7 +555,7 @@ export default function Pricing() {
                 {selectedPlan.name} Plan Scope
               </h3>
               <p className="text-xs text-gray-500 font-semibold mb-6">
-                Delivery Timeline: <strong className="text-black">{selectedPlan.deliveryTime}</strong> • Model: <strong className="text-black">{billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-time Project'}</strong>
+                Delivery: <strong className="text-black">{selectedPlan.deliveryTime}</strong> • Warranty: <strong className="text-black">{selectedPlan.warranty}</strong> • Model: <strong className="text-black">{billingCycle === 'retainer' ? 'Monthly Retainer' : 'One-time Project'}</strong>
               </p>
 
               {/* Price Breakdown Box */}
