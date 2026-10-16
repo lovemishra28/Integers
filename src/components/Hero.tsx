@@ -137,6 +137,7 @@ export default function Hero() {
               src={teamHero} 
               alt="IntegersDev team of web developers and designers in Gwalior - Vinay, Aryan, Kuldeep, and Love" 
               fill 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               className="object-cover object-center" 
               priority
             />

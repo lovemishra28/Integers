@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { cache } from "react";
 import matter from "gray-matter";
 import { siteConfig } from "@/config/site";
 
@@ -103,8 +104,9 @@ export function getAuthorDetails(authorName: string): AuthorDetails {
 
 /**
  * Fetches all blog posts parsed from MDX files, sorted by date descending.
+ * Memoized with React cache for per-request deduplication.
  */
-export function getAllPosts(): BlogPostItem[] {
+export const getAllPosts = cache((): BlogPostItem[] => {
   if (!fs.existsSync(POSTS_DIRECTORY)) {
     return [];
   }
@@ -146,12 +148,13 @@ export function getAllPosts(): BlogPostItem[] {
   return posts.sort(
     (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
   );
-}
+});
 
 /**
  * Fetches a single blog post by slug.
+ * Memoized with React cache.
  */
-export function getPostBySlug(slug: string): BlogPostItem | null {
+export const getPostBySlug = cache((slug: string): BlogPostItem | null => {
   const mdxPath = path.join(POSTS_DIRECTORY, `${slug}.mdx`);
   const mdPath = path.join(POSTS_DIRECTORY, `${slug}.md`);
 
@@ -184,12 +187,13 @@ export function getPostBySlug(slug: string): BlogPostItem | null {
     headings: extractHeadings(content),
     authorDetails: getAuthorDetails(frontmatter.author),
   };
-}
+});
 
 /**
  * Finds related posts sharing tags with the current post.
+ * Memoized with React cache.
  */
-export function getRelatedPosts(currentSlug: string, tags: string[], limit: number = 3): BlogPostItem[] {
+export const getRelatedPosts = cache((currentSlug: string, tags: string[], limit: number = 3): BlogPostItem[] => {
   const all = getAllPosts();
   const currentTagsSet = new Set(tags.map((t) => t.toLowerCase()));
 
@@ -215,11 +219,12 @@ export function getRelatedPosts(currentSlug: string, tags: string[], limit: numb
   });
 
   return scored.slice(0, limit).map((s) => s.post);
-}
+});
 
 /**
  * Returns all blog slugs for generateStaticParams.
+ * Memoized with React cache.
  */
-export function getAllBlogSlugs(): string[] {
+export const getAllBlogSlugs = cache((): string[] => {
   return getAllPosts().map((p) => p.slug);
-}
+});

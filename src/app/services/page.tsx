@@ -7,6 +7,8 @@ import SiteLayout from "@/components/SiteLayout";
 import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Web, Mobile & UI/UX Development Services | IntegersDev",
   description:

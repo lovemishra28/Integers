@@ -90,20 +90,20 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
         {
           title: "Unreadable PDF Menus on Smartphones",
           description:
-            "Mobile guests hate downloading 10MB PDF menus and pinching to zoom. Over 65% of mobile users abandon a restaurant site if the menu is a static PDF.",
-          stat: "65% Mobile Drop-Off",
+            "Mobile guests hate downloading heavy PDF menus and pinching to zoom. Many mobile users abandon restaurant sites when forced to navigate non-responsive menus.",
+          stat: "High Mobile Bounce Rate",
         },
         {
           title: "Friction-Filled Manual Phone Reservations",
           description:
             "Requiring guests to call during noisy evening shifts leads to unanswered phones, misplaced bookings, and frustrated diners walking to competitors.",
-          stat: "40% Lost Walk-Ins",
+          stat: "Lost Table Bookings",
         },
         {
           title: "Zero Google Local Pack Ranking",
           description:
             "Without restaurant schema markup, geotagged menus, and fast Core Web Vitals, your establishment gets buried beneath national food review portals.",
-          stat: "#1 Cause of Low Traffic",
+          stat: "Leading Barrier to Traffic",
         },
       ],
     },
@@ -166,9 +166,9 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       slug: "vastavikta",
       liveUrl: "https://vastavikta-five.vercel.app/",
       metrics: [
-        { metric: "+68%", label: "Direct Reservations" },
+        { metric: "Direct", label: "Online Reservations" },
         { metric: "< 0.6s", label: "Initial Page Paint" },
-        { metric: "98/100", label: "Lighthouse Performance" },
+        { metric: "90+", label: "Lighthouse Performance" },
         { metric: "0%", label: "Aggregator Commission" },
       ],
     },
@@ -310,10 +310,10 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       slug: "divyanshi-travels",
       liveUrl: "https://www.divyanshitravels.in/",
       metrics: [
-        { metric: "+65%", label: "Faster Inquiries" },
+        { metric: "Instant", label: "WhatsApp Inquiries" },
         { metric: "50+", label: "Monthly Booking Leads" },
         { metric: "< 0.8s", label: "Initial Paint Speed" },
-        { metric: "#1", label: "Local Search Ranking" },
+        { metric: "Page 1", label: "Local Search Placement" },
       ],
     },
     faqs: [
@@ -449,13 +449,13 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       client: "Multi-Speciality Clinical Network",
       category: "Healthcare & Clinical Systems",
       summary:
-        "IntegersDev engineered an ultra-fast, WCAG-accessible patient portal featuring automated doctor slot booking, test package directories, and Google Local Pack optimization that reduced reception phone strain by 45%.",
+        "IntegersDev engineered an ultra-fast, WCAG-accessible patient portal featuring automated doctor slot booking, test package directories, and Google Local Pack optimization that streamlined front desk operations.",
       coverImage: "/services/web-dev-showcase.png",
       metrics: [
-        { metric: "-45%", label: "Reception Phone Strain" },
+        { metric: "Automated", label: "Patient Appointments" },
         { metric: "120+", label: "Monthly Online Bookings" },
-        { metric: "99/100", label: "Accessibility Score" },
-        { metric: "#1", label: "Local 3-Pack Ranking" },
+        { metric: "WCAG AA", label: "Accessibility Standards" },
+        { metric: "Top 3", label: "Local Maps Placement" },
       ],
     },
     faqs: [

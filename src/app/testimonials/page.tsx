@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FaStar, FaQuoteLeft, FaCheckCircle, FaExternalLinkAlt, FaAward, FaBolt, FaUsers, FaArrowRight } from "react-icons/fa";
+import { FaStar, FaQuoteLeft, FaCheckCircle, FaExternalLinkAlt, FaAward, FaBolt, FaUsers, FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
 import SiteLayout from "@/components/SiteLayout";
 import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
@@ -82,9 +82,9 @@ export default async function TestimonialsPage() {
                 <FaStar key={i} className="w-4 h-4" />
               ))}
             </div>
-            <div className="text-3xl font-black text-black">5.0 / 5.0</div>
+            <div className="text-3xl font-black text-black">Verified</div>
             <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">
-              Average Client Rating
+              Direct Client Reviews
             </div>
           </div>
 
@@ -94,7 +94,7 @@ export default async function TestimonialsPage() {
             </div>
             <div className="text-3xl font-black text-black">100%</div>
             <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">
-              Client Satisfaction
+              Code Ownership Transferred
             </div>
           </div>
 
@@ -145,6 +145,20 @@ export default async function TestimonialsPage() {
               <div>
                 <FaQuoteLeft className="w-8 h-8 text-black/15 absolute top-6 right-6 pointer-events-none group-hover:text-[#d4ff3f] transition-colors" />
 
+                {/* Trust Verification Pill */}
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-black bg-[#d4ff3f] border border-black px-2.5 py-0.5 rounded-full shadow-[1px_1px_0px_0px_#000]">
+                    <FaCheckCircle className="w-2.5 h-2.5 text-black" />
+                    {review.verifiedBadge || "Verified Client"}
+                  </span>
+                  {review.location && (
+                    <span className="text-[10px] text-gray-500 font-bold flex items-center gap-1">
+                      <FaMapMarkerAlt className="w-2.5 h-2.5 text-gray-400" />
+                      {review.location}
+                    </span>
+                  )}
+                </div>
+
                 {/* Rating */}
                 <div className="flex text-yellow-400 mb-4 gap-1">
                   {[...Array(Math.max(1, Math.min(5, review.rating || 5)))].map((_, i) => (
@@ -157,18 +171,29 @@ export default async function TestimonialsPage() {
                   &ldquo;{review.text}&rdquo;
                 </p>
 
-                {/* Case Study Link if applicable */}
-                {review.projectSlug && (
-                  <div className="mb-6">
+                {/* Credibility Action Links: Direct Live Site and/or Case Study */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {review.liveUrl && (
+                    <a
+                      href={review.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-[#d4ff3f] border border-black px-3 py-1.5 rounded-full hover:bg-black hover:text-[#d4ff3f] transition-colors shadow-[1px_1px_0px_0px_#000]"
+                    >
+                      <span>Visit Live Site</span>
+                      <FaExternalLinkAlt className="w-2.5 h-2.5" />
+                    </a>
+                  )}
+                  {review.projectSlug && (
                     <Link
                       href={`/portfolio/${review.projectSlug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-[#d4ff3f] border border-black px-3 py-1.5 rounded-full hover:bg-black hover:text-[#d4ff3f] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-white border border-black px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-colors shadow-[1px_1px_0px_0px_#000]"
                     >
-                      <span>Explore Case Study: {review.projectName || "Live Work"}</span>
-                      <FaExternalLinkAlt className="w-2.5 h-2.5" />
+                      <span>Case Study: {review.projectName || "Details"}</span>
+                      <FaArrowRight className="w-2.5 h-2.5 -rotate-45" />
                     </Link>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               {/* Author Meta */}

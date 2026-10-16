@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidateTag, revalidatePath } from "next/cache";
 import connectToDatabase from "@/lib/mongodb";
 import Review from "@/models/Review";
 
@@ -28,6 +29,15 @@ export async function POST(request: Request) {
 
     await newReview.save();
 
+    // Invalidate cached reviews across the app
+    try {
+      revalidateTag("reviews", "max");
+      revalidatePath("/");
+      revalidatePath("/testimonials");
+    } catch (e) {
+      // Non-blocking in background/offline runs
+    }
+
     return NextResponse.json({ success: true, review: newReview }, { status: 201 });
   } catch (error: any) {
     console.error("Failed to save review:", error);
@@ -45,7 +55,15 @@ export async function GET() {
       .sort({ createdAt: -1 })
       .limit(8);
 
-    return NextResponse.json({ success: true, reviews }, { status: 200 });
+    return NextResponse.json(
+      { success: true, reviews },
+      {
+        status: 200,
+        headers: {
+          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+        },
+      }
+    );
   } catch (error) {
     console.error("Failed to fetch reviews:", error);
     return NextResponse.json({ error: "Failed to fetch reviews" }, { status: 500 });

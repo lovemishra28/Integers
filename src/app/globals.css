@@ -5,9 +5,18 @@
   --color-brand-dark: #141414;
   --color-brand-light: #f6f8f1;
   --color-brand-gray: #f0f0f0;
+  --color-brand-card: #ffffff;
+  --color-brand-border: #000000;
+  --color-brand-accent: #62d124;
   
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-brutal-sm: 2px 2px 0px 0px #000;
+  --shadow-brutal: 4px 4px 0px 0px #000;
+  --shadow-brutal-lg: 6px 6px 0px 0px #000;
+  --shadow-brutal-xl: 8px 8px 0px 0px #000;
+  --shadow-brutal-lime: 4px 4px 0px 0px #d4ff3f;
 }
 
 html {
@@ -22,11 +31,43 @@ html {
     color: #141414;
     max-width: 100%;
     overflow-x: clip;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body::selection {
     background-color: #d4ff3f;
     color: #141414;
+  }
+
+  /* Accessible focus ring constraint */
+  :focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+  }
+
+  /* Touch target optimization to prevent mobile input zoom and improve response */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Off-screen rendering constraint: skips rendering off-screen sections until near viewport */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* Reduced motion constraint for accessibility and low-powered devices */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

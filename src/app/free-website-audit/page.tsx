@@ -58,9 +58,9 @@ export default function FreeWebsiteAuditPage() {
                 <FaStar key={i} className="w-4 h-4" />
               ))}
             </div>
-            <div className="text-3xl font-black text-black">5.0 / 5.0</div>
+            <div className="text-3xl font-black text-black">Verified</div>
             <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">
-              Average Client Rating
+              Client Feedback
             </div>
           </div>
 
@@ -230,13 +230,13 @@ export default function FreeWebsiteAuditPage() {
                 <span className="text-xs font-black uppercase tracking-wider px-3 py-1 bg-blue-100 border border-black rounded-full">
                   Case Study: Divyanshi Travels
                 </span>
-                <span className="text-xs font-bold text-emerald-600">65% Mobile Bookings</span>
+                <span className="text-xs font-bold text-emerald-600">Direct Mobile Bookings</span>
               </div>
               <h3 className="text-xl font-black text-black mb-3">
                 Eliminating Mobile Checkout Friction
               </h3>
               <p className="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed mb-6">
-                Our audit pinpointed high drop-offs on smartphone tour booking forms due to clumsy dropdowns and slow API calls. A streamlined PWA reservation flow turned smartphones into their #1 booking channel.
+                Our audit pinpointed high drop-offs on smartphone tour booking forms due to clumsy dropdowns and slow API calls. A streamlined PWA reservation flow turned smartphones into their primary booking channel.
               </p>
             </div>
 

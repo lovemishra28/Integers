@@ -155,7 +155,7 @@ export default function Services() {
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover object-center group-hover:scale-108 transition-transform duration-500 z-0"
-                priority={index < 2}
+                loading="lazy"
               />
 
               {/* Smooth Gradient Overlay for Contrast */}
@@ -261,7 +261,6 @@ export default function Services() {
                     alt={`${selectedService.title} - IntegersDev digital solutions in Gwalior`}
                     fill
                     className="object-cover"
-                    priority
                   />
                 </div>
 

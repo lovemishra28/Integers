@@ -21,6 +21,8 @@ import ServicePageTemplate, {
 } from "@/components/ServicePageTemplate";
 import { FAQItem } from "@/components/FAQAccordion";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Web Development Company in Gwalior | Next.js Websites | IntegersDev",
   description:
@@ -186,8 +188,9 @@ const techStackData: TechItem[] = [
 const pricingTeaserData: PricingTeaser = {
   title: "Predictable Investment for Growing Businesses",
   badge: "Transparent Package",
-  startingPrice: "₹23,700 / $249",
-  timeframe: "7 to 10 Business Days",
+  startingPrice: "$249 / ₹23,700",
+  timeframe: "7 – 10 Days",
+  warranty: "14 Days Post-Launch Warranty",
   description:
     "Everything you need to launch a competitive, high-converting digital storefront in Gwalior with zero hidden agency costs.",
   highlights: [
@@ -196,7 +199,7 @@ const pricingTeaserData: PricingTeaser = {
     "Local SEO schema markup & Google indexing",
     "Inquiry capture form connected to MongoDB / email",
     "100% source code ownership & repository transfer",
-    "30 days of post-launch hypercare maintenance",
+    "14 days post-launch bug fix warranty",
   ],
   ctaText: "Explore Full Pricing & Retainer Plans",
   ctaHref: "/pricing",
@@ -210,7 +213,7 @@ const caseStudyData: RelatedCaseStudy = {
   description:
     "A premier culinary destination platform requiring responsive multi-course menus, ambiance gallery showcases, table reservation workflows, and sub-second speed to attract high-value guests in Central India.",
   impact:
-    "Achieved sub-0.8s load times, 42% uplift in reservation leads, and 100% Core Web Vitals compliance on mobile 4G/5G networks.",
+    "Achieved sub-0.8s load times, streamlined online table reservations, and verified green Core Web Vitals on mobile 4G/5G networks.",
   image: "/projects/vastavikta.png",
   stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel", "Mobile-First UX"],
   liveUrl: "https://vastavikta-five.vercel.app/",

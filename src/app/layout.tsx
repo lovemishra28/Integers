@@ -4,8 +4,10 @@ import "./globals.css";
 
 const poppins = Poppins({ 
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "600", "700", "900"],
   variable: '--font-poppins',
+  display: 'swap',
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -74,13 +76,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <OrganizationSchema />
         <LocalBusinessSchema />
       </head>
       {/* Apply the Poppins font and font-sans so Tailwind uses it */}
-      <body className={`${poppins.variable} font-sans`}>
+      <body className={`${poppins.variable} font-sans`} suppressHydrationWarning>
         <GoogleAnalytics />
         <AnalyticsListener />
         {children}

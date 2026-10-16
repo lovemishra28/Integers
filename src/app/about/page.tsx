@@ -23,6 +23,8 @@ import SiteLayout from "@/components/SiteLayout";
 import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "About Us | Web Development Studio in Gwalior | IntegersDev",
   description:

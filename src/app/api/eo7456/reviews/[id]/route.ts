@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidateTag, revalidatePath } from "next/cache";
 import connectToDatabase from "@/lib/mongodb";
 import Review from "@/models/Review";
 import { checkRequestAuth, isAuthenticated } from "@/lib/adminAuth";
@@ -40,6 +41,14 @@ export async function PATCH(request: Request, context: RouteContext) {
       return NextResponse.json({ error: "Review not found" }, { status: 404 });
     }
 
+    try {
+      revalidateTag("reviews", "max");
+      revalidatePath("/");
+      revalidatePath("/testimonials");
+    } catch (e) {
+      // Non-blocking in background/offline runs
+    }
+
     return NextResponse.json({ success: true, review: updated });
   } catch (error: any) {
     console.error("Failed to update review:", error);
@@ -67,6 +76,14 @@ export async function DELETE(request: Request, context: RouteContext) {
 
     if (!deleted) {
       return NextResponse.json({ error: "Review not found" }, { status: 404 });
+    }
+
+    try {
+      revalidateTag("reviews", "max");
+      revalidatePath("/");
+      revalidatePath("/testimonials");
+    } catch (e) {
+      // Non-blocking in background/offline runs
     }
 
     return NextResponse.json({ success: true, message: "Deleted successfully" });

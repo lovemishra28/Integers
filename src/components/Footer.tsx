@@ -96,8 +96,9 @@ export default function Footer() {
               src={teamMember}
               alt="IntegersDev web developers and engineering collective in Gwalior, India"
               fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              loading="lazy"
               className="object-cover object-top lg:object-[center_20%]"
-              priority
             />
             {/* Smooth gradient transition from the dark left side to the image on the right */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/60 to-transparent"></div>

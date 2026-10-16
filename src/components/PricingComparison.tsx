@@ -122,7 +122,7 @@ const COMPARISON_DATA: ComparisonCategory[] = [
         basic: "Optimized",
         standard: "Guaranteed 90+",
         turbo: "Guaranteed 95+",
-        enterprise: "98+ Core Web Vitals SLA",
+        enterprise: "Core Web Vitals SLA Guarantee",
       },
       {
         name: "Dynamic Lead Capture & Booking Forms",
@@ -215,6 +215,13 @@ const COMPARISON_DATA: ComparisonCategory[] = [
         standard: true,
         turbo: true,
         enterprise: true,
+      },
+      {
+        name: "Delivery Timeline",
+        basic: "3 – 5 Days",
+        standard: "7 – 10 Days",
+        turbo: "2 – 3 Weeks",
+        enterprise: "Milestone Sprints",
       },
       {
         name: "Post-Launch Warranty Bug Fixes",

@@ -83,7 +83,6 @@ export default function Projects() {
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-500 z-0"
-                priority
               />
 
               {/* Crisp Contrast Gradient (Clean & Transparent - No Blur) */}

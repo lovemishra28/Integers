@@ -145,9 +145,9 @@ export const projects: CaseStudyProject[] = [
 
     results: [
       {
-        metric: "+42%",
-        label: "Direct Bookings",
-        detail: "Surge in direct online table inquiries within 30 days of production launch.",
+        metric: "Direct",
+        label: "Table Reservations",
+        detail: "Streamlined direct online table booking flow eliminating aggregator dependency.",
       },
       {
         metric: "< 0.8s",
@@ -155,9 +155,9 @@ export const projects: CaseStudyProject[] = [
         detail: "Lightning-fast first paint score verified across mobile 4G/5G connections.",
       },
       {
-        metric: "98/100",
+        metric: "90+",
         label: "Google PageSpeed",
-        detail: "Near-perfect Lighthouse audit score for mobile performance and accessibility.",
+        detail: "Consistently scored in top Lighthouse audit tier for mobile performance and accessibility.",
       },
       {
         metric: "0%",
@@ -254,9 +254,9 @@ export const projects: CaseStudyProject[] = [
 
     results: [
       {
-        metric: "+65%",
-        label: "Faster Inquiries",
-        detail: "Reduced lead qualification time through structured WhatsApp message passing.",
+        metric: "Instant",
+        label: "WhatsApp Inquiries",
+        detail: "Instant lead qualification and direct traveler routing through pre-filled WhatsApp messaging.",
       },
       {
         metric: "50+",
@@ -269,9 +269,9 @@ export const projects: CaseStudyProject[] = [
         detail: "Ultra-fast rendering on regional mobile networks for travelers on the go.",
       },
       {
-        metric: "#1",
-        label: "Local Search Ranking",
-        detail: "Top Google search rankings for regional caravan rental queries in Central India.",
+        metric: "Page 1",
+        label: "Local Search Placement",
+        detail: "High-visibility Google search placements for regional caravan rental queries in Central India.",
       },
     ],
 

@@ -6,57 +6,7 @@ import { FaCheck, FaArrowRight, FaClock, FaStar, FaBolt, FaShieldAlt } from "rea
 import { motion } from "framer-motion";
 import { trackPricingTierSelection } from "@/lib/analytics";
 
-const TEASER_PLANS = [
-  {
-    id: "basic",
-    name: "Basic",
-    badge: "Fast MVP",
-    tagline: "Ideal for early MVPs, landing pages & design validation",
-    priceUSD: "$129",
-    priceINR: "₹12,250",
-    delivery: "3 – 5 Days",
-    popular: false,
-    features: [
-      "Custom Figma UI/UX Design Creation",
-      "2 Iterative Design Revisions",
-      "Mobile Responsive Viewports",
-      "Figma Source File Handoff",
-    ],
-  },
-  {
-    id: "standard",
-    name: "Standard",
-    badge: "★ Most Popular",
-    tagline: "Complete production frontend & backend ready to convert",
-    priceUSD: "$249",
-    priceINR: "₹23,700",
-    delivery: "7 – 10 Days",
-    popular: true,
-    features: [
-      "Full Next.js / React Frontend Development",
-      "Complete Backend & Database Integration",
-      "Interactive Lead Forms & Validation",
-      "90+ Lighthouse Performance & SEO",
-      "Production Cloud Deployment Setup",
-    ],
-  },
-  {
-    id: "turbo",
-    name: "Turbo",
-    badge: "Scale & App",
-    tagline: "End-to-end fullstack platform built for serious scale & traffic",
-    priceUSD: "$449",
-    priceINR: "₹42,750",
-    delivery: "2 – 3 Weeks",
-    popular: false,
-    features: [
-      "Full Web & Mobile App Dev (PWA/Hybrid)",
-      "Advanced Cloud DB & API Integrations",
-      "Custom Admin / CMS Dashboard",
-      "Priority Sprint Delivery & 30-Day Support",
-    ],
-  },
-];
+import { PRICING_TIERS } from "@/data/pricing";
 
 export default function PricingTeaser() {
   return (
@@ -110,7 +60,7 @@ export default function PricingTeaser() {
 
       {/* 3 Compact Preview Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-        {TEASER_PLANS.map((plan, index) => (
+        {PRICING_TIERS.map((plan, index) => (
           <motion.div
             key={plan.id}
             initial={{ opacity: 0, y: 25 }}
@@ -142,7 +92,7 @@ export default function PricingTeaser() {
                   }`}
                 >
                   <FaClock className="w-2.5 h-2.5" />
-                  {plan.delivery}
+                  {plan.deliveryTime}
                 </span>
               </div>
 
@@ -165,13 +115,17 @@ export default function PricingTeaser() {
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl sm:text-5xl font-black font-sans text-black tracking-tight">
-                    {plan.priceUSD}
+                    {plan.priceDisplayUSD}
                   </span>
                   <span className="text-xs font-bold text-black/70">
-                    / {plan.priceINR}
+                    / {plan.priceDisplayINR}
                   </span>
                 </div>
-                <span className="text-[10px] font-semibold text-black/60 block mt-0.5">
+                <div className="flex items-center gap-1 text-[11px] font-bold text-gray-700 mt-2">
+                  <FaShieldAlt className="w-3 h-3 text-black" />
+                  <span>{plan.warranty}</span>
+                </div>
+                <span className="text-[10px] font-semibold text-black/60 block mt-1">
                   One-time project or monthly retainer (-20%)
                 </span>
               </div>
@@ -201,9 +155,9 @@ export default function PricingTeaser() {
             {/* Card Action Link to /pricing */}
             <Link
               href="/pricing"
-              onClick={() => trackPricingTierSelection(plan.name, plan.priceUSD, "USD")}
+              onClick={() => trackPricingTierSelection(plan.name, plan.priceDisplayUSD, "USD")}
               data-track-plan={plan.name}
-              data-track-price={plan.priceUSD}
+              data-track-price={plan.priceDisplayUSD}
               data-track-currency="USD"
               className={`w-full py-3 px-4 rounded-xl font-black text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-all border-2 border-black ${
                 plan.popular

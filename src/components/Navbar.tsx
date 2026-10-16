@@ -80,6 +80,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <Link
             href="/contact"
+            suppressHydrationWarning
             className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-full font-bold text-xs bg-[#d4ff3f] text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform"
           >
             Talk
@@ -88,6 +89,7 @@ export default function Navbar() {
 
           <button
             type="button"
+            suppressHydrationWarning
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="w-10 h-10 rounded-full border-2 border-black bg-white flex items-center justify-center text-black font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform cursor-pointer"
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
