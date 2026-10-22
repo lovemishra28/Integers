@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 1. Core Primary Static Pages
   const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}`, e
+      url: `${baseUrl}`,
       lastModified: lastDesignUpdate,
       changeFrequency: "daily",
       priority: 1.0,
