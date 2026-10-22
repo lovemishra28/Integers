@@ -6,7 +6,7 @@ import { INDUSTRY_LANDINGS } from "@/data/industryLandings";
 import { getAllBlogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url || "https://integersdev.in";
+  const baseUrl = siteConfig.url || "https://www.integersdev.in";
   // The launch / last full redesign update date for static and landing pages
   const lastDesignUpdate = new Date("2026-10-14T00:00:00.000Z");
 

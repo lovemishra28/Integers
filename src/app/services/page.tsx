@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     "Explore our complete service offerings in Gwalior: Next.js web development, bespoke UI/UX architecture, mobile apps & custom software solutions.",
   alternates: {
-    canonical: "https://integersdev.in/services",
+    canonical: "https://www.integersdev.in/services",
   },
   openGraph: {
     title: "Web, Mobile & UI/UX Development Services | IntegersDev",
     description:
       "Explore high-performance digital services built by IntegersDev in Gwalior, India.",
-    url: "https://integersdev.in/services",
+    url: "https://www.integersdev.in/services",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Digital Services" }],
   },

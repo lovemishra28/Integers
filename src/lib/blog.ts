@@ -125,9 +125,23 @@ export const getAllPosts = cache((): BlogPostItem[] => {
 
     const { data, content } = matter(fileContents);
 
+    const rawDesc = (data.description || "").trim();
+    const fallbackDesc = content
+      .replace(/^#+\s+.*$/gm, "")
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/[*_`]/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 155);
+
+    const description =
+      rawDesc ||
+      fallbackDesc ||
+      "Read in-depth engineering guides, technical breakdowns, and web development insights from IntegersDev in Gwalior.";
+
     const frontmatter: BlogPostFrontmatter = {
       title: data.title || "Untitled Article",
-      description: data.description || "",
+      description,
       date: data.date || "2026-10-01",
       author: data.author || "IntegersDev Team",
       tags: Array.isArray(data.tags) ? data.tags : [],
@@ -170,9 +184,23 @@ export const getPostBySlug = cache((slug: string): BlogPostItem | null => {
   const fileContents = fs.readFileSync(targetPath, "utf8");
   const { data, content } = matter(fileContents);
 
+  const rawDesc = (data.description || "").trim();
+  const fallbackDesc = content
+    .replace(/^#+\s+.*$/gm, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 155);
+
+  const description =
+    rawDesc ||
+    fallbackDesc ||
+    "Read in-depth engineering guides, technical breakdowns, and web development insights from IntegersDev in Gwalior.";
+
   const frontmatter: BlogPostFrontmatter = {
     title: data.title || "Untitled Article",
-    description: data.description || "",
+    description,
     date: data.date || "2026-10-01",
     author: data.author || "IntegersDev Team",
     tags: Array.isArray(data.tags) ? data.tags : [],

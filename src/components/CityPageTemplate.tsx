@@ -38,7 +38,7 @@ export default function CityPageTemplate({ city }: CityPageTemplateProps) {
     <SiteLayout>
       {/* City-Specific Structured Data */}
       <LocalBusinessSchema
-        id={`https://integersdev.in/${city.slug}#localbusiness`}
+        id={`https://www.integersdev.in/${city.slug}#localbusiness`}
         cityName={city.cityName}
         customDescription={city.meta.description}
       />

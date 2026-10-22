@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Read the IntegersDev Privacy Policy. Learn how we collect, process, and protect client data, contact form inquiries, and project specifications in compliance with India's DPDPA 2023 and IT Act 2000.",
   alternates: {
-    canonical: "https://integersdev.in/privacy-policy",
+    canonical: "https://www.integersdev.in/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | IntegersDev",
     description:
       "Data protection, contact form disclosure, and user privacy standards for IntegersDev in Gwalior, India.",
-    url: "https://integersdev.in/privacy-policy",
+    url: "https://www.integersdev.in/privacy-policy",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Privacy Policy" }],
   },
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
               IntegersDev (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) is a boutique digital engineering and design agency headquartered in Gwalior, Madhya Pradesh, India. We are deeply committed to respecting and protecting the privacy of our website visitors, prospective clients, founders, and business partners.
             </p>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-              This Privacy Policy details how we collect, store, process, transfer, and safeguard personal information collected through our official website (<a href="https://integersdev.in" className="text-black font-bold underline">integersdev.in</a>), project consultation channels, and contact forms. This policy adheres strictly to:
+              This Privacy Policy details how we collect, store, process, transfer, and safeguard personal information collected through our official website (<a href="https://www.integersdev.in" className="text-black font-bold underline">integersdev.in</a>), project consultation channels, and contact forms. This policy adheres strictly to:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base text-gray-700 font-medium">
               <li><strong>The Digital Personal Data Protection Act (DPDPA), 2023</strong> (India).</li>

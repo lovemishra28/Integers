@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with IntegersDev in Gwalior, Madhya Pradesh. Contact Vinay, Aryan, Kuldeep & Love for custom web development, UI/UX design, or mobile apps. Call +91 9981097501.",
   alternates: {
-    canonical: "https://integersdev.in/contact",
+    canonical: "https://www.integersdev.in/contact",
   },
   openGraph: {
     title: "Contact Us | IntegersDev - Web Development Studio in Gwalior",
     description:
       "Start your next web or mobile project with IntegersDev in Gwalior. Free initial consultation and fast proposals.",
-    url: "https://integersdev.in/contact",
+    url: "https://www.integersdev.in/contact",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact IntegersDev" }],
   },

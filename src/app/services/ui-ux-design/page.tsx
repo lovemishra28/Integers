@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   description:
     "Top UI UX design agency India. IntegersDev crafts intuitive web & mobile interfaces, clickable Figma prototypes & scalable design systems that convert visitors into revenue.",
   alternates: {
-    canonical: "https://integersdev.in/services/ui-ux-design",
+    canonical: "https://www.integersdev.in/services/ui-ux-design",
   },
   openGraph: {
     title: "UI UX Design Agency India | Figma & Prototypes | IntegersDev",
     description:
       "Premier UI UX design agency in India. High-converting user flows, interactive prototypes, and modern design systems engineered by IntegersDev.",
-    url: "https://integersdev.in/services/ui-ux-design",
+    url: "https://www.integersdev.in/services/ui-ux-design",
     siteName: "IntegersDev",
     images: [
       {

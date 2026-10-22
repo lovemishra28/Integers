@@ -14,15 +14,24 @@ export const metadata: Metadata = {
   description:
     "Engineering guides, Next.js tutorials, local business SEO benchmarks for Gwalior, and modern UI/UX design insights from the IntegersDev engineering collective.",
   alternates: {
-    canonical: "https://integersdev.in/blog",
+    canonical: "https://www.integersdev.in/blog",
   },
   openGraph: {
     title: "Blog & Technical Insights | IntegersDev",
     description:
       "Engineering insights, Next.js guides, and UI/UX best practices from IntegersDev in Gwalior.",
-    url: "https://integersdev.in/blog",
+    url: "https://www.integersdev.in/blog",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & Technical Insights | Web Development & UI/UX | IntegersDev",
+    description:
+      "Engineering guides, Next.js tutorials, local business SEO benchmarks for Gwalior, and modern UI/UX design insights from the IntegersDev engineering collective.",
+    site: "@integers_dev",
+    creator: "@integers_dev",
+    images: ["/og-image.png"],
   },
 };
 

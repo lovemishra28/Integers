@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   description:
     "Top Next.js development agency India. IntegersDev builds blazing-fast React Server Component web platforms with Turbopack & Edge caching. Get a free proposal!",
   alternates: {
-    canonical: "https://integersdev.in/services/nextjs-development",
+    canonical: "https://www.integersdev.in/services/nextjs-development",
   },
   openGraph: {
     title: "Next.js Development Agency India | App Router & RSC | IntegersDev",
     description:
       "Premier Next.js development agency in India. Specialized React Server Components, Server Actions & Edge acceleration by IntegersDev.",
-    url: "https://integersdev.in/services/nextjs-development",
+    url: "https://www.integersdev.in/services/nextjs-development",
     siteName: "IntegersDev",
     images: [
       {

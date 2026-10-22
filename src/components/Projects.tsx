@@ -50,11 +50,11 @@ export default function Projects() {
           {/* Green blob behind header */}
           <div className="absolute -right-4 -top-4 w-12 h-12 bg-[#d4ff3f] rounded-full opacity-80 z-0 blur-sm pointer-events-none"></div>
           <span className="text-sm font-bold text-[#62d124] block mb-2 text-center relative z-10">
-            Work Projects
+            Featured Projects
           </span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold font-sans text-black text-center max-w-2xl relative z-10">
-          We Are Creating Something Different Layout
+          Digital Products &amp; Websites Engineered to Perform
         </h2>
       </motion.div>
 

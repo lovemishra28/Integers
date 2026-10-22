@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     "Got questions about web development, Next.js, pricing, UI/UX, or mobile apps in Gwalior? Browse all frequently asked questions about working with IntegersDev.",
   alternates: {
-    canonical: "https://integersdev.in/faq",
+    canonical: "https://www.integersdev.in/faq",
   },
   openGraph: {
     title: "Frequently Asked Questions | IntegersDev",
     description:
       "All answers about web development, UI/UX design, pricing, and project delivery with IntegersDev in Gwalior.",
-    url: "https://integersdev.in/faq",
+    url: "https://www.integersdev.in/faq",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev FAQs" }],
   },

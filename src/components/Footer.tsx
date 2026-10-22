@@ -116,7 +116,7 @@ export default function Footer() {
             <div className="relative z-10">
               <span className="text-[#d4ff3f] font-black text-xs tracking-wider uppercase mb-4 block">Say Hello</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-12 leading-tight tracking-tight">
-                Let&apos;s Work Together<br />With Us
+                Let&apos;s Build Something<br />Great Together
               </h2>
 
               <div className="space-y-6">

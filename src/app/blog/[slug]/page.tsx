@@ -14,6 +14,8 @@ import AuthorBox from "@/components/blog/AuthorBox";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import { mdxComponents } from "@/components/blog/MdxComponents";
 
+import { siteConfig } from "@/config/site";
+
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
@@ -38,29 +40,39 @@ export async function generateMetadata({
   if (!post) {
     return {
       title: "Article Not Found | IntegersDev",
+      description: "The requested engineering publication or article could not be located.",
+      robots: { index: false, follow: false },
     };
   }
 
-  const canonicalUrl = `https://integersdev.in/blog/${post.slug}`;
+  const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const description =
+    post.frontmatter.description?.trim() ||
+    "Read in-depth engineering guides, technical breakdowns, and web development insights from IntegersDev in Gwalior.";
+
+  const coverImage = post.frontmatter.coverImage || "/og-image.png";
+  const absoluteImageUrl = coverImage.startsWith("http")
+    ? coverImage
+    : `${siteConfig.url}${coverImage.startsWith("/") ? "" : "/"}${coverImage}`;
 
   return {
     title: `${post.frontmatter.title} | IntegersDev Blog`,
-    description: post.frontmatter.description,
+    description,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
       title: `${post.frontmatter.title} | IntegersDev`,
-      description: post.frontmatter.description,
+      description,
       url: canonicalUrl,
-      siteName: "IntegersDev",
+      siteName: siteConfig.name,
       type: "article",
       publishedTime: post.frontmatter.date,
       authors: [post.frontmatter.author],
       tags: post.frontmatter.tags,
       images: [
         {
-          url: post.frontmatter.coverImage || "/og-image.png",
+          url: absoluteImageUrl,
           width: 1200,
           height: 630,
           alt: post.frontmatter.title,
@@ -69,11 +81,11 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.frontmatter.title,
-      description: post.frontmatter.description,
+      title: `${post.frontmatter.title} | IntegersDev`,
+      description,
       site: "@integers_dev",
       creator: "@integers_dev",
-      images: [post.frontmatter.coverImage || "/og-image.png"],
+      images: [absoluteImageUrl],
     },
   };
 }
@@ -87,19 +99,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const relatedPosts = getRelatedPosts(post.slug, post.frontmatter.tags, 3);
-  const canonicalUrl = `https://integersdev.in/blog/${post.slug}`;
+  const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const description =
+    post.frontmatter.description?.trim() ||
+    "Read in-depth engineering guides, technical breakdowns, and web development insights from IntegersDev in Gwalior.";
+  const coverImage = post.frontmatter.coverImage || "/og-image.png";
+  const absoluteImageUrl = coverImage.startsWith("http")
+    ? coverImage
+    : `${siteConfig.url}${coverImage.startsWith("/") ? "" : "/"}${coverImage}`;
 
   return (
     <SiteLayout>
       {/* 1. Schema.org Article / BlogPosting Structured Data */}
       <ArticleSchema
         title={post.frontmatter.title}
-        description={post.frontmatter.description}
+        description={description}
         datePublished={post.frontmatter.date}
         authorName={post.authorDetails.name}
         authorRole={post.authorDetails.role}
         url={canonicalUrl}
-        imageUrl={post.frontmatter.coverImage || "https://integersdev.in/og-image.png"}
+        imageUrl={absoluteImageUrl}
         keywords={post.frontmatter.tags}
       />
 

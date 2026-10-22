@@ -37,7 +37,7 @@ export default function ArticleSchema({
       "@id": url,
     },
     url: url,
-    image: imageUrl || "https://integersdev.in/og-image.png",
+    image: imageUrl || "https://www.integersdev.in/og-image.png",
     author: {
       "@type": "Person",
       name: authorName,
@@ -53,7 +53,7 @@ export default function ArticleSchema({
       url: siteConfig.url,
       logo: {
         "@type": "ImageObject",
-        url: "https://integersdev.in/og-image.png",
+        url: "https://www.integersdev.in/og-image.png",
       },
     },
     keywords: keywords && keywords.length > 0 ? keywords.join(", ") : undefined,

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "High-performance, secure websites for clinics, dental centers, and doctors. Seamless appointment booking, OPD schedules, doctor profiles & local SEO.",
   alternates: {
-    canonical: "https://integersdev.in/website-for-clinics",
+    canonical: "https://www.integersdev.in/website-for-clinics",
   },
   openGraph: {
     title: "Website for Clinics, Doctors & Hospitals | Healthcare Web Design | IntegersDev",
     description:
       "High-performance, secure websites for clinics, dental centers, and doctors. Seamless appointment booking, OPD schedules, doctor profiles & local SEO.",
-    url: "https://integersdev.in/website-for-clinics",
+    url: "https://www.integersdev.in/website-for-clinics",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Website for Clinics by IntegersDev" }],
   },

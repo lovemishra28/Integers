@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   description:
     "Transparent pricing for web development, UI/UX design, and custom software in Gwalior. Explore project packages starting from $129 (₹12,250), monthly retainers, and detailed plan comparison.",
   alternates: {
-    canonical: "https://integersdev.in/pricing",
+    canonical: "https://www.integersdev.in/pricing",
   },
   openGraph: {
     title: "Pricing & Plans | Web & App Development | IntegersDev",
     description:
       "Transparent pricing for web development, UI/UX design, and custom software in Gwalior. Clear milestone tiers starting from $129 / ₹12,250.",
-    url: "https://integersdev.in/pricing",
+    url: "https://www.integersdev.in/pricing",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Transparent Pricing" }],
   },
@@ -77,11 +77,11 @@ const pricingProductsSchema = {
   "@graph": [
     {
       "@type": "Product",
-      "@id": "https://integersdev.in/pricing#basic-plan",
+      "@id": "https://www.integersdev.in/pricing#basic-plan",
       "name": "IntegersDev Basic Web & UI/UX Plan",
       "description":
         "Ideal for early MVPs, landing pages & design validation. Custom UI/UX design, 2 iterative revisions, Figma source handoff, and mobile responsiveness.",
-      "image": "https://integersdev.in/og-image.png",
+      "image": "https://www.integersdev.in/og-image.png",
       "brand": {
         "@type": "Brand",
         "name": "IntegersDev",
@@ -101,11 +101,11 @@ const pricingProductsSchema = {
             "priceCurrency": "USD",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://integersdev.in/pricing",
+            "url": "https://www.integersdev.in/pricing",
             "seller": {
               "@type": "Organization",
               "name": "IntegersDev",
-              "url": "https://integersdev.in",
+              "url": "https://www.integersdev.in",
             },
           },
           {
@@ -115,11 +115,11 @@ const pricingProductsSchema = {
             "priceCurrency": "INR",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://integersdev.in/pricing",
+            "url": "https://www.integersdev.in/pricing",
             "seller": {
               "@type": "Organization",
               "name": "IntegersDev",
-              "url": "https://integersdev.in",
+              "url": "https://www.integersdev.in",
             },
           },
         ],
@@ -127,11 +127,11 @@ const pricingProductsSchema = {
     },
     {
       "@type": "Product",
-      "@id": "https://integersdev.in/pricing#standard-plan",
+      "@id": "https://www.integersdev.in/pricing#standard-plan",
       "name": "IntegersDev Standard Full-Stack Web Plan",
       "description":
         "Complete production frontend & backend development with Next.js, database setup, interactive lead forms, and basic SEO configuration.",
-      "image": "https://integersdev.in/og-image.png",
+      "image": "https://www.integersdev.in/og-image.png",
       "brand": {
         "@type": "Brand",
         "name": "IntegersDev",
@@ -151,11 +151,11 @@ const pricingProductsSchema = {
             "priceCurrency": "USD",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://integersdev.in/pricing",
+            "url": "https://www.integersdev.in/pricing",
             "seller": {
               "@type": "Organization",
               "name": "IntegersDev",
-              "url": "https://integersdev.in",
+              "url": "https://www.integersdev.in",
             },
           },
           {
@@ -165,11 +165,11 @@ const pricingProductsSchema = {
             "priceCurrency": "INR",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://integersdev.in/pricing",
+            "url": "https://www.integersdev.in/pricing",
             "seller": {
               "@type": "Organization",
               "name": "IntegersDev",
-              "url": "https://integersdev.in",
+              "url": "https://www.integersdev.in",
             },
           },
         ],
@@ -177,11 +177,11 @@ const pricingProductsSchema = {
     },
     {
       "@type": "Product",
-      "@id": "https://integersdev.in/pricing#turbo-plan",
+      "@id": "https://www.integersdev.in/pricing#turbo-plan",
       "name": "IntegersDev Turbo Full-Stack & Mobile Platform Plan",
       "description":
         "End-to-end fullstack platform built for serious scale & traffic. Web and mobile app development (PWA/Hybrid), custom CMS dashboard, and priority sprint delivery.",
-      "image": "https://integersdev.in/og-image.png",
+      "image": "https://www.integersdev.in/og-image.png",
       "brand": {
         "@type": "Brand",
         "name": "IntegersDev",
@@ -201,11 +201,11 @@ const pricingProductsSchema = {
             "priceCurrency": "USD",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://integersdev.in/pricing",
+            "url": "https://www.integersdev.in/pricing",
             "seller": {
               "@type": "Organization",
               "name": "IntegersDev",
-              "url": "https://integersdev.in",
+              "url": "https://www.integersdev.in",
             },
           },
           {
@@ -215,11 +215,11 @@ const pricingProductsSchema = {
             "priceCurrency": "INR",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
-            "url": "https://integersdev.in/pricing",
+            "url": "https://www.integersdev.in/pricing",
             "seller": {
               "@type": "Organization",
               "name": "IntegersDev",
-              "url": "https://integersdev.in",
+              "url": "https://www.integersdev.in",
             },
           },
         ],
