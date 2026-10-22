@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   FaArrowRight,
   FaCheck,
@@ -25,6 +26,7 @@ import { PRICING_TIERS, PricingTier } from '@/data/pricing';
 const PLANS = PRICING_TIERS;
 
 export default function Pricing() {
+  const router = useRouter();
   const [billingCycle, setBillingCycle] = useState<BillingCycle>('project');
   const [currency, setCurrency] = useState<Currency>('USD');
   const [selectedPlanId, setSelectedPlanId] = useState<string>('standard');
@@ -66,7 +68,7 @@ export default function Pricing() {
     );
   };
 
-  // Scroll down to contact form and populate message
+  // Scroll down to contact form and populate message, or navigate to /contact?plan=...
   const handleProceedToContact = () => {
     setIsModalOpen(false);
     const contactElem = document.getElementById('contact-form') || document.getElementById('contact');
@@ -82,6 +84,8 @@ export default function Pricing() {
           textarea.focus();
         }
       }, 700);
+    } else {
+      router.push(`/contact?plan=${selectedPlan.id}`);
     }
   };
 

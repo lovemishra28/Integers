@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   description:
     "Explore web development, UI/UX design, and mobile app case studies by IntegersDev in Gwalior. High-converting Next.js websites and custom digital solutions.",
   alternates: {
-    canonical: "https://integersdev.in/portfolio",
+    canonical: "https://www.integersdev.in/portfolio",
   },
   openGraph: {
     title: "Portfolio & Case Studies | IntegersDev",
     description:
       "Explore web development, UI/UX design, and mobile app case studies by IntegersDev in Gwalior.",
-    url: "https://integersdev.in/portfolio",
+    url: "https://www.integersdev.in/portfolio",
     siteName: "IntegersDev",
     images: [
       {

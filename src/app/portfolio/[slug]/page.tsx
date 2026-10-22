@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${project.title} - Case Study | IntegersDev`;
   const description = `${project.summary} Engineered by IntegersDev in Gwalior, India.`;
-  const url = `https://integersdev.in/portfolio/${project.slug}`;
+  const url = `https://www.integersdev.in/portfolio/${project.slug}`;
 
   return {
     title,
@@ -102,7 +102,7 @@ export default async function CaseStudyPage({ params }: Props) {
           }}
           itemName={`${project.title} Web Platform`}
           itemType="Service"
-          itemUrl={`https://integersdev.in/portfolio/${project.slug}`}
+          itemUrl={`https://www.integersdev.in/portfolio/${project.slug}`}
         />
       )}
 

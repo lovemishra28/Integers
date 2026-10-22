@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   description:
     "Leading web development company in Gwalior. IntegersDev builds custom Next.js websites, high-converting platforms & fullstack web apps. Request a free quote!",
   alternates: {
-    canonical: "https://integersdev.in/services/web-development",
+    canonical: "https://www.integersdev.in/services/web-development",
   },
   openGraph: {
     title: "Web Development Company in Gwalior | Next.js & Fullstack | IntegersDev",
     description:
       "Looking for the top web development company in Gwalior? IntegersDev engineers custom Next.js websites and high-converting web applications.",
-    url: "https://integersdev.in/services/web-development",
+    url: "https://www.integersdev.in/services/web-development",
     siteName: "IntegersDev",
     images: [
       {

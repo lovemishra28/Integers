@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "High-conversion web platforms for real estate developers & luxury builders. Interactive master plans, floor plan selectors, site visit booking & ad funnels.",
   alternates: {
-    canonical: "https://integersdev.in/website-for-real-estate",
+    canonical: "https://www.integersdev.in/website-for-real-estate",
   },
   openGraph: {
     title: "Website for Real Estate Developers, Builders & Realtors | IntegersDev",
     description:
       "High-conversion web platforms for real estate developers & luxury builders. Interactive master plans, floor plan selectors, site visit booking & ad funnels.",
-    url: "https://integersdev.in/website-for-real-estate",
+    url: "https://www.integersdev.in/website-for-real-estate",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Website for Real Estate by IntegersDev" }],
   },

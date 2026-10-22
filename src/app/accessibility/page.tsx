@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Read the IntegersDev Accessibility Statement. Discover our commitment to WCAG 2.1 Level AA compliance, high contrast design, keyboard navigation, and India's RPwD Act 2016.",
   alternates: {
-    canonical: "https://integersdev.in/accessibility",
+    canonical: "https://www.integersdev.in/accessibility",
   },
   openGraph: {
     title: "Accessibility Statement | IntegersDev",
     description:
       "Digital accessibility standards, assistive technology support, and WCAG compliance at IntegersDev.",
-    url: "https://integersdev.in/accessibility",
+    url: "https://www.integersdev.in/accessibility",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Accessibility Statement" }],
   },

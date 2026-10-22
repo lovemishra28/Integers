@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   description:
     "Read authentic reviews and ratings from founders, local businesses, and product managers who built Next.js websites, mobile apps, and UI/UX design systems with IntegersDev in Gwalior.",
   alternates: {
-    canonical: "https://integersdev.in/testimonials",
+    canonical: "https://www.integersdev.in/testimonials",
   },
   openGraph: {
     title: "Client Testimonials & Reviews | IntegersDev",
     description:
       "Read authentic client reviews and feedback from founders and businesses who partnered with IntegersDev in Gwalior.",
-    url: "https://integersdev.in/testimonials",
+    url: "https://www.integersdev.in/testimonials",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Client Testimonials" }],
   },
@@ -44,7 +44,7 @@ export default async function TestimonialsPage() {
         }))}
         itemName="IntegersDev Web & App Development"
         itemType="LocalBusiness"
-        itemUrl="https://integersdev.in/testimonials"
+        itemUrl="https://www.integersdev.in/testimonials"
       />
 
       {/* 1. Header with Breadcrumbs */}

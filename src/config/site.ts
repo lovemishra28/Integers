@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "IntegersDev",
   tagline: "Web Development Company in Gwalior | Next.js & UI/UX",
-  url: "https://integersdev.in",
+  url: "https://www.integersdev.in",
   email: "contact@integersdev.in",
   phone: "+91 9981097501",
   phoneClean: "+919981097501",
@@ -27,10 +27,9 @@ export const siteConfig = {
   // ANALYTICS & SEARCH ENGINE VERIFICATION
   // Replace via environment variables or default fallbacks
   // -------------------------------------------------------------
-  gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-XXXXXXXXXX",
+  gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "",
   googleSiteVerification:
-    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
-    "z_3-Pz-vO2P-r8S2YQ9U-9w4uO9vE7E-example-token",
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
 
   // -------------------------------------------------------------
   // SINGLE SOURCE OF TRUTH FOR ADDRESS & PHYSICAL LOCATION

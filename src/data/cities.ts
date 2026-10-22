@@ -78,7 +78,7 @@ export const CITIES_DATA: CityConfig[] = [
       title: "Top Web Development Company in Gwalior | Next.js & UI/UX Studio | IntegersDev",
       description:
         "Leading web development company in Gwalior. IntegersDev builds custom Next.js websites, high-converting platforms & mobile apps. In-person meetings in City Center.",
-      canonical: "https://integersdev.in/web-development-company-gwalior",
+      canonical: "https://www.integersdev.in/web-development-company-gwalior",
     },
     hero: {
       badge: "Headquartered in Gwalior",
@@ -136,7 +136,7 @@ export const CITIES_DATA: CityConfig[] = [
         painPoint:
           "Patients struggling to book diagnostic appointments, locate doctor schedules, or view lab test packages on mobile devices.",
         solution:
-          "HIPAA/patient-friendly appointment scheduling portals, doctor profile directories, and instant test booking with location directions.",
+          "Secure, patient-friendly appointment scheduling portals, verified doctor profile directories, and instant diagnostic booking with location directions.",
         techStack: ["Next.js SSR", "PostgreSQL", "Cloudflare CDN", "Clean UI"],
       },
       {
@@ -224,7 +224,7 @@ export const CITIES_DATA: CityConfig[] = [
       title: "Web Development Company in Indore | Next.js & UI/UX | IntegersDev",
       description:
         "Premier web development company for Indore startups, D2C brands & enterprises. High-speed Next.js web applications, UI/UX systems & mobile apps. Request a quote!",
-      canonical: "https://integersdev.in/web-development-company-indore",
+      canonical: "https://www.integersdev.in/web-development-company-indore",
     },
     hero: {
       badge: "Engineering for Indore Startups",
@@ -370,7 +370,7 @@ export const CITIES_DATA: CityConfig[] = [
       title: "Web Development Company in Bhopal | Next.js & UI/UX | IntegersDev",
       description:
         "Top web development company in Bhopal. High-security Next.js websites, custom software, UI/UX design & mobile apps for institutions, solar & industry.",
-      canonical: "https://integersdev.in/web-development-company-bhopal",
+      canonical: "https://www.integersdev.in/web-development-company-bhopal",
     },
     hero: {
       badge: "Serving Capital Region & MP",

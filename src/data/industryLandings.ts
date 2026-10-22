@@ -67,7 +67,7 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       title: "Website for Restaurants & Cafes | Custom Next.js Web Design | IntegersDev",
       description:
         "High-converting custom websites for restaurants, cafes & dining brands. Commission-free table reservations, digital menus, QR ordering, and local SEO.",
-      canonical: "https://integersdev.in/website-for-restaurants",
+      canonical: "https://www.integersdev.in/website-for-restaurants",
     },
     hero: {
       badge: "Culinary & Dining Web Engineering",
@@ -211,7 +211,7 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       title: "Website for Travel Agencies & Tour Operators | IntegersDev",
       description:
         "Custom high-speed websites for travel agencies, tour operators & vehicle rental companies. Interactive itineraries, WhatsApp lead funnels, and instant inquiries.",
-      canonical: "https://integersdev.in/website-for-travel-agencies",
+      canonical: "https://www.integersdev.in/website-for-travel-agencies",
     },
     hero: {
       badge: "Travel & Tourism Engineering",
@@ -355,7 +355,7 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       title: "Website for Clinics, Doctors & Hospitals | Healthcare Web Design | IntegersDev",
       description:
         "High-performance, secure websites for clinics, dental centers, and doctors. Seamless appointment booking, OPD schedules, doctor profiles & local SEO.",
-      canonical: "https://integersdev.in/website-for-clinics",
+      canonical: "https://www.integersdev.in/website-for-clinics",
     },
     hero: {
       badge: "Healthcare & Clinical Engineering",
@@ -497,7 +497,7 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       title: "Website for Schools & Educational Institutes | Web Design | IntegersDev",
       description:
         "Modern websites & admission portals for private schools, colleges, and academies. Online admission forms, academic calendars, fee charts & parent portals.",
-      canonical: "https://integersdev.in/website-for-schools",
+      canonical: "https://www.integersdev.in/website-for-schools",
     },
     hero: {
       badge: "Academic & Institutional Engineering",
@@ -639,7 +639,7 @@ export const INDUSTRY_LANDINGS: Record<string, IndustryLandingConfig> = {
       title: "Website for Real Estate Developers, Builders & Realtors | IntegersDev",
       description:
         "High-conversion web platforms for real estate developers & luxury builders. Interactive master plans, floor plan selectors, site visit booking & ad funnels.",
-      canonical: "https://integersdev.in/website-for-real-estate",
+      canonical: "https://www.integersdev.in/website-for-real-estate",
     },
     hero: {
       badge: "Real Estate & Property Engineering",

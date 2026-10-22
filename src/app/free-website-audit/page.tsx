@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     "Get a free 24-hour website audit from IntegersDev in Gwalior. We analyze your Core Web Vitals, technical SEO, mobile UX friction, and Next.js migration roadmap.",
   alternates: {
-    canonical: "https://integersdev.in/free-website-audit",
+    canonical: "https://www.integersdev.in/free-website-audit",
   },
   openGraph: {
     title: "Free Website Audit | Speed, SEO & Conversion Diagnostic | IntegersDev",
     description:
       "Get a free 24-hour website diagnostic from IntegersDev in Gwalior. Identify speed bottlenecks, technical SEO issues, and conversion blockers.",
-    url: "https://integersdev.in/free-website-audit",
+    url: "https://www.integersdev.in/free-website-audit",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Free Website Audit" }],
   },

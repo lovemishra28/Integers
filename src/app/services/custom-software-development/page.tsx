@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   description:
     "Custom software development company in Gwalior. IntegersDev engineers bespoke SaaS apps, internal admin portals, RBAC systems & automated databases. Request a proposal!",
   alternates: {
-    canonical: "https://integersdev.in/services/custom-software-development",
+    canonical: "https://www.integersdev.in/services/custom-software-development",
   },
   openGraph: {
     title: "Custom Software Development in Gwalior | SaaS & Portals | IntegersDev",
     description:
       "Premier custom software development studio in Gwalior. Bespoke web portals, database systems & operational dashboards by IntegersDev.",
-    url: "https://integersdev.in/services/custom-software-development",
+    url: "https://www.integersdev.in/services/custom-software-development",
     siteName: "IntegersDev",
     images: [
       {

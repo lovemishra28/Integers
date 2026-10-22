@@ -18,12 +18,19 @@ export async function submitContactForm(formData: FormData) {
       lastName = parts.slice(1).join(" ") || "Lead";
     }
 
+    const plan = (formData.get("plan") || "").toString().trim();
+    const rawNotes = (formData.get("notes") || "").toString().trim();
+    const notes = plan
+      ? (rawNotes ? `Selected Plan: ${plan.toUpperCase()} | ${rawNotes}` : `Selected Plan: ${plan.toUpperCase()}`)
+      : rawNotes;
+
     const data = {
       firstName: firstName || "Anonymous",
       lastName: lastName || "Contact",
       email: (formData.get("email") || "").toString().trim(),
       phone: (formData.get("phone") || "").toString().trim(),
       message: (formData.get("message") || "General Inquiry").toString().trim(),
+      notes,
     };
 
     // Save to MongoDB

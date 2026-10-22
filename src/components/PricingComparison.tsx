@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FaCheck, FaTimes, FaArrowRight, FaBolt, FaStar } from "react-icons/fa";
+import { FaCheck, FaTimes, FaBolt, FaStar } from "react-icons/fa";
 import { trackPricingTierSelection } from "@/lib/analytics";
 
 interface ComparisonRow {
@@ -319,8 +319,8 @@ export default function PricingComparison() {
                       / ₹12,250
                     </span>
                   </div>
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/contact?plan=basic"
                     onClick={() => trackPricingTierSelection("Basic", "$129", "USD")}
                     data-track-plan="Basic"
                     data-track-price="$129"
@@ -328,7 +328,7 @@ export default function PricingComparison() {
                     className="mt-3 inline-flex items-center justify-center w-full py-2 px-3 rounded-xl text-[11px] font-black uppercase tracking-wider bg-black text-white hover:bg-[#d4ff3f] hover:text-black transition-all border border-black cursor-pointer"
                   >
                     Select Basic
-                  </a>
+                  </Link>
                 </th>
 
                 {/* Standard Plan Column Header (Featured) */}
@@ -347,8 +347,8 @@ export default function PricingComparison() {
                       / ₹23,700
                     </span>
                   </div>
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/contact?plan=standard"
                     onClick={() => trackPricingTierSelection("Standard", "$249", "USD")}
                     data-track-plan="Standard"
                     data-track-price="$249"
@@ -356,7 +356,7 @@ export default function PricingComparison() {
                     className="mt-3 inline-flex items-center justify-center w-full py-2 px-3 rounded-xl text-[11px] font-black uppercase tracking-wider bg-black text-[#d4ff3f] shadow-[2px_2px_0px_0px_#000] hover:translate-y-[-1px] transition-all border border-black cursor-pointer"
                   >
                     Select Standard
-                  </a>
+                  </Link>
                 </th>
 
                 {/* Turbo Plan Column Header */}
@@ -374,8 +374,8 @@ export default function PricingComparison() {
                       / ₹42,750
                     </span>
                   </div>
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/contact?plan=turbo"
                     onClick={() => trackPricingTierSelection("Turbo", "$449", "USD")}
                     data-track-plan="Turbo"
                     data-track-price="$449"
@@ -383,7 +383,7 @@ export default function PricingComparison() {
                     className="mt-3 inline-flex items-center justify-center w-full py-2 px-3 rounded-xl text-[11px] font-black uppercase tracking-wider bg-black text-white hover:bg-[#d4ff3f] hover:text-black transition-all border border-black cursor-pointer"
                   >
                     Select Turbo
-                  </a>
+                  </Link>
                 </th>
 
                 {/* Enterprise Column Header */}
@@ -470,28 +470,31 @@ export default function PricingComparison() {
                   Ready to start your project?
                 </td>
                 <td className="p-4 sm:p-6 text-center border-l-2 border-black">
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/contact?plan=basic"
+                    onClick={() => trackPricingTierSelection("Basic", "$129", "USD")}
                     className="inline-flex items-center justify-center w-full py-2.5 px-3 rounded-xl text-xs font-black uppercase bg-black text-white hover:bg-[#d4ff3f] hover:text-black transition-all border border-black"
                   >
                     Get Basic
-                  </a>
+                  </Link>
                 </td>
                 <td className="p-4 sm:p-6 text-center border-l-2 border-black bg-[#d4ff3f]/30">
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/contact?plan=standard"
+                    onClick={() => trackPricingTierSelection("Standard", "$249", "USD")}
                     className="inline-flex items-center justify-center w-full py-2.5 px-3 rounded-xl text-xs font-black uppercase bg-black text-[#d4ff3f] shadow-[3px_3px_0px_0px_#000] hover:translate-y-[-1px] transition-all border-2 border-black"
                   >
                     Get Standard
-                  </a>
+                  </Link>
                 </td>
                 <td className="p-4 sm:p-6 text-center border-l-2 border-black">
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/contact?plan=turbo"
+                    onClick={() => trackPricingTierSelection("Turbo", "$449", "USD")}
                     className="inline-flex items-center justify-center w-full py-2.5 px-3 rounded-xl text-xs font-black uppercase bg-black text-white hover:bg-[#d4ff3f] hover:text-black transition-all border border-black"
                   >
                     Get Turbo
-                  </a>
+                  </Link>
                 </td>
                 <td className="p-4 sm:p-6 text-center border-l-2 border-black bg-gray-100">
                   <Link

@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   description:
     "Top web development company in Gwalior, India. IntegersDev crafts custom Next.js sites, UI/UX & mobile apps to grow your brand. Contact us for a free quote!",
   alternates: {
-    canonical: "https://integersdev.in",
+    canonical: "https://www.integersdev.in",
   },
   openGraph: {
     title: "Web Development Company in Gwalior | Next.js & UI/UX | IntegersDev",
     description:
       "Top web development company in Gwalior, India. IntegersDev crafts custom Next.js sites, UI/UX & mobile apps to grow your brand. Contact us for a free quote!",
-    url: "https://integersdev.in",
+    url: "https://www.integersdev.in",
     siteName: "IntegersDev",
     locale: "en_IN",
     type: "website",

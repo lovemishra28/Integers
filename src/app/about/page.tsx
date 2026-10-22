@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   description:
     "Meet IntegersDev: Vinay, Aryan, Kuldeep & Love. A modern web development, UI/UX and mobile app engineering studio rooted in Gwalior, Madhya Pradesh, India. Discover our story, values, and 5-step process.",
   alternates: {
-    canonical: "https://integersdev.in/about",
+    canonical: "https://www.integersdev.in/about",
   },
   openGraph: {
     title: "About Us | IntegersDev - Web Development Studio in Gwalior",
     description:
       "Meet the team behind IntegersDev: engineering fast Next.js platforms, UI/UX systems & mobile apps in Gwalior, India.",
-    url: "https://integersdev.in/about",
+    url: "https://www.integersdev.in/about",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Team in Gwalior" }],
   },
@@ -155,8 +155,8 @@ import { JsonLd } from "@/components/schema";
 const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "@id": "https://integersdev.in/about#webpage",
-  url: "https://integersdev.in/about",
+  "@id": "https://www.integersdev.in/about#webpage",
+  url: "https://www.integersdev.in/about",
   name: "About IntegersDev | Web Development Studio in Gwalior",
   description:
     "Learn about IntegersDev: the core engineering team, company story, values, and 5-step delivery process based in Gwalior, Madhya Pradesh.",

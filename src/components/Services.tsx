@@ -111,7 +111,7 @@ export default function Services() {
           <div className="relative z-10">
             <span className="text-sm font-bold text-[#62d124] block mb-2">Our Services</span>
             <h2 className="text-4xl md:text-5xl font-bold font-sans leading-tight text-black max-w-lg">
-              The process that makes your life easier.
+              Full-Stack Engineering Built for Scalable Growth.
             </h2>
           </div>
         </div>

@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   description:
     "Top app development company Gwalior. IntegersDev builds high-performance React Native iOS & Android apps with offline sync & push notifications. Get a free quote!",
   alternates: {
-    canonical: "https://integersdev.in/services/mobile-app-development",
+    canonical: "https://www.integersdev.in/services/mobile-app-development",
   },
   openGraph: {
     title: "App Development Company Gwalior | iOS & Android | IntegersDev",
     description:
       "Premier app development company in Gwalior. High-speed cross-platform mobile apps engineered by IntegersDev.",
-    url: "https://integersdev.in/services/mobile-app-development",
+    url: "https://www.integersdev.in/services/mobile-app-development",
     siteName: "IntegersDev",
     images: [
       {

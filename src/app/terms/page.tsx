@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Read the terms of service and client engagement agreements for IntegersDev. India-governed contract terms, milestone deliverables, IP ownership, and liability standards.",
   alternates: {
-    canonical: "https://integersdev.in/terms",
+    canonical: "https://www.integersdev.in/terms",
   },
   openGraph: {
     title: "Terms of Use & Service Agreement | IntegersDev",
     description:
       "Client engagement guidelines, milestone billing terms, IP ownership, and legal contracts for IntegersDev in Gwalior, India.",
-    url: "https://integersdev.in/terms",
+    url: "https://www.integersdev.in/terms",
     siteName: "IntegersDev",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IntegersDev Terms of Use" }],
   },
@@ -65,7 +65,7 @@ export default function TermsPage() {
               These Terms of Use (&ldquo;Terms&rdquo;) constitute a legally enforceable agreement between you (&ldquo;Client&rdquo;, &ldquo;User&rdquo;, or &ldquo;You&rdquo;) and <strong>IntegersDev</strong> (&ldquo;Agency&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), registered and operating from Gwalior, Madhya Pradesh, India.
             </p>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-              By accessing, browsing, interacting with <a href="https://integersdev.in" className="text-black font-bold underline">integersdev.in</a>, submitting inquiries through our contact forms, or commissioning bespoke development, you acknowledge that you have read, understood, and agreed to be bound by these Terms, together with our <Link href="/privacy-policy" className="text-black font-bold underline">Privacy Policy</Link>.
+              By accessing, browsing, interacting with <a href="https://www.integersdev.in" className="text-black font-bold underline">integersdev.in</a>, submitting inquiries through our contact forms, or commissioning bespoke development, you acknowledge that you have read, understood, and agreed to be bound by these Terms, together with our <Link href="/privacy-policy" className="text-black font-bold underline">Privacy Policy</Link>.
             </p>
             <div className="p-4 bg-[#f8f9f5] border-2 border-black rounded-2xl text-xs sm:text-sm font-medium text-gray-800">
               <strong>Contact Form Disclosure:</strong> Submitting a project inquiry via our contact form initiates a pre-contractual discovery dialogue. It does NOT automatically bind IntegersDev to build or deliver software until both parties formally sign a dedicated Statement of Work (SOW), project specification sheet, or confirm a sprint kickoff proposal.
